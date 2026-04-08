@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MotionEffects from "@/components/MotionEffects";
 
 export const metadata: Metadata = {
-  title: "Hayat Care Center | Adult Daycare & Community Center",
+  title: "Hayat Care Center | Assisted Support & Senior Community Living",
   description:
-    "Compassionate adult daycare with health support, engaging programs, and family-focused care planning.",
+    "Explore assisted support, amenities, dining, life enrichment, and floor plans at Hayat Care Center.",
 };
 
 export default function RootLayout({
@@ -17,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--ink)]">
+        <MotionEffects />
         <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="relative z-0 flex-1">{children}</main>
+        <div className="relative z-0">
+          <Footer />
+        </div>
       </body>
     </html>
   );

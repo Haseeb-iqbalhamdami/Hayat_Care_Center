@@ -47,11 +47,11 @@ export default function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
           <Link href="/" className="shrink-0" aria-label="Hayat Care Center home">
             <Image
-              src="/logo.jpg"
+              src="/hayat-logo.png"
               alt="Hayat Adult Daycare and Community Center"
               width={215}
-              height={84}
-              className="h-[52px] w-auto sm:h-[72px]"
+              height={100}
+              className="h-[82px] w-[200px] sm:h-[92px]"
               priority
             />
           </Link>

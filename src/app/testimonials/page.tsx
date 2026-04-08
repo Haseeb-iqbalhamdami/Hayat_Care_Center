@@ -4,7 +4,7 @@ import { testimonials } from "@/data/siteContent";
 
 export const metadata: Metadata = {
   title: "Testimonials | Hayat Care Center",
-  description: "Read stories from families and members who trust Hayat Care Center.",
+  description: "Read what residents and families say about Hayat Care Center.",
 };
 
 export default function TestimonialsPage() {
@@ -12,13 +12,27 @@ export default function TestimonialsPage() {
     <>
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">Testimonials</p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl">
-            What Families And Members Say About Hayat
+          <p
+            data-reveal
+            className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
+          >
+            Testimonials
+          </p>
+          <h1
+            data-reveal
+            data-reveal-delay={90}
+            className="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
+          >
+            How Families And Residents Describe The Hayat Experience
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg">
-            Real feedback helps families decide with confidence. Here are some
-            of the experiences shared by our community.
+          <p
+            data-reveal
+            data-reveal-delay={180}
+            className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
+          >
+            The strongest signal of quality is often how a place feels after the
+            first weeks and months. These reflections show what stands out most
+            to the people who know the community best.
           </p>
         </div>
       </section>
@@ -26,8 +40,14 @@ export default function TestimonialsPage() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((item) => (
-              <article key={item.name + item.role} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-[var(--line)]">
+            {testimonials.map((item, index) => (
+              <article
+                key={item.name + item.role}
+                data-reveal
+                data-reveal-delay={index * 90}
+                data-tilt
+                className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-[var(--line)]"
+              >
                 <div className="mb-4 flex gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <svg key={i} className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -35,14 +55,16 @@ export default function TestimonialsPage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-sm leading-7 text-[var(--ink-soft)]">“{item.quote}”</p>
+                <p className="text-sm leading-7 text-[var(--ink-soft)]">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
                 <p className="mt-5 text-sm font-bold text-[var(--ink)]">{item.name}</p>
                 <p className="text-xs text-[var(--ink-soft)]">{item.role}</p>
               </article>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div data-reveal data-reveal-delay={180} className="mt-10 text-center">
             <Link
               href="/contact"
               className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"

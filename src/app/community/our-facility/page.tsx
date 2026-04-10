@@ -12,43 +12,35 @@ export const metadata: Metadata = {
 
 const facilityGalleryItems = [
   {
-    image:
-      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-reception.jpg",
     text: "Reception Lobby",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-compassionate-care.jpg",
     text: "Care Hallway",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1617201929473-5f3644f8f5d5?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-dining-social.jpg",
     text: "Dining Area",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-comfortable-lounge.jpg",
     text: "Resident Lounge",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-wellness-programs.jpg",
     text: "Wellness Studio",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/home/gallery-outdoor-spaces.jpg",
     text: "Garden Courtyard",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/community/suite-interior.jpg",
     text: "Suite Interior",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/community/quiet-reading-room.jpg",
     text: "Quiet Reading Room",
   },
 ];

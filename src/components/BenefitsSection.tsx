@@ -61,7 +61,7 @@ export default function BenefitsSection() {
           {/* Left: Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+              src="/images/shared/caregiver-support.jpg"
               alt="Caregiver with senior resident"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

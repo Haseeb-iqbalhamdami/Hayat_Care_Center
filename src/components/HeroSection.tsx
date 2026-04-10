@@ -6,7 +6,7 @@ export default function HeroSection() {
       className="relative min-h-[600px] flex items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(15, 51, 102, 0.7), rgba(15, 51, 102, 0.6)), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1920&q=80')",
+          "linear-gradient(rgba(15, 51, 102, 0.7), rgba(15, 51, 102, 0.6)), url('/images/shared/hero-community-compassion.jpg')",
       }}
     >
       <div className="max-w-5xl mx-auto px-4 text-center text-white py-24">

@@ -391,12 +391,12 @@ class App {
 
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: "https://picsum.photos/seed/h1/1200/900", text: "Hayat Lobby" },
-      { image: "https://picsum.photos/seed/h2/1200/900", text: "Dining Hall" },
-      { image: "https://picsum.photos/seed/h3/1200/900", text: "Courtyard" },
-      { image: "https://picsum.photos/seed/h4/1200/900", text: "Lounge" },
-      { image: "https://picsum.photos/seed/h5/1200/900", text: "Wellness" },
-      { image: "https://picsum.photos/seed/h6/1200/900", text: "Suites" },
+      { image: "/images/reactbits/circular-h1.jpg", text: "Hayat Lobby" },
+      { image: "/images/reactbits/circular-h2.jpg", text: "Dining Hall" },
+      { image: "/images/reactbits/circular-h3.jpg", text: "Courtyard" },
+      { image: "/images/reactbits/circular-h4.jpg", text: "Lounge" },
+      { image: "/images/reactbits/circular-h5.jpg", text: "Wellness" },
+      { image: "/images/reactbits/circular-h6.jpg", text: "Suites" },
     ];
 
     const galleryItems = items && items.length ? items : defaultItems;

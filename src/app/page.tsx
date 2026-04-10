@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
-import DomeGallery from "@/components/reactbits/DomeGallery";
-import GooeyNav from "@/components/reactbits/GooeyNav";
+import CircularGallery from "@/components/reactbits/CircularGallery";
 import LogoLoop, { type LogoItem } from "@/components/reactbits/LogoLoop";
 import PixelCard from "@/components/reactbits/PixelCard";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
@@ -60,85 +60,107 @@ const trustLogos: LogoItem[] = [
   },
 ];
 
-const gooeyNavItems = [
-  { label: "Hero", href: "#home-hero" },
-  { label: "Why Hayat", href: "#why-hayat" },
-  { label: "Dome Gallery", href: "#dome-gallery" },
-  { label: "Floor Plans", href: "#floor-plans-home" },
-  { label: "Support", href: "#assisted-support-home" },
-  { label: "Contact", href: "/contact" },
+const hayatGalleryImages = [
+  {
+    src: "/images/home/upload-01.jpg",
+    alt: "Hayat community photo 1",
+    title: "Community Moment 01",
+  },
+  {
+    src: "/images/home/upload-02.jpg",
+    alt: "Hayat community photo 2",
+    title: "Community Moment 02",
+  },
+  {
+    src: "/images/home/upload-03.jpg",
+    alt: "Hayat community photo 3",
+    title: "Community Moment 03",
+  },
+  {
+    src: "/images/home/upload-04.jpg",
+    alt: "Hayat community photo 4",
+    title: "Community Moment 04",
+  },
+  {
+    src: "/images/home/upload-05.jpg",
+    alt: "Hayat community photo 5",
+    title: "Community Moment 05",
+  },
+  {
+    src: "/images/home/upload-06.jpg",
+    alt: "Hayat community photo 6",
+    title: "Community Moment 06",
+  },
+  {
+    src: "/images/home/upload-07.jpg",
+    alt: "Hayat community photo 7",
+    title: "Community Moment 07",
+  },
+  {
+    src: "/images/home/upload-08.jpg",
+    alt: "Hayat community photo 8",
+    title: "Community Moment 08",
+  },
+  {
+    src: "/images/home/upload-09.jpg",
+    alt: "Hayat community photo 9",
+    title: "Community Moment 09",
+  },
+  {
+    src: "/images/home/upload-10.jpg",
+    alt: "Hayat community photo 10",
+    title: "Community Moment 10",
+  },
+  {
+    src: "/images/home/upload-11.jpg",
+    alt: "Hayat community photo 11",
+    title: "Community Moment 11",
+  },
+  {
+    src: "/images/home/upload-12.jpg",
+    alt: "Hayat community photo 12",
+    title: "Community Moment 12",
+  },
+  {
+    src: "/images/home/upload-13.jpg",
+    alt: "Hayat community photo 13",
+    title: "Community Moment 13",
+  },
 ];
 
-const domeGalleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1400&q=80",
-    alt: "Community reception lobby",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80",
-    alt: "Modern care space",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1617201929473-5f3644f8f5d5?auto=format&fit=crop&w=1400&q=80",
-    alt: "Dining and social hall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80",
-    alt: "Resident lounge seating",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1400&q=80",
-    alt: "Wellness and mobility studio",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=1400&q=80",
-    alt: "Outdoor courtyard walkway",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80",
-    alt: "Quiet reading room",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-    alt: "Resident suite interior",
-  },
-];
-
-const heroShowcaseImage =
-  "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1800&q=80";
+const heroShowcaseImage = "/images/home/hero-community-care.jpg";
+const homeCircularGalleryItems = hayatGalleryImages.map((image) => ({
+  image: image.src,
+  text: image.title,
+}));
 
 export default function Home() {
   return (
     <>
-      <section id="home-hero" className="hero-grid relative">
-        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-55">
-          <Threads
-            amplitude={1.1}
-            distance={0.18}
-            color={[0.2, 0.5, 0.84]}
-            enableMouseInteraction={false}
+      <section id="home-hero" className="hero-grid relative border-b-0 bg-transparent">
+        <div className="absolute inset-0">
+          <Image
+            src={heroShowcaseImage}
+            alt="Residents and caregivers in a bright, welcoming Hayat community space"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-85"
           />
         </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-8 lg:pt-10">
-          <div
-            data-reveal
-            className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface-soft)] p-2 shadow-[0_18px_50px_rgba(0,0,0,0.3)]"
-          >
-            <div
-              role="img"
-              aria-label="Welcoming Hayat community care environment"
-              className="h-[220px] rounded-[1.4rem] bg-cover bg-center sm:h-[300px] lg:h-[360px]"
-              style={{ backgroundImage: `url("${heroShowcaseImage}")` }}
-            />
-          </div>
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-35">
+          {/* <Threads
+            amplitude={1.1}
+            color={[0.847, 0.455, 0.263]}
+            enableMouseInteraction={false}
+          /> */}
         </div>
 
-        <div className="relative z-10 mx-auto mt-8 grid max-w-7xl items-center gap-8 px-4 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-          <div>
+        <div className="relative z-10 mx-auto flex min-h-[min(760px,calc(100svh-4.5rem))] max-w-7xl items-end px-4 py-16 md:py-20">
+          <div className="max-w-4xl">
             <p
               data-reveal
-              className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
+              className="text-sm font-bold uppercase tracking-[0.22em] text-[var(--brand-orange)]"
             >
               Hayat Care Center
             </p>
@@ -174,28 +196,31 @@ export default function Home() {
               </Link>
               <a
                 href={contactDetails.phoneHref}
-                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white px-7 py-3.5 text-sm font-bold text-[var(--brand-navy)]"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white px-7 py-3.5 text-sm font-bold text-[var(--brand-navy)] transition-colors hover:bg-[var(--surface-soft)]"
               >
                 Call {contactDetails.phoneLabel}
               </a>
             </div>
           </div>
+        </div>
+      </section>
 
+      <section id="quick-navigation" className="bg-white py-10 md:py-12">
+        <div className="mx-auto max-w-7xl px-4">
           <BorderGlow
             data-reveal
-            data-reveal-delay={140}
             borderRadius={24}
             glowRadius={30}
             className="h-full"
           >
-            <aside data-tilt className="h-full rounded-3xl bg-white p-6 md:p-8">
+            <aside data-tilt className="h-full rounded-3xl bg-white p-6 shadow-xl md:p-8">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
                 Quick Navigation
               </p>
               <h2 className="mt-3 text-2xl font-bold leading-tight text-[var(--ink)]">
                 Browse The Community
               </h2>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {homeQuickLinks.slice(0, 4).map((item) => (
                   <Link
                     key={item.title}
@@ -211,7 +236,7 @@ export default function Home() {
                   </Link>
                 ))}
               </div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {communityStats.map((stat) => (
                   <div
                     key={stat.label}
@@ -249,68 +274,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="py-10 md:py-12">
-        <div className="mx-auto max-w-7xl px-4">
-          <BorderGlow data-reveal borderRadius={22} glowRadius={28}>
-            <div className="rounded-3xl bg-white p-6 md:p-7">
-              <p className="text-center text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
-                Gooey Navigation
-              </p>
-              <div className="mt-4 overflow-x-auto pb-2">
-                <GooeyNav
-                  items={gooeyNavItems}
-                  className="mx-auto min-w-max [--color-1:#2f7ec9] [--color-2:#5aa9df] [--color-3:#d87443] [--color-4:#153f73]"
-                />
-              </div>
-            </div>
-          </BorderGlow>
-        </div>
-      </section> */}
 
-      <section id="why-hayat" className="py-16 md:py-20">
+
+      <section id="hayat-gallery" className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <p
             data-reveal
             className="text-center text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
           >
-            Why Hayat
-          </p>
-          <div data-reveal data-reveal-delay={70}>
-            <ScrollFloat
-              as="h2"
-              containerClassName="mx-auto mt-3 max-w-3xl text-center text-3xl font-bold text-[var(--ink)] md:text-4xl"
-              textClassName="text-balance"
-            >
-              A More Complete Community Experience
-            </ScrollFloat>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {homeFeatureCards.map((item, index) => (
-              <div key={item.title} data-reveal data-reveal-delay={index * 90}>
-                <PixelCard
-                  variant={index === 0 ? "blue" : index === 1 ? "yellow" : "default"}
-                  className="[--pc-width:100%] [--pc-height:320px] bg-[var(--surface)]"
-                >
-                  <article className="flex h-full flex-col justify-end p-6">
-                    <h3 className="text-xl font-bold text-[var(--ink)]">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-                      {item.text}
-                    </p>
-                  </article>
-                </PixelCard>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="dome-gallery" className="bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <p
-            data-reveal
-            className="text-center text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
-          >
-            Dome Gallery
+            Hayat Photo Gallery
           </p>
           <div data-reveal data-reveal-delay={70}>
             <ScrollFloat
@@ -318,7 +290,7 @@ export default function Home() {
               containerClassName="mx-auto mt-3 max-w-4xl text-center text-3xl font-bold text-[var(--ink)] md:text-4xl"
               textClassName="text-balance"
             >
-              Walk Through Hayat Spaces In A 3D Dome View
+              A Closer Look At Daily Life At Hayat Care Center
             </ScrollFloat>
           </div>
           <p
@@ -326,34 +298,55 @@ export default function Home() {
             data-reveal-delay={120}
             className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-[var(--ink-soft)]"
           >
-            Drag to explore featured community spaces including reception,
-            dining, lounges, suites, and wellness areas.
+            Explore spaces that reflect Hayat&apos;s focus on comfort, safety,
+            social connection, and supportive care.
           </p>
-
           <BorderGlow
             data-reveal
             data-reveal-delay={180}
+            className="mt-8 overflow-hidden"
             borderRadius={26}
             glowRadius={30}
-            className="mt-8 overflow-hidden"
           >
-            <div className="h-[420px] rounded-3xl bg-white md:h-[540px]">
-              <DomeGallery
-                images={domeGalleryImages}
-                fit={0.43}
-                fitBasis="max"
-                minRadius={420}
-                maxRadius={900}
-                padFactor={0.2}
-                overlayBlurColor="rgba(15, 28, 47, 0.85)"
-                openedImageWidth="340px"
-                openedImageHeight="440px"
-                imageBorderRadius="20px"
-                openedImageBorderRadius="22px"
-                grayscale={false}
+            <div className="h-[420px] rounded-3xl bg-white p-3 md:h-[520px] md:p-4">
+              <CircularGallery
+                items={homeCircularGalleryItems}
+                bend={2.6}
+                textColor="#f09a73"
+                borderRadius={0.06}
+                scrollSpeed={2.2}
+                scrollEase={0.06}
               />
             </div>
+
           </BorderGlow>
+          {/* <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {hayatGalleryImages.map((image, index) => (
+              <BorderGlow
+                key={image.src}
+                data-reveal
+                data-reveal-delay={180 + index * 70}
+                borderRadius={24}
+                glowRadius={28}
+                className="h-full"
+              >
+                <article className="h-full overflow-hidden rounded-3xl bg-white">
+                  <div className="relative h-56 w-full md:h-64">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="px-4 py-3 text-sm font-semibold text-[var(--ink)]">
+                    {image.title}
+                  </p>
+                </article>
+              </BorderGlow>
+            ))}
+          </div> */}
         </div>
       </section>
 
@@ -379,7 +372,7 @@ export default function Home() {
             <div data-reveal data-reveal-delay={120}>
               <Link
                 href="/floor-plans"
-                className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
+                className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
               >
                 View All Floor Plans
               </Link>

@@ -1,22 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0f1c2f;
-  --surface: #16253c;
-  --surface-soft: #1b2f4a;
-  --ink: #e8f0ff;
-  --ink-soft: #a7bbd9;
-  --brand-navy: #153f73;
-  --brand-blue: #2f7ec9;
-  --brand-sky: #5aa9df;
-  --brand-orange: #d87443;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #fff4ef;
+  --ink: #111111;
+  --ink-soft: #e57f4f;
+  --heading-ink: #e67b45;
+  --brand-navy: #111111;
+  --brand-blue: #d87443;
+  --brand-sky: #f09a73;
+  --brand-orange: #f5915f;
   --brand-orange-strong: #c35f31;
-  --line: #2a3f5e;
-  --ring: #4c7cb0;
-  --font-body: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
-  --font-heading: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --line: #f1d5c8;
+  --ring: #ed8856;
+  --font-body: var(--font-roboto), "Roboto", "Segoe UI", sans-serif;
+  --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
   --scroll-progress: 0;
-  --brand-orange1: rgb(0, 0, 0);
+  --brand-orange1: #ffffff;
 }
 
 @theme inline {
@@ -55,8 +56,11 @@ body > header {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
+  color: var(--heading-ink);
 }
 
 a {
@@ -88,7 +92,7 @@ a {
 .hero-grid {
   position: relative;
   overflow: clip;
-  background: var(--surface);
+  background: var(--surface-soft);
   border-bottom: 1px solid var(--line);
 }
 
@@ -97,9 +101,9 @@ a {
 }
 
 .glass {
-  background: rgba(22, 37, 60, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(76, 124, 176, 0.45);
+  border: 1px solid rgba(216, 116, 67, 0.28);
 }
 
 .dropdown-panel {
@@ -156,7 +160,7 @@ a {
   content: "";
   position: absolute;
   inset: -30%;
-  background: rgba(90, 169, 223, 0.16);
+  background: rgba(216, 116, 67, 0.14);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -175,7 +179,7 @@ a {
   transform: scaleX(var(--scroll-progress));
   transform-origin: left center;
   background: var(--brand-blue);
-  box-shadow: 0 0 24px rgba(29, 118, 200, 0.35);
+  box-shadow: 0 0 24px rgba(216, 116, 67, 0.35);
   pointer-events: none;
   z-index: 90;
 }

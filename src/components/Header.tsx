@@ -90,7 +90,7 @@ function MobileAccordion({ item, pathname, onNavigate }: { item: NavItem; pathna
         className={`block rounded-lg px-4 py-3 text-sm font-semibold ${
           pathname === item.href
             ? "bg-[var(--brand-navy)] text-white"
-            : "text-[var(--ink)] hover:bg-sky-50"
+            : "text-[var(--ink)] hover:bg-[var(--surface-soft)]"
         } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]`}
         onClick={onNavigate}
       >
@@ -108,7 +108,7 @@ function MobileAccordion({ item, pathname, onNavigate }: { item: NavItem; pathna
         className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-semibold transition-colors ${
           item.children.some((c) => pathname === c.href)
             ? "bg-[var(--brand-navy)]/10 text-[var(--brand-navy)]"
-            : "text-[var(--ink)] hover:bg-sky-50"
+            : "text-[var(--ink)] hover:bg-[var(--surface-soft)]"
         } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]`}
       >
         {item.label}
@@ -244,7 +244,7 @@ export default function Header() {
                 ariaLabel="Primary navigation"
                 activeIndex={desktopActiveIndex}
                 particleCount={11}
-                className="text-sm font-semibold [--gooey-gap:0.18rem] [--gooey-pad:0.25rem] [--gooey-link-py:0.6rem] [--gooey-link-px:0.9rem] [--color-1:#2f7ec9] [--color-2:#5aa9df] [--color-3:#d87443] [--color-4:#153f73]"
+                className="text-sm font-semibold [--gooey-gap:0.18rem] [--gooey-pad:0.25rem] [--gooey-link-py:0.6rem] [--gooey-link-px:0.9rem] [--color-1:#d87443] [--color-2:#f09a73] [--color-3:#111111] [--color-4:#c35f31]"
                 onItemEnter={(_item: NavItem, index: number) => openDesktopDropdown(index)}
                 onItemFocus={(_item: NavItem, index: number) => openDesktopDropdown(index)}
                 onItemActivate={(_item: NavItem, index: number) => openDesktopDropdown(index)}
@@ -266,7 +266,7 @@ export default function Header() {
                       className={`block rounded-xl px-4 py-3 transition-colors ${
                         pathname === child.href
                           ? "bg-[var(--brand-navy)]/5 text-[var(--brand-navy)]"
-                          : "hover:bg-sky-50"
+                          : "hover:bg-[var(--surface-soft)]"
                       } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]`}
                       onClick={() => setDesktopOpenIndex(null)}
                     >

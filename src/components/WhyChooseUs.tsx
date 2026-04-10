@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           <div>
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+                src="/images/shared/caregiver-support.jpg"
                 alt="Caring community at Hayat"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"

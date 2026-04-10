@@ -16,7 +16,7 @@ export default function VideoTourSection() {
           {/* Placeholder for embedded video */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
             <Image
-              src="https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=1200&q=80"
+              src="/images/shared/video-tour-cover.jpg"
               alt="Senior living community tour"
               fill
               sizes="(min-width: 1024px) 896px, 100vw"

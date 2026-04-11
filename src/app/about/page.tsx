@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import AboutJourneyShowcase from "@/components/about/AboutJourneyShowcase";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { communityStats, trustPoints } from "@/data/siteContent";
@@ -44,35 +45,10 @@ export default function AboutPage() {
       </section>
 
       <section className="py-16 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1.1fr_0.9fr]">
-          <BorderGlow
-            data-reveal
-            data-tilt
-            className="h-full"
-            borderRadius={24}
-            glowRadius={30}
-          >
-            <article className="h-full rounded-3xl bg-white p-8">
-              <h2 className="text-3xl font-bold text-[var(--ink)] md:text-4xl">
-                What Defines Hayat
-              </h2>
-              <p className="mt-5 text-base leading-7 text-[var(--ink-soft)]">
-                Residents benefit from a community that feels active and refined
-                rather than overly clinical. The environment is built around
-                thoughtful service, resident dignity, and a daily rhythm that
-                includes dining, social connection, life enrichment, and support
-                when it is needed.
-              </p>
-              <p className="mt-4 text-base leading-7 text-[var(--ink-soft)]">
-                Families choose Hayat because it pairs clear communication with a
-                visible standard of care. From the first tour onward, the goal is
-                to make the next chapter feel organized, welcoming, and genuinely
-                supportive.
-              </p>
-            </article>
-          </BorderGlow>
+        <div className="mx-auto max-w-7xl px-4">
+          <AboutJourneyShowcase />
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {communityStats.map((stat, index) => (
               <BorderGlow
                 key={stat.label}

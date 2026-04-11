@@ -53,6 +53,7 @@ const navItems: NavItem[] = [
   {
     label: "Explore",
     children: [
+      { label: "Benefits", href: "/benefits", description: "Meals, wellness, activities, and everything included." },
       { label: "Amenities", href: "/amenities", description: "Comforts and shared spaces that shape daily life." },
       { label: "Activities & events", href: "/activities-events", description: "Social programs, outings, and gatherings." },
       { label: "Wellness", href: "/wellness", description: "Movement, engagement, and whole-person support." },

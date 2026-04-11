@@ -359,6 +359,96 @@ main > section {
   }
 }
 
+/* Benefits timeline: node activation ping ripple */
+@keyframes timelineNodePing {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Benefits carousel: text entrance on slide change */
+.benefit-carousel-text {
+  animation: benefitCarouselTextIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes benefitCarouselTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) translateX(-8px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Benefits page: stat pop animation for non-numeric counters */
+.benefit-stat-pop {
+  animation: benefitStatPop 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+
+@keyframes benefitStatPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(8px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08) translateY(-2px);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Benefits page: staggered card entrance with subtle horizontal slide */
+.benefit-card-stagger {
+  --stagger-x: 0px;
+}
+
+.benefit-card-stagger:nth-child(odd) {
+  --stagger-x: -12px;
+}
+
+.benefit-card-stagger:nth-child(even) {
+  --stagger-x: 12px;
+}
+
+[data-revealed="true"] .benefit-card-stagger,
+.benefit-card-stagger[data-revealed="true"] {
+  animation: benefitCardSlide 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes benefitCardSlide {
+  from {
+    transform: translateX(var(--stagger-x));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Benefits page: meal item left-border reveal */
+.benefit-meal-item {
+  border-left: 3px solid transparent;
+  transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.benefit-meal-item[data-revealed="true"] {
+  border-left-color: var(--brand-gold);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -411,5 +501,37 @@ main > section {
   .help-dock-fab,
   .help-dock-fab--pulse {
     animation: none;
+  }
+
+  .timeline-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .timeline-node {
+    scale: 1 !important;
+    transition: none !important;
+  }
+
+  .benefit-carousel-text {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .benefit-stat-pop {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .benefit-card-stagger,
+  [data-revealed="true"] .benefit-card-stagger,
+  .benefit-card-stagger[data-revealed="true"] {
+    animation: none;
+    transform: none;
   }
 }

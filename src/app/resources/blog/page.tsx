@@ -44,7 +44,12 @@ export default function BlogPage() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className={styles.featureGrid}>
-            <article data-reveal className={styles.featuredCard}>
+            <Link
+              href={`/resources/blog/${featuredPost.slug}`}
+              aria-label={`Read article ${featuredPost.title}`}
+              data-reveal
+              className={styles.featuredCard}
+            >
               <Image
                 src={featuredPost.image}
                 alt={featuredPost.imageAlt}
@@ -70,13 +75,16 @@ export default function BlogPage() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-4 text-sm font-semibold text-white/95">Read Full Article &rarr;</p>
               </div>
-            </article>
+            </Link>
 
             <div className={styles.spotlightStack}>
               {spotlightPosts.map((post, index) => (
-                <article
+                <Link
                   key={post.title}
+                  href={`/resources/blog/${post.slug}`}
+                  aria-label={`Read article ${post.title}`}
                   data-reveal
                   data-reveal-delay={110 + index * 80}
                   className={styles.spotlightCard}
@@ -90,8 +98,9 @@ export default function BlogPage() {
                     </p>
                     <h3 className={styles.spotlightTitle}>{post.title}</h3>
                     <p className={styles.spotlightExcerpt}>{post.excerpt}</p>
+                    <p className="mt-2 text-xs font-semibold text-[var(--brand-blue)]">Read Full Article &rarr;</p>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -111,8 +120,10 @@ export default function BlogPage() {
 
           <div className={styles.journalGrid}>
             {blogPosts.map((post, index) => (
-              <article
+              <Link
                 key={post.title}
+                href={`/resources/blog/${post.slug}`}
+                aria-label={`Read article ${post.title}`}
                 data-reveal
                 data-reveal-delay={index * 75}
                 data-tilt
@@ -140,8 +151,9 @@ export default function BlogPage() {
                       </span>
                     ))}
                   </div>
+                  <p className="mt-3 text-sm font-semibold text-[var(--brand-blue)]">Read Full Article &rarr;</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

@@ -636,84 +636,262 @@ export const facilitySpaces = [
 
 export const blogPosts = [
   {
+    slug: "daily-routines-emotional-wellness-senior-living",
     title: "How Daily Routines Support Emotional Wellness In Senior Living",
     excerpt: "A consistent rhythm of meals, activities, and rest can help older adults feel more grounded, confident, and connected to their community.",
     readTime: "5 min",
     date: "March 28, 2026",
     category: "Wellness",
+    author: "Hayat Care Team",
     image: "/images/home/gallery-comfortable-lounge.jpg",
     imageAlt: "Older adults enjoying a calm lounge routine at a care center",
     highlights: [
       "Why predictable schedules reduce anxiety and confusion",
       "Simple routines families can support at home",
     ],
+    detail: {
+      overview:
+        "Routine is more than a timetable. For many older adults, it creates emotional safety, reduces stress, and gives each day a clear sense of direction.",
+      sections: [
+        {
+          title: "Why predictability matters",
+          content:
+            "When morning, mealtimes, social time, and rest happen in a familiar rhythm, older adults can anticipate what comes next. That predictability lowers uncertainty and supports steadier mood.",
+        },
+        {
+          title: "How routines build confidence",
+          content:
+            "Repeating meaningful daily actions, such as joining breakfast, attending activities, and taking short walks, helps residents feel capable and connected. Small wins throughout the day can improve overall emotional balance.",
+        },
+        {
+          title: "How families can reinforce routine",
+          content:
+            "Families can align visits and calls with existing routines instead of disrupting them. Coordinating around known activity windows helps loved ones stay engaged and prevents exhaustion from over scheduling.",
+        },
+      ],
+      actionSteps: [
+        "Keep wake up and bedtime consistent most days",
+        "Plan social activity during the time of day with best energy",
+        "Use a visible schedule with simple language and cues",
+        "Review and adjust routines as mobility or health needs change",
+      ],
+    },
   },
   {
+    slug: "family-tour-checklist-assisted-living",
     title: "What Families Should Know Before Touring An Assisted Living Community",
     excerpt: "Knowing which questions to ask and what details to notice during a tour can help families make a more informed and confident decision.",
     readTime: "6 min",
     date: "March 15, 2026",
     category: "Family Guide",
+    author: "Hayat Care Team",
     image: "/images/home/gallery-reception.jpg",
     imageAlt: "Family arriving at a welcoming reception area",
     highlights: [
       "Tour checklist for safety staffing and service quality",
       "How to compare communities beyond first impressions",
     ],
+    detail: {
+      overview:
+        "A tour should answer practical questions about care quality, communication, and daily life. A structured checklist helps families compare communities fairly.",
+      sections: [
+        {
+          title: "Observe the environment first",
+          content:
+            "Look at lighting, cleanliness, noise level, wayfinding, and how residents use common spaces. A strong environment should feel warm and active, not rushed or chaotic.",
+        },
+        {
+          title: "Ask about staffing and communication",
+          content:
+            "Ask who coordinates care plans, how schedule changes are handled, and how families receive updates. Clear communication systems are often the difference between stress and confidence.",
+        },
+        {
+          title: "Review daily programming and dining",
+          content:
+            "Request a real weekly activity calendar and sample menus. Programs should offer variety and resident choice while dining should reflect nutrition, flexibility, and social opportunity.",
+        },
+      ],
+      actionSteps: [
+        "Bring a written checklist and score each stop after the visit",
+        "Ask for response times for urgent and non urgent requests",
+        "Request to observe an active program, not only staged spaces",
+        "Discuss transition support for the first 30 to 60 days",
+      ],
+    },
   },
   {
+    slug: "social-connection-healthy-aging",
     title: "The Role Of Social Connection In Healthy Aging",
     excerpt: "Research consistently shows that regular social interaction improves cognitive health, mood, and overall quality of life for seniors.",
     readTime: "4 min",
     date: "March 3, 2026",
     category: "Health",
+    author: "Hayat Care Team",
     image: "/images/home/gallery-dining-social.jpg",
     imageAlt: "Residents sharing a social meal and conversation",
     highlights: [
       "Evidence linking social activity to cognitive outcomes",
       "Group programs that encourage daily participation",
     ],
+    detail: {
+      overview:
+        "Healthy aging is strongly linked to belonging and regular interaction. Social connection supports emotional resilience and can reduce isolation related decline.",
+      sections: [
+        {
+          title: "Connection supports brain health",
+          content:
+            "Conversations, shared activities, and group participation activate attention, recall, and language. Consistent social contact gives the brain frequent opportunities to stay engaged.",
+        },
+        {
+          title: "Mood improves with meaningful interaction",
+          content:
+            "Daily social moments, including meals, games, and creative classes, can reduce loneliness and improve outlook. Even short repeated interactions build stronger emotional stability over time.",
+        },
+        {
+          title: "Designing participation for different personalities",
+          content:
+            "Not every resident prefers large groups. A good program mix includes both lively events and smaller circles so people can participate at a comfortable pace.",
+        },
+      ],
+      actionSteps: [
+        "Offer both group events and one to one social moments",
+        "Track participation trends and adjust programs monthly",
+        "Encourage family involvement in selected social events",
+        "Pair new residents with welcoming peers for easier onboarding",
+      ],
+    },
   },
   {
+    slug: "independent-vs-assisted-living-differences",
     title: "Understanding The Difference Between Independent And Assisted Living",
     excerpt: "Choosing the right level of support starts with understanding what each option includes and how it matches your loved one's daily needs.",
     readTime: "7 min",
     date: "February 20, 2026",
     category: "Senior Living",
+    author: "Hayat Care Team",
     image: "/images/home/hero-community-care.jpg",
     imageAlt: "Community lifestyle setting with guided care support",
     highlights: [
       "Care level differences and who each model is for",
       "Questions to ask when planning the next care step",
     ],
+    detail: {
+      overview:
+        "Independent living and assisted living serve different care profiles. Matching the right environment to current needs helps families avoid unnecessary disruption.",
+      sections: [
+        {
+          title: "Independent living at a glance",
+          content:
+            "Independent living is designed for older adults who can manage daily routines with minimal support and primarily want convenience, social access, and reduced home responsibilities.",
+        },
+        {
+          title: "Assisted living at a glance",
+          content:
+            "Assisted living includes support with daily activities such as medication reminders, mobility, hygiene, and care coordination. The goal is to increase safety while preserving dignity and autonomy.",
+        },
+        {
+          title: "How to decide between options",
+          content:
+            "Start with real daily patterns, not ideal assumptions. If missed medications, fall concerns, caregiver burnout, or isolation are increasing, assisted living may offer a more stable and sustainable model.",
+        },
+      ],
+      actionSteps: [
+        "List all weekly support tasks currently handled by family",
+        "Assess safety risks in the current home routine",
+        "Compare service scope and staffing model in each community",
+        "Plan for expected care changes over the next 12 months",
+      ],
+    },
   },
   {
+    slug: "nutrition-tips-for-senior-energy",
     title: "Nutrition Tips That Help Seniors Stay Energized Throughout The Day",
     excerpt: "Small adjustments to meal timing, hydration, and nutrient balance can make a noticeable difference in how active and alert older adults feel.",
     readTime: "5 min",
     date: "February 8, 2026",
     category: "Nutrition",
+    author: "Hayat Care Team",
     image: "/images/home/gallery-wellness-programs.jpg",
     imageAlt: "Nutritious wellness focused meal planning for seniors",
     highlights: [
       "Balanced plate examples for breakfast lunch and dinner",
       "Hydration habits that support energy and focus",
     ],
+    detail: {
+      overview:
+        "Energy and focus in older adults are closely tied to consistent nutrition and hydration. Small meal planning improvements can produce meaningful day to day results.",
+      sections: [
+        {
+          title: "Prioritize balanced meals",
+          content:
+            "Each meal should combine protein, fiber rich carbohydrates, healthy fats, and colorful produce. Balanced plates help maintain energy without sharp highs and lows.",
+        },
+        {
+          title: "Use meal timing to prevent fatigue",
+          content:
+            "Long gaps between meals can lead to low energy and irritability. Consistent breakfast, lunch, dinner, and optional light snacks help maintain steadier stamina.",
+        },
+        {
+          title: "Hydration and practical habits",
+          content:
+            "Older adults may not always feel thirst early. Keeping water visible, serving hydrating foods, and using regular reminders can improve hydration and support cognitive clarity.",
+        },
+      ],
+      actionSteps: [
+        "Include protein at each major meal",
+        "Offer fruits and vegetables in easy to eat formats",
+        "Track hydration goals across the full day",
+        "Review medications and appetite patterns with care staff",
+      ],
+    },
   },
   {
+    slug: "creative-activities-healthy-aging-mind",
     title: "How Creative Activities Keep The Mind Sharp With Age",
     excerpt: "Art, music, storytelling, and hands-on projects engage memory and focus in ways that support long-term cognitive health.",
     readTime: "5 min",
     date: "January 25, 2026",
     category: "Wellness",
+    author: "Hayat Care Team",
     image: "/images/home/gallery-compassionate-care.jpg",
     imageAlt: "Creative and compassionate activity session for older adults",
     highlights: [
       "Why creative work helps memory attention and mood",
       "Programs families can encourage during the week",
     ],
+    detail: {
+      overview:
+        "Creative engagement is a powerful tool for healthy aging. It activates memory, attention, language, and emotional expression in a way that feels enjoyable and purposeful.",
+      sections: [
+        {
+          title: "Creative work strengthens cognition",
+          content:
+            "Painting, music, and storytelling require planning, recall, sequencing, and interpretation. These repeated mental actions can help preserve cognitive flexibility over time.",
+        },
+        {
+          title: "Mood and confidence benefits",
+          content:
+            "Creative sessions can lower stress and provide visible accomplishment. Sharing completed work with peers and family often improves confidence and social engagement.",
+        },
+        {
+          title: "Building a practical weekly plan",
+          content:
+            "A successful program rotates creative formats and skill levels. Short, frequent sessions are often more sustainable than occasional long events.",
+        },
+      ],
+      actionSteps: [
+        "Schedule at least three creative sessions each week",
+        "Mix solo and group creative formats",
+        "Celebrate participation not perfection",
+        "Involve families in monthly showcase moments",
+      ],
+    },
   },
 ] as const;
+
+export function getBlogPostBySlug(slug: string) {
+  return blogPosts.find((post) => post.slug === slug);
+}
 
 export const seniorLivingGuideTopics = [
   {

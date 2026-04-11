@@ -4,12 +4,14 @@
 }
 
 .featuredCard {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 1.7rem;
   min-height: 460px;
   isolation: isolate;
   box-shadow: 0 24px 46px -28px rgba(15, 23, 42, 0.45);
+  text-decoration: none;
 }
 
 .featuredCard::before {
@@ -145,6 +147,7 @@
     transform 0.26s ease,
     box-shadow 0.26s ease,
     border-color 0.26s ease;
+  text-decoration: none;
 }
 
 .spotlightCard:hover {
@@ -235,6 +238,7 @@
 }
 
 .journalCard {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
@@ -245,6 +249,7 @@
     transform 0.28s ease,
     box-shadow 0.28s ease,
     border-color 0.28s ease;
+  text-decoration: none;
 }
 
 .journalCard:hover {
@@ -320,6 +325,13 @@
   padding: 0.22rem 0.5rem;
   font-size: 0.72rem;
   line-height: 1.2;
+}
+
+.featuredCard:focus-visible,
+.spotlightCard:focus-visible,
+.journalCard:focus-visible {
+  outline: 2px solid rgba(7, 61, 122, 0.85);
+  outline-offset: 3px;
 }
 
 @keyframes borderFlow {

@@ -58,6 +58,7 @@ const navItems: NavItem[] = [
       { label: "Activities & events", href: "/activities-events", description: "Social programs, outings, and gatherings." },
       { label: "Wellness", href: "/wellness", description: "Movement, engagement, and whole-person support." },
       { label: "Dining", href: "/dining", description: "Hospitality-led meals with thoughtful nutrition." },
+      { label: "Meal plan", href: "/meal-plan", description: "Seven day menu with breakfast lunch dinner and ingredient details." },
       { label: "Floor plans", href: "/floor-plans", description: "Compare layouts and imagine everyday living." },
       { label: "Photo gallery", href: "/gallery/photos", description: "See community spaces, suites, and grounds." },
     ],

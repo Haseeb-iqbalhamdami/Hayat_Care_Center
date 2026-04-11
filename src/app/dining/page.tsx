@@ -86,6 +86,12 @@ export default function DiningPage() {
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
+                  href="/meal-plan"
+                  className="inline-flex rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-bold text-white"
+                >
+                  View 7 Day Meal Plan
+                </Link>
+                <Link
                   href="/amenities"
                   className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
                 >

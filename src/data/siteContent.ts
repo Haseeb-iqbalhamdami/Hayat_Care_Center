@@ -27,6 +27,7 @@ export const navGroups = [
       { label: "Activities & Events", href: "/activities-events", description: "Social programs, outings, and daily gatherings." },
       { label: "Life Enrichment", href: "/wellness", description: "Wellness and engagement programs at Hayat." },
       { label: "Dining Experience", href: "/dining", description: "Meals, hospitality, and nutrition handled with care." },
+      { label: "Weekly Meal Plan", href: "/meal-plan", description: "Seven day menu with breakfast lunch dinner and ingredients." },
     ],
   },
   {
@@ -77,6 +78,7 @@ export const footerLinkGroups = [
       { label: "Activities & Events", href: "/activities-events" },
       { label: "Life Enrichment", href: "/wellness" },
       { label: "Dining Experience", href: "/dining" },
+      { label: "Weekly Meal Plan", href: "/meal-plan" },
     ],
   },
   {

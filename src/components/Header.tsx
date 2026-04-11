@@ -90,8 +90,10 @@ function MobileSection({
       <Link
         href={href}
         aria-current={pathname === href ? "page" : undefined}
-        className={`block rounded-xl px-4 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
-          pathname === href ? "bg-[#073D7A]/10 text-[#073D7A]" : "text-black hover:bg-slate-100"
+        className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
+          pathname === href
+            ? "bg-[#073D7A]/10 text-[#073D7A] hover:bg-[#D5664B] hover:text-white"
+            : "text-black hover:bg-[#D5664B] hover:text-white"
         }`}
         onClick={onNavigate}
       >
@@ -107,13 +109,15 @@ function MobileSection({
         onClick={() => setExpanded((p) => !p)}
         aria-expanded={expanded}
         aria-controls={panelId}
-        className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
-          item.children.some((c) => pathname === c.href) ? "text-[#D5664B]" : "text-black hover:bg-slate-50"
+        className={`group flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
+          item.children.some((c) => pathname === c.href)
+            ? "text-[#D5664B] hover:bg-[#D5664B] hover:text-white"
+            : "text-black hover:bg-[#D5664B] hover:text-white"
         }`}
       >
         {item.label}
         <svg
-          className={`h-4 w-4 shrink-0 text-[#073D7A] transition-transform ${expanded ? "rotate-180" : ""}`}
+          className={`h-4 w-4 shrink-0 text-[#073D7A] transition-transform group-hover:text-white ${expanded ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -129,15 +133,19 @@ function MobileSection({
               key={child.href}
               href={child.href}
               aria-current={pathname === child.href ? "page" : undefined}
-              className="block rounded-lg px-3 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B]"
+              className="group block rounded-lg px-3 py-2.5 transition-colors hover:bg-[#D5664B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B]"
               onClick={onNavigate}
             >
               <span
-                className={`block text-sm font-semibold ${pathname === child.href ? "text-[#073D7A]" : "text-black"}`}
+                className={`block text-sm font-semibold transition-colors group-hover:text-white ${
+                  pathname === child.href ? "text-[#073D7A] group-hover:text-white" : "text-black"
+                }`}
               >
                 {child.label}
               </span>
-              <span className="mt-0.5 block text-xs leading-5 text-slate-600">{child.description}</span>
+              <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
+                {child.description}
+              </span>
             </Link>
           ))}
         </div>
@@ -149,6 +157,7 @@ function MobileSection({
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
@@ -195,20 +204,44 @@ export default function Header() {
     setMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const openItem = openIndex !== null ? navItems[openIndex] : null;
 
-  const linkBase =
-    "rounded-lg px-2.5 py-2 text-sm font-semibold text-black/90 transition-colors hover:text-[#073D7A]";
-  const linkActive = "text-[#073D7A]";
+  /** At top of homepage only: sit on the hero with no bar; after scroll → glass. */
+  const heroOverlayNav = pathname === "/" && !scrolled && !mobileOpen;
+
+  const linkBase = heroOverlayNav
+    ? "rounded-lg px-2.5 py-2 text-sm font-semibold text-white/95 transition-colors hover:bg-[#D5664B] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+    : "rounded-lg px-2.5 py-2 text-sm font-semibold text-black/90 transition-colors hover:bg-[#D5664B] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+  const linkActive = heroOverlayNav ? "text-white" : "text-[#073D7A]";
   const linkAccent = "text-[#D5664B]";
 
   /** Match homepage / hero gutters (`max-w-[1920px] px-4 sm:px-6 xl:px-10`). */
   const headerGutter = "mx-auto w-full max-w-[1920px] px-4 sm:px-6 xl:px-10";
 
-  /** White frosted glass at all scroll positions (no dark bar). */
+  const shellTransition =
+    "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out";
+
+  const shellClassGlassMobile =
+    "w-full rounded-[2rem] border border-white/65 bg-white/72 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.2)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/65";
+
+  const shellClassGlassBar =
+    "w-full rounded-full border border-white/65 bg-white/72 px-3 py-2 sm:px-5 sm:py-2.5 shadow-[0_8px_32px_-12px_rgba(7,61,122,0.18)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/65";
+
+  const shellClassTransparent =
+    "w-full rounded-full border border-transparent bg-transparent px-3 py-2 sm:px-5 sm:py-2.5 shadow-none";
+
   const shellClass = mobileOpen
-    ? "w-full rounded-[2rem] border border-white/70 bg-white/80 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.18)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/72"
-    : "w-full rounded-full border border-white/70 bg-white/80 px-3 py-2 sm:px-5 sm:py-2.5 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.15)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/72";
+    ? `${shellTransition} ${shellClassGlassMobile}`
+    : heroOverlayNav
+      ? `${shellTransition} ${shellClassTransparent}`
+      : `${shellTransition} ${shellClassGlassBar}`;
 
   return (
     <header className="fixed inset-x-0 top-0 z-[60] w-full bg-transparent">
@@ -220,14 +253,19 @@ export default function Header() {
           >
             <Link href="/" className="flex w-fit shrink-0 items-center gap-2" aria-label="Hayat Care Centers home">
               <Image
-                src="/logoo.png"
+                src={heroOverlayNav ? "/whietlogoo.png" : "/logoo.png"}
                 alt=""
-                width={200}
-                height={72}
-                className="h-10 w-auto drop-shadow-sm sm:h-[48px]"
+                width={320}
+                height={115}
+                className={`w-auto max-w-[min(72vw,320px)] object-contain object-left transition-[height,min-height] duration-300 ${
+                  heroOverlayNav
+                    ? "h-24 min-h-[3.5rem] sm:h-[4.25rem] sm:min-h-[4.25rem] md:h-[4.75rem] md:min-h-[4.75rem] lg:h-26 lg:min-h-20 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)]"
+                    : "h-10 min-h-10 sm:h-12 sm:min-h-[3rem] drop-shadow-sm"
+                }`}
                 priority
               />
             </Link>
+      
 
             <div
               className="relative hidden min-w-0 justify-self-center lg:block"
@@ -238,7 +276,10 @@ export default function Header() {
             >
               <ul className="flex flex-wrap items-center justify-center gap-0.5 xl:gap-1">
                 <li>
-                  <Link href="/" className={`${linkBase} ${pathname === "/" ? linkActive : ""}`}>
+                  <Link
+                    href="/"
+                    className={`${linkBase} ${pathname === "/" ? (heroOverlayNav ? "text-[#D5664B]" : linkActive) : ""}`}
+                  >
                     Home
                   </Link>
                 </li>
@@ -258,7 +299,11 @@ export default function Header() {
                       <button
                         type="button"
                         className={`flex items-center gap-1 ${linkBase} ${
-                          openIndex === index || item.children.some((c) => pathname === c.href) ? linkAccent : ""
+                          openIndex === index || item.children.some((c) => pathname === c.href)
+                            ? heroOverlayNav
+                              ? "text-[#D5664B]"
+                              : linkAccent
+                            : ""
                         }`}
                         aria-expanded={openIndex === index}
                         aria-haspopup="true"
@@ -286,11 +331,15 @@ export default function Header() {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block rounded-xl px-4 py-3 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
+                      className="group block rounded-xl px-4 py-3 transition-colors hover:bg-[#D5664B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
                       onClick={() => setOpenIndex(null)}
                     >
-                      <span className="block text-sm font-semibold text-black">{child.label}</span>
-                      <span className="mt-0.5 block text-xs leading-5 text-slate-600">{child.description}</span>
+                      <span className="block text-sm font-semibold text-black transition-colors group-hover:text-white">
+                        {child.label}
+                      </span>
+                      <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
+                        {child.description}
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -300,7 +349,9 @@ export default function Header() {
             <div className="flex items-center justify-end gap-2 sm:gap-3 lg:justify-self-end">
               <a
                 href={contactDetails.phoneHref}
-                className="hidden text-sm font-semibold text-slate-600 transition hover:text-[#073D7A] lg:inline"
+                className={`hidden text-sm font-semibold transition lg:inline ${
+                  heroOverlayNav ? "text-white/90 hover:text-white" : "text-slate-600 hover:text-[#073D7A]"
+                }`}
               >
                 {contactDetails.phoneLabel}
               </a>
@@ -316,7 +367,11 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen((p) => !p)}
-                className="inline-flex rounded-xl border border-slate-200/90 bg-white/90 p-2.5 text-black lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B]"
+                className={`inline-flex rounded-xl p-2.5 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
+                  heroOverlayNav
+                    ? "border border-white/35 bg-white/15 text-white"
+                    : "border border-slate-200/90 bg-white/90 text-black"
+                }`}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-nav-panel"
@@ -340,8 +395,10 @@ export default function Header() {
               <div className="space-y-2 pb-3">
                 <Link
                   href="/"
-                  className={`block rounded-xl px-4 py-3 text-sm font-semibold ${
-                    pathname === "/" ? "bg-[#073D7A]/10 text-[#073D7A]" : "text-black hover:bg-slate-50"
+                  className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                    pathname === "/"
+                      ? "bg-[#073D7A]/10 text-[#073D7A] hover:bg-[#D5664B] hover:text-white"
+                      : "text-black hover:bg-[#D5664B] hover:text-white"
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >

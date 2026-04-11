@@ -7,8 +7,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Star } from "lucide-react";
 import { contactDetails } from "@/data/siteContent";
 
-const HERO_BG = "/images/usedimages/wmremove-transformed.png";
-
 const services = [
   {
     text: "Adult day program",
@@ -21,7 +19,7 @@ const services = [
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
-    text: "Non-medical transportation service",
+    text: "Non-medical transportation",
     image: "/images/new/3.png",
     imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
   },
@@ -31,6 +29,7 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
   const n = services.length;
   const relativeIndex = (cardIndex - currentIndex + n) % n;
 
+  /* Coverflow: same card size for all; center = focus, sides sit behind (smaller scale + Z + mild Y rotation). */
   switch (relativeIndex) {
     case 0:
       return {
@@ -38,29 +37,26 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
         y: 0,
         z: 0,
         scale: 1,
-        opacity: 1,
         rotateY: 0,
-        zIndex: 40,
+        zIndex: 30,
       };
     case 1:
       return {
-        x: 150,
-        y: 20,
-        z: -180,
-        scale: 0.75,
-        opacity: 0.42,
-        rotateY: -35,
-        zIndex: 20,
+        x: 92,
+        y: 4,
+        z: -240,
+        scale: 0.9,
+        rotateY: -12,
+        zIndex: 11,
       };
     case 2:
       return {
-        x: -150,
-        y: 20,
-        z: -180,
-        scale: 0.75,
-        opacity: 0.42,
-        rotateY: 35,
-        zIndex: 20,
+        x: -92,
+        y: 4,
+        z: -240,
+        scale: 0.9,
+        rotateY: 12,
+        zIndex: 10,
       };
     default:
       return {
@@ -68,62 +64,140 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
         y: 0,
         z: 0,
         scale: 1,
-        opacity: 1,
         rotateY: 0,
-        zIndex: 40,
+        zIndex: 30,
       };
   }
 }
 
 function RotatingCards({ currentIndex }: { currentIndex: number }) {
+  const n = services.length;
+
+  /** One footprint for every card — only scale/depth changes for side vs center (carousel / cover flow). */
+  const cardFrame =
+    "relative h-[min(44vh,360px)] w-[min(78vw,272px)] overflow-hidden rounded-[1.35rem] sm:h-[400px] sm:w-[278px] lg:h-[min(48vh,428px)] lg:w-[292px] sm:rounded-[1.65rem]";
+
   return (
-    <div className="relative h-[350px] w-full lg:h-[450px]" style={{ perspective: "1200px" }}>
-      <div className="absolute inset-0 flex items-center justify-center">
+    <div
+      className="relative mx-auto h-[min(54vh,460px)] w-full min-w-[320px] max-w-[540px] lg:h-[min(58vh,540px)] lg:max-w-[580px]"
+      style={{ perspective: "1900px" }}
+    >
+      <div
+        className="pointer-events-none absolute left-1/2 top-[40%] h-[min(88%,400px)] w-[min(125%,520px)] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[#D5664B]/[0.12] blur-[44px]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute left-1/2 top-[46%] h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.05] blur-2xl"
+        aria-hidden
+      />
+
+      <div className="absolute inset-0 flex items-center justify-center overflow-visible [transform-style:preserve-3d]">
         {services.map((service, index) => {
           const style = getCardStyle(index, currentIndex);
+          const rel = (index - currentIndex + n) % n;
+          const isFront = rel === 0;
+
           return (
             <motion.div
               key={service.text}
-              className="absolute"
+              className="absolute [transform-style:preserve-3d] will-change-transform"
               initial={false}
               animate={{
                 x: style.x,
                 y: style.y,
                 z: style.z,
                 scale: style.scale,
-                opacity: style.opacity,
                 rotateY: style.rotateY,
               }}
               transition={{
-                duration: 0.8,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                duration: 0.82,
+                ease: [0.22, 1, 0.36, 1],
               }}
               style={{
                 zIndex: style.zIndex,
                 transformStyle: "preserve-3d",
               }}
             >
-              <div className="relative h-[300px] w-[240px] overflow-hidden rounded-xl shadow-2xl sm:h-[340px] sm:w-[260px] lg:h-[400px] lg:w-[300px]">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 260px, 300px"
-                  priority={index === 0}
+              <div
+                className={`${cardFrame} shadow-black/45 transition-shadow duration-500 ${
+                  isFront
+                    ? "shadow-[0_28px_56px_-20px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.14)]"
+                    : "shadow-[0_18px_40px_-22px_rgba(0,0,0,0.6)]"
+                }`}
+              >
+                <div
+                  className={`absolute inset-0 ${isFront ? "" : "brightness-[0.93] saturate-[0.96]"}`}
+                >
+                  <Image
+                    src={service.image}
+                    alt={isFront ? service.imageAlt : ""}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 292px, 300px"
+                    priority={index === 0}
+                  />
+                  {/* Bottom-only scrim: full photo visible on top, no dark gradient over the sky/ceiling */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black/88 via-black/32 to-transparent"
+                    aria-hidden
+                  />
+                </div>
+
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-[1.35rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] ring-1 ring-inset ring-white/10 sm:rounded-[1.65rem]"
+                  aria-hidden
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#073D7A]/95 via-[#073D7A]/45 to-transparent" />
-                <div className="absolute inset-0 rounded-xl border border-white/15" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
-                    {service.text}
-                  </h3>
-                  <p className="mt-1 text-xs font-medium text-white/75">Hayat · Colorado</p>
+
+                <div className="absolute inset-x-0 bottom-0 z-20 p-2.5 sm:p-3">
+                  <div
+                    className={`rounded-xl border backdrop-blur-md sm:rounded-2xl ${
+                      isFront
+                        ? "border-white/25 bg-black/40"
+                        : "border-white/15 bg-black/50"
+                    }`}
+                  >
+                    {isFront ? (
+                      <div
+                        className="h-0.5 w-full bg-gradient-to-r from-[#D5664B] via-[#e87860] to-transparent"
+                        aria-hidden
+                      />
+                    ) : null}
+                    <div className="px-3 py-2 sm:px-3.5 sm:py-2.5">
+                      <p
+                        className={`text-[9px] font-semibold uppercase tracking-[0.26em] sm:text-[10px] ${
+                          isFront ? "text-white/70" : "text-white/60"
+                        }`}
+                      >
+                        Hayat · Colorado
+                      </p>
+                      <h3 className="mt-0.5 text-[0.88rem] font-semibold leading-snug tracking-tight text-white text-balance sm:text-[1rem] lg:text-[1.05rem]">
+                        {service.text}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
           );
         })}
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-1 lg:pb-2">
+        <div
+          className="flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-2 shadow-lg shadow-black/20 backdrop-blur-md"
+          aria-hidden
+        >
+          {services.map((_, i) => (
+            <span
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                i === currentIndex
+                  ? "w-7 bg-[#D5664B] shadow-[0_0_14px_rgba(213,102,75,0.55)]"
+                  : "w-1.5 bg-white/35 hover:bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -162,9 +236,12 @@ function Typewriter({ onWordChange }: { onWordChange: (index: number) => void })
   }, [text, isDeleting, wordIndex]);
 
   return (
-    <span className="text-[#D5664B]">
-      {text}
-      <span className="ml-1 inline-block h-[0.9em] w-[2px] animate-pulse bg-[#D5664B]" aria-hidden />
+    <span className="inline-block">
+      <span className="text-[#f4b5a8] drop-shadow-[0_1px_12px_rgba(0,0,0,0.35)]">{text}</span>
+      <span
+        className="ml-1 inline-block h-[0.9em] w-[2px] rounded-sm bg-[#D5664B] animate-pulse align-middle"
+        aria-hidden
+      />
     </span>
   );
 }
@@ -189,18 +266,18 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative flex min-h-[85vh] items-center overflow-hidden lg:min-h-[calc(100vh-5.75rem)]"
+      className="relative flex min-h-[100svh] items-center overflow-x-clip overflow-y-visible -mt-24 pt-24 sm:-mt-[5.75rem] sm:pt-[5.75rem]"
     >
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <Image
-          src={HERO_BG}
+          src="/images/new/4.png"
           alt=""
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#073D7A]/42" />
+        <div className="absolute inset-0 bg-[#073D7A]/70" />
         <div
           className="absolute inset-0"
           style={{
@@ -211,35 +288,35 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div
-        className="container relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24"
+        className="container relative z-10 mx-auto max-w-7xl py-16 sm:px-6 lg:py-24"
         style={{ y: contentY, opacity: contentOpacity }}
       >
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:overflow-visible">
           <div className="max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6 text-[1.5rem] font-bold leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-5xl"
+              className="mb-6 text-[1.5rem] font-bold leading-[1.12] text-slate-50 sm:text-4xl md:text-5xl lg:text-4xl"
             >
               <span className="sr-only">
                 Hayat adult day program, home care agency, and non-medical transportation in Colorado
               </span>
               <span aria-hidden className="block">
-                <span className="text-white">Hayat </span>
+                <span className="text-slate-50">Hayat </span>
                 <Typewriter onWordChange={handleWordChange} />
               </span>
-              <span className="mt-1 block text-white/85">in Colorado</span>
+              <span className="mt-1 block font-semibold text-slate-200/95">in Colorado</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="mb-10 max-w-xl text-lg leading-relaxed text-white/65 sm:text-xl"
+              className="mb-10 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl"
             >
-              Adult day programs, home care, and non-medical transportation—one coordinated team for
-              families across Colorado.
+              Adult day programs, home care, and non-medical transportation—one coordinated team for families across
+              Colorado.
             </motion.p>
 
             <motion.div
@@ -307,7 +384,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.45 }}
-            className="hidden lg:block"
+            className="relative hidden min-w-0 overflow-visible lg:block lg:justify-self-end xl:justify-self-center"
           >
             <RotatingCards currentIndex={currentServiceIndex} />
           </motion.div>

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { floorPlans } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Floor Plans | Hayat Care Center",
-  description: "Compare suite layouts and floor plan options at Hayat Care Center.",
+  title: "Floor Plans | Hayat Care Centers",
+  description: "Compare suite layouts and floor plan options at Hayat Care Centers.",
 };
 
 export default function FloorPlansPage() {

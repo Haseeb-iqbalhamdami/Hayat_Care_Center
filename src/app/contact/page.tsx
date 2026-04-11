@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { contactDetails } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Contact | Hayat Care Center",
-  description: "Contact Hayat Care Center to schedule a visit or request a callback.",
+  title: "Contact | Hayat Care Centers",
+  description: "Contact Hayat Care Centers to schedule a visit or request a callback.",
 };
 
 export default function ContactPage() {
@@ -51,7 +51,7 @@ export default function ContactPage() {
             glowColor="210 84 70"
           >
             <aside className="h-full rounded-3xl bg-[var(--brand-navy)] p-8 text-white">
-              <h2 className="text-3xl font-bold">Hayat Care Center</h2>
+              <h2 className="text-3xl font-bold">Hayat Care Centers</h2>
               <ul className="mt-6 space-y-3 text-sm text-blue-50">
                 <li>
                   Main Line:{" "}

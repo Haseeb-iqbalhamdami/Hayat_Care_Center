@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { wellnessPillars } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Life Enrichment | Hayat Care Center",
-  description: "Discover Hayat Care Center's wellness and life enrichment approach.",
+  title: "Life Enrichment | Hayat Care Centers",
+  description: "Discover Hayat Care Centers' wellness and life enrichment approach.",
 };
 
 export default function WellnessPage() {

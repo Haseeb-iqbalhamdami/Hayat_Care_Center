@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { videoHighlights } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Videos | Hayat Care Center",
-  description: "Watch walkthrough tours, resident stories, and community highlights from Hayat Care Center.",
+  title: "Videos | Hayat Care Centers",
+  description: "Watch walkthrough tours, resident stories, and community highlights from Hayat Care Centers.",
 };
 
 export default function VideosPage() {
@@ -26,7 +26,7 @@ export default function VideosPage() {
               containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              Experience Hayat Care Center In Motion
+              Experience Hayat Care Centers In Motion
             </ScrollFloat>
           </div>
           <p

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { faqs } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "FAQ | Hayat Care Center",
-  description: "Find answers to common questions about life at Hayat Care Center.",
+  title: "FAQ | Hayat Care Centers",
+  description: "Find answers to common questions about life at Hayat Care Centers.",
 };
 
 export default function FaqPage() {

@@ -59,7 +59,7 @@ export const navGroups = [
     href: "/contact",
     links: [
       { label: "Contact Us", href: "/contact", description: "Schedule a tour or request a callback." },
-      { label: "Careers", href: "/careers", description: "Join the Hayat Care Center team." },
+      { label: "Careers", href: "/careers", description: "Join the Hayat Care Centers team." },
     ],
   },
 ] as const;
@@ -99,76 +99,247 @@ export const footerLinkGroups = [
 ] as const;
 
 export const communityStats = [
-  { value: "24/7", label: "Team presence and family communication" },
-  { value: "3", label: "Distinct suite styles to compare" },
-  { value: "Daily", label: "Programs, dining, and wellness routines" },
-  { value: "1:1", label: "Care planning tailored to each resident" },
+  { value: "2", label: "Care paths: Adult Care Center & Home Care Agency" },
+  { value: "24/7", label: "Responsive coordination and family updates" },
+  { value: "Daily", label: "Structured days at the center—or flexible visits at home" },
+  { value: "1:1", label: "Plans built around preferences, safety, and dignity" },
+] as const;
+
+export const adultCareCenterSummary = {
+  eyebrow: "Adult care center",
+  title: "Daytime support that feels social, steady, and dignified",
+  body:
+    "Hayat’s adult care center is designed for older adults who benefit from supervised daytime engagement—meaningful activities, nourishing meals, and a calm rhythm—while family caregivers work or recharge. It is a community setting with attentive staff, clear communication, and a focus on comfort rather than a clinical feel.",
+  bullets: [
+    "Structured programming: movement, creativity, conversation, and rest built into the day",
+    "Supervision and assistance with personal care needs as part of the plan",
+    "Family partnership with practical updates and predictable routines",
+  ],
+} as const;
+
+export const homeCareAgencySummary = {
+  eyebrow: "Home care agency",
+  title: "The help you need at home—personal care, companionship, and peace of mind",
+  body:
+    "When staying home is the goal, Hayat’s home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, transportation, and friendly companionship. Care plans are written around your schedule, your priorities, and what “independence with backup” should look like for your household.",
+  bullets: [
+    "Flexible scheduling—from a few hours a week to more comprehensive coverage",
+    "Consistent staffing orientation so visits feel familiar, not fragmented",
+    "Transparent communication with family members and care partners",
+  ],
+} as const;
+
+/** Homepage: deeper comparison of the three service lines */
+export const homeVerticalsDeepDive = {
+  eyebrow: "Our verticals",
+  title: "Three ways we serve—same standards, different settings",
+  intro:
+    "Hayat is built around three complementary verticals: daytime community care, private-duty home support, and non-medical transportation. Families often start with one and add others when schedules, health, or travel needs change. Below is how each vertical works day to day, and who it tends to fit best.",
+  adult: {
+    name: "Adult care center",
+    tagline: "Structured daytime community care",
+    fitFor:
+      "Older adults who thrive with routine, social connection, and on-site support during the day—while still sleeping at home with family at night.",
+    details: [
+      "Arrival, welcome, and a predictable rhythm: meals, activities, rest, and personal care as outlined in the individual plan.",
+      "On-site team for oversight, engagement, and gentle redirection when memory or mobility need extra attention.",
+      "Family caregivers gain reliable daytime coverage so they can work, rest, or handle errands knowing their loved one is in a staffed environment.",
+    ],
+    outcomes: ["Supervised social setting", "Nutrition & hydration built into the day", "Transparent handoffs at pickup"],
+  },
+  home: {
+    name: "Home care agency",
+    tagline: "Private-duty care in the home you love",
+    fitFor:
+      "Individuals who want to remain at home with help for bathing, dressing, errands, companionship, or post-hospital recovery—on a schedule that matches your household.",
+    details: [
+      "Care plans spell out tasks, frequency, and goals; supervisors check in so quality stays consistent visit to visit.",
+      "We prioritize caregiver continuity so clients see familiar faces, and we communicate early when a change is unavoidable.",
+      "Home care can stand alone or pair with the center—for example, evenings and weekends at home after weekday programming.",
+    ],
+    outcomes: ["Flexible hours", "Privacy and familiarity of home", "Caregiver notes families can review"],
+  },
+  transport: {
+    name: "Non-medical transportation",
+    tagline: "Dependable rides for life outside the home",
+    fitFor:
+      "Older adults and clients who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
+    details: [
+      "Door-through-door or curb-to-curb options depending on mobility; drivers oriented to patience, pacing, and clear communication.",
+      "Coordination with the center or home care team so pickup windows align with programming or visit schedules.",
+      "Advance booking preferred; same-day requests handled when capacity allows.",
+    ],
+    outcomes: ["Predictable scheduling", "Trained, vetted drivers", "Works alongside center & home care plans"],
+  },
+} as const;
+
+export const nonMedicalTransportationSummary = {
+  eyebrow: "Non-medical transportation",
+  title: "Rides that respect your time, mobility, and dignity",
+  body:
+    "Our non-medical transportation service helps clients get to medical appointments, therapy, the adult day center, shopping, and community events—without treating you like a number on a route. It is not ambulance or emergency care; it is reliable, courteous transport when driving yourself is no longer the best option.",
+  bullets: [
+    "Scheduled pickups aligned with your care plan and family preferences",
+    "Vehicles and assistance levels matched to walkers, wheelchairs, or step-free needs when arranged in advance",
+    "Clear communication if a delay happens—we call families, not the other way around",
+  ],
+} as const;
+
+/** Locations / service hubs — update names and areas to match your real footprint */
+export const hayatBranches = [
+  {
+    name: "Main campus — Adult care center",
+    area: "Springfield, IL",
+    lines: [
+      "Full daytime programming, dining, activities, and nursing oversight per plan.",
+      "Tours by appointment; same-day callbacks for urgent questions.",
+    ],
+    ctaLabel: "Plan a tour",
+    href: "/contact",
+  },
+  {
+    name: "Hayat Home Care — Field services",
+    area: "Greater Springfield & nearby towns",
+    lines: [
+      "In-home assessments, caregiver matching, and schedule changes handled by a dedicated coordinator.",
+      "Coverage varies by ZIP—ask us to confirm your address.",
+    ],
+    ctaLabel: "Request coverage check",
+    href: "/contact",
+  },
+  {
+    name: "Family & enrollment office",
+    area: "By appointment (phone or in-person)",
+    lines: [
+      "Consultations for either vertical, paperwork support, and help transitioning between center and home.",
+      "Resource referrals when Hayat is not the right fit—we would rather point you honestly than oversell.",
+    ],
+    ctaLabel: "Book a consult",
+    href: "/enrollment",
+  },
+] as const;
+
+/** Long-form testimonial blocks for the homepage */
+export const homeTestimonialStories = [
+  {
+    quote:
+      "The community feels calm, well cared for, and truly welcoming. My father settled in faster than we expected.",
+    story:
+      "We toured three places. Hayat was the only one where staff greeted people by name and the activity board looked like real life—not a brochure. Six weeks in, Dad is eating better and actually jokes with the dining team. The front desk texts us a quick update when something changes; that alone lowered our stress.",
+    name: "Fatima A.",
+    role: "Daughter of a center participant",
+  },
+  {
+    quote:
+      "What stood out was the balance between support and independence. Attentive without feeling clinical.",
+    story:
+      "My uncle did not want to feel babysat. The team figured out how much help he would accept and built from there. When he had a rough week, they adjusted without making it a big production. We finally sleep through the night again.",
+    name: "Michael R.",
+    role: "Family caregiver",
+  },
+  {
+    quote:
+      "From meals to activities, the day has structure again. My mother looks forward to going.",
+    story:
+      "Isolation was eating away at her mood. Having lunch with other people and a reason to get dressed has been as important as any medication change. Staff noticed when she was quieter than usual and called us—we caught a UTI early.",
+    name: "Sara K.",
+    role: "Daughter of a participant",
+  },
+  {
+    quote:
+      "Home care from Hayat let my parents stay in their house together—with real backup we could trust.",
+    story:
+      "We started with mornings and weekends, then added overnights after a fall scare. The coordinators explained every change in writing. When one aide was out sick, they did not leave us hanging; we always knew who was coming through the door.",
+    name: "Daniel L.",
+    role: "Son of home care clients",
+  },
+  {
+    quote:
+      "Staff know people personally—that shows in greetings, gentle redirection, and family updates.",
+    story:
+      "As guardian, I need documentation and clarity. Hayat’s notes are specific enough for court updates but still read human. I have fired agencies that treated us like a ticket number; here we feel partnered.",
+    name: "Nadia H.",
+    role: "Family guardian",
+  },
+  {
+    quote:
+      "There is always something happening—but I can still find quiet when I want it.",
+    story:
+      "I was afraid a center would be loud and chaotic. Hayat has busy hours and calm corners. I pick my level of social time. My family stops worrying because they know I am not home alone all day.",
+    name: "Eleanor T.",
+    role: "Adult care center participant",
+  },
 ] as const;
 
 export const homeQuickLinks = [
   {
+    title: "Adult care center",
+    href: "/#adult-day-center",
+    description: "Daytime community care, activities, meals, and supervised support.",
+  },
+  {
+    title: "Home care agency",
+    href: "/#home-care-agency",
+    description: "Trusted caregivers at home for personal care and daily routines.",
+  },
+  {
+    title: "Non-medical transportation",
+    href: "/#non-medical-transportation",
+    description: "Scheduled rides for appointments, errands, and community visits—not emergency transport.",
+  },
+  {
     title: "Amenities",
     href: "/amenities",
-    description: "Warm gathering spaces, concierge-style support, and everyday comforts.",
+    description: "Welcoming shared spaces and everyday comforts that elevate the experience.",
   },
   {
-    title: "Activities & Events",
+    title: "Activities & events",
     href: "/activities-events",
-    description: "A calendar built around movement, connection, and meaningful routines.",
+    description: "Programs that add structure, joy, and connection to the week.",
   },
   {
-    title: "Dining Experience",
-    href: "/dining",
-    description: "Hospitality-led meals with flexible options and thoughtful nutrition.",
-  },
-  {
-    title: "Assisted Support",
+    title: "Care services",
     href: "/services",
-    description: "Care that balances independence with practical help and oversight.",
+    description: "How we plan support, communicate, and adjust as needs change.",
   },
   {
-    title: "Floor Plans",
-    href: "/floor-plans",
-    description: "Studio, one-bedroom, and companion-style layouts to review.",
-  },
-  {
-    title: "Schedule A Tour",
+    title: "Schedule a consult",
     href: "/contact",
-    description: "Talk with our team and plan a visit that fits your family.",
+    description: "Tour the center, request an in-home assessment, or ask a question.",
   },
 ] as const;
 
 export const homeFeatureCards = [
   {
-    title: "Hospitality-Led Living",
-    text: "Residents step into a calm, well-appointed setting where service, comfort, and daily rhythms feel intentional.",
+    title: "Three ways to receive care",
+    text: "Daytime care at the center, private-duty support at home, and non-medical transportation when you need dependable rides—use one or combine them as life changes.",
   },
   {
-    title: "Personalized Assistance",
-    text: "Support plans are built around health routines, personal preferences, and the level of help each resident wants.",
+    title: "Plans that respect independence",
+    text: "We match services to ability, preference, and family goals—never a one-size template.",
   },
   {
-    title: "Connection Every Day",
-    text: "Meals, social gatherings, enrichment programs, and shared spaces encourage genuine community life.",
+    title: "Warmth you can feel",
+    text: "Hayat blends professional standards with hospitality: clear communication, dignified assistance, and reliable follow-through.",
   },
 ] as const;
 
 export const trustPoints = [
   {
-    title: "Thoughtfully Designed Community Spaces",
-    text: "Lounges, dining rooms, quiet corners, and welcoming outdoor areas make it easier to relax and connect.",
+    title: "Center life with hospitality in mind",
+    text: "Shared dining, comfortable lounges, and outdoor areas make the adult care center feel like a community—not an institution.",
   },
   {
-    title: "Care With Clear Communication",
-    text: "Families receive practical updates and direct access to a team that understands the value of clarity.",
+    title: "Home care with consistency",
+    text: "Predictable visits, respectful boundaries, and caregivers who understand your routines reduce stress for everyone at home.",
   },
   {
-    title: "Wellness Without A Clinical Feel",
-    text: "Residents receive support and oversight in an environment designed to feel bright, social, and uplifting.",
+    title: "Families stay in the loop",
+    text: "Practical updates, responsive coordination, and honest guidance when needs evolve.",
   },
   {
-    title: "Programs That Give Shape To The Day",
-    text: "Movement, creative activities, conversation, and dining create a steady routine residents can look forward to.",
+    title: "Safety and dignity together",
+    text: "We plan for fall risk, medication routines, nutrition, and mobility—without sacrificing respect or autonomy.",
   },
 ] as const;
 
@@ -282,34 +453,40 @@ export const diningFeatures = [
 
 export const services = [
   {
-    title: "Personal Care Assistance",
-    description: "Support with bathing, dressing, grooming, and other daily tasks is delivered with respect and consistency.",
+    title: "Personal care & grooming",
+    description:
+      "Respectful help with bathing, dressing, toileting, and grooming—at the center during the day or in the privacy of home.",
     icon: "M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 20a8 8 0 1 1 16 0",
   },
   {
-    title: "Medication & Wellness Support",
-    description: "Residents benefit from reminders, observation, and communication that keeps routines on track.",
+    title: "Medication reminders & wellness cues",
+    description:
+      "Structured prompts, observation, and family communication so routines stay steady and changes are noticed early.",
     icon: "M12 21s-6-4.35-6-9a6 6 0 0 1 12 0c0 4.65-6 9-6 9Zm0-10V7m-2 2h4",
   },
   {
-    title: "Housekeeping Coordination",
-    description: "Clean, orderly living spaces and practical day-to-day support help reduce stress for residents and families.",
-    icon: "M3 4h18M8 4v16m8-16v16M4 9h4m8 0h4M4 15h4m8 0h4",
-  },
-  {
-    title: "Dining & Nutrition",
-    description: "Meals, snacks, and hydration are woven into the day with attention to comfort and individual needs.",
+    title: "Meals, hydration & nutrition support",
+    description:
+      "Hospitality-style dining at the center, or meal preparation and encouragement at home—always aligned with dietary needs.",
     icon: "M4 6h16M7 3v6m10-6v6M5 11h14v8H5z",
   },
   {
-    title: "Transportation Planning",
-    description: "Scheduled transportation and appointment coordination make daily logistics easier to manage.",
-    icon: "M8 17h8M7 7h10l2 6H5l2-6Zm1 10a1 1 0 1 0 0 .01M16 17a1 1 0 1 0 0 .01",
+    title: "Companionship & engagement",
+    description:
+      "Friendly conversation, purposeful activities, and gentle motivation so days feel connected—not isolated.",
+    icon: "M12 21c-4.42 0-8-3.58-8-8S7.58 5 12 5s8 3.58 8 8-3.58 8-8 8Zm-1-12v4l3 2",
   },
   {
-    title: "Family Partnership",
-    description: "The Hayat team keeps families informed, involved, and confident in the support being provided.",
-    icon: "M12 21c-4.42 0-8-3.58-8-8S7.58 5 12 5s8 3.58 8 8-3.58 8-8 8Zm-1-12v4l3 2",
+    title: "Light housekeeping & homemaking",
+    description:
+      "Tidying, laundry help, and organization so energy goes toward health, rest, and time with loved ones.",
+    icon: "M3 4h18M8 4v16m8-16v16M4 9h4m8 0h4M4 15h4m8 0h4",
+  },
+  {
+    title: "Transportation & errands",
+    description:
+      "Escorts to appointments, pharmacy stops, and essential outings—planned with safety and pacing in mind.",
+    icon: "M8 17h8M7 7h10l2 6H5l2-6Zm1 10a1 1 0 1 0 0 .01M16 17a1 1 0 1 0 0 .01",
   },
 ] as const;
 
@@ -598,7 +775,7 @@ export const photoCategories = [
 export const videoHighlights = [
   {
     title: "Community Walkthrough Tour",
-    description: "A guided tour through the lobby, common areas, dining room, activity spaces, and model suites at Hayat Care Center.",
+    description: "A guided tour through the lobby, common areas, dining room, activity spaces, and model suites at Hayat Care Centers.",
     duration: "4:30",
   },
   {
@@ -615,12 +792,12 @@ export const videoHighlights = [
 
 export const faqs = [
   {
-    q: "Who is the right fit for Hayat Care Center?",
-    a: "Hayat is designed for older adults who would benefit from a supportive community setting, daily hospitality services, and practical assistance with routines or wellness oversight.",
+    q: "Who is Hayat Care Centers for?",
+    a: "Hayat serves older adults and families through two offerings: an adult care center for structured daytime support, and a home care agency for personalized help at home. Many families use one service first and add the other later as needs change.",
   },
   {
     q: "What support is available?",
-    a: "Residents can receive help with daily living tasks, reminders, mobility support, dining, housekeeping coordination, transportation planning, and ongoing wellness communication.",
+    a: "Depending on the path you choose, Hayat can provide personal care, medication reminders, meals and nutrition support, companionship, light housekeeping, transportation, and clear family communication—always guided by a written plan.",
   },
   {
     q: "Can families tour before making a decision?",

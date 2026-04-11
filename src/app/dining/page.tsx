@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { diningFeatures } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Dining Experience | Hayat Care Center",
-  description: "Learn about meals, nutrition, and dining at Hayat Care Center.",
+  title: "Dining Experience | Hayat Care Centers",
+  description: "Learn about meals, nutrition, and dining at Hayat Care Centers.",
 };
 
 export default function DiningPage() {

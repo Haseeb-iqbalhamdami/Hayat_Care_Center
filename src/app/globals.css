@@ -3,17 +3,24 @@
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
-  --surface-soft: #fff4ef;
-  --ink: #111111;
-  --ink-soft: #e57f4f;
-  --heading-ink: #e67b45;
-  --brand-navy: #111111;
-  --brand-blue: #d87443;
-  --brand-sky: #f09a73;
-  --brand-orange: #f5915f;
-  --brand-orange-strong: #c35f31;
-  --line: #f1d5c8;
-  --ring: #ed8856;
+  --surface-elevated: #f8fafc;
+  --surface-soft: #f1f5f9;
+  --ink: #0a0a0a;
+  --ink-soft: #4b5563;
+  --heading-ink: #073d7a;
+  /* Brand palette */
+  --brand-navy: #073d7a;
+  --brand-blue: #073d7a;
+  --brand-sky: #0a4a8f;
+  --brand-coral: #d5664b;
+  --brand-coral-hover: #c4553a;
+  /* Legacy token names (mapped to new palette) */
+  --brand-gold: #d5664b;
+  --brand-gold-bright: #e07860;
+  --brand-orange: #d5664b;
+  --brand-orange-strong: #c4553a;
+  --line: #e5e7eb;
+  --ring: #073d7a;
   --font-body: var(--font-roboto), "Roboto", "Segoe UI", sans-serif;
   --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
   --scroll-progress: 0;
@@ -31,16 +38,22 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  background-color: #ffffff;
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--bg);
+  background-color: #ffffff;
+  background: #ffffff;
   color: var(--ink);
   overflow-x: clip;
   position: relative;
   isolation: isolate;
+}
+
+#main-content {
+  background-color: #ffffff;
 }
 
 body > *:not(header) {
@@ -48,9 +61,17 @@ body > *:not(header) {
   z-index: 1;
 }
 
+/* Do not set position here — it overrides the header’s sticky/fixed positioning. */
 body > header {
-  position: relative;
   z-index: 60;
+}
+
+/* Help dock must sit above page content (body > * z-index was trapping it below siblings) */
+.help-dock-root {
+  z-index: 9999 !important;
+  position: fixed !important;
+  inset: 0;
+  pointer-events: none;
 }
 
 h1,
@@ -63,8 +84,11 @@ h6 {
   color: var(--heading-ink);
 }
 
-a {
-  color: inherit;
+/* Must live in @layer base so Tailwind utilities (e.g. text-white on <Link>/<a>) can override. */
+@layer base {
+  a {
+    color: inherit;
+  }
 }
 
 .skip-link {
@@ -92,29 +116,35 @@ a {
 .hero-grid {
   position: relative;
   overflow: clip;
-  background: var(--surface-soft);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   border-bottom: 1px solid var(--line);
 }
 
 .hero-grid::after {
-  content: none;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 40% at 10% 0%, rgba(184, 134, 11, 0.06), transparent 50%);
+  opacity: 1;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(216, 116, 67, 0.28);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
 }
 
 .dropdown-panel {
-  animation: dropdownIn 0.18s ease-out;
+  animation: dropdownIn 0.2s ease-out;
   transform-origin: top center;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
 @keyframes dropdownIn {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-4px) scale(0.97);
+    transform: translateX(-50%) translateY(-6px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -124,12 +154,12 @@ a {
 
 [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 42px, 0) scale(0.985);
-  filter: blur(10px);
+  transform: translate3d(0, 36px, 0) scale(0.99);
+  filter: blur(8px);
   transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform, filter;
 }
 
@@ -137,6 +167,93 @@ a {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   filter: blur(0);
+}
+
+/* Our verticals: branch graphic draws in after scroll reveal */
+.verticals-branch-svg .vb-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.verticals-branch-svg .vb-node {
+  opacity: 0;
+  transform: scale(0.35);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-node--root {
+  animation: vbNodePop 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) 0.06s forwards;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-path--stem {
+  animation: vbStrokeDraw 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.18s forwards;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-path--left {
+  animation: vbStrokeDraw 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.38s forwards;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-path--mid {
+  animation: vbStrokeDraw 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.44s forwards;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-path--right {
+  animation: vbStrokeDraw 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.38s forwards;
+}
+
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-node--left,
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-node--mid,
+[data-reveal][data-revealed="true"] .verticals-branch-svg .vb-node--right {
+  animation: vbNodePop 0.42s cubic-bezier(0.34, 1.2, 0.64, 1) 0.72s forwards;
+}
+
+@keyframes vbStrokeDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes vbNodePop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Our verticals: inner card motion after the link reveals */
+[data-vertical-card][data-revealed="true"] .vertical-card__media {
+  animation: verticalCardPartIn 0.58s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+[data-vertical-card][data-revealed="true"] .vertical-card__body {
+  animation: verticalCardPartIn 0.58s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+@keyframes verticalCardPartIn {
+  from {
+    transform: translateY(12px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes activityWeekPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activity-week-panel {
+  animation: activityWeekPanelIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 [data-tilt] {
@@ -160,7 +277,7 @@ a {
   content: "";
   position: absolute;
   inset: -30%;
-  background: rgba(216, 116, 67, 0.14);
+  background: rgba(213, 102, 75, 0.1);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -174,12 +291,12 @@ a {
 .scroll-progress {
   position: fixed;
   inset: 0 auto auto 0;
-  height: 4px;
+  height: 3px;
   width: 100%;
   transform: scaleX(var(--scroll-progress));
   transform-origin: left center;
-  background: var(--brand-blue);
-  box-shadow: 0 0 24px rgba(216, 116, 67, 0.35);
+  background: linear-gradient(90deg, #073d7a, #d5664b);
+  box-shadow: 0 0 18px rgba(7, 61, 122, 0.25);
   pointer-events: none;
   z-index: 90;
 }
@@ -196,6 +313,51 @@ main > section {
   background-color: var(--surface-soft) !important;
 }
 
+.help-dock-panel {
+  animation: helpDockIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes helpDockIn {
+  from {
+    opacity: 0;
+    transform: translate3d(12px, 24px, 0) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.help-dock-fab {
+  animation: helpFabIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes helpFabIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-12deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.help-dock-fab--pulse {
+  animation:
+    helpFabIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both,
+    helpFabPulse 2.4s ease-in-out 0.6s infinite;
+}
+
+@keyframes helpFabPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(213, 102, 75, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(213, 102, 75, 0);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -216,5 +378,38 @@ main > section {
   [data-tilt] {
     transition: none;
     transform: none;
+  }
+
+  .verticals-branch-svg .vb-path {
+    stroke-dashoffset: 0;
+  }
+
+  .verticals-branch-svg .vb-node {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal][data-revealed="true"] .verticals-branch-svg .vb-path,
+  [data-reveal][data-revealed="true"] .verticals-branch-svg .vb-node {
+    animation: none;
+  }
+
+  [data-vertical-card][data-revealed="true"] .vertical-card__media,
+  [data-vertical-card][data-revealed="true"] .vertical-card__body {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .activity-week-panel {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .help-dock-panel,
+  .help-dock-fab,
+  .help-dock-fab--pulse {
+    animation: none;
   }
 }

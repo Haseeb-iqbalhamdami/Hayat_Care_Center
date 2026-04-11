@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { testimonials } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Testimonials | Hayat Care Center",
-  description: "Read what residents and families say about Hayat Care Center.",
+  title: "Testimonials | Hayat Care Centers",
+  description: "Read what residents and families say about Hayat Care Centers.",
 };
 
 export default function TestimonialsPage() {

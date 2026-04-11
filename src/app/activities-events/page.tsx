@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
+import InHouseActivitySchedule from "@/components/activities/InHouseActivitySchedule";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { activityCategories } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Activities & Events | Hayat Care Center",
-  description: "Explore the activity calendar and social programming at Hayat Care Center.",
+  title: "Activities & Events | Hayat Care Centers",
+  description: "Explore the activity calendar and social programming at Hayat Care Centers.",
 };
 
 const weeklyRhythm = [
@@ -46,6 +47,12 @@ export default function ActivitiesEventsPage() {
             day feel rigid. Residents can join in, slow down, or mix both
             depending on how they want to spend their time.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50/60 py-14 md:py-20">
+        <div data-reveal data-reveal-delay={40}>
+          <InHouseActivitySchedule />
         </div>
       </section>
 

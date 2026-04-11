@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import CircularGallery from "@/components/reactbits/CircularGallery";
@@ -6,8 +6,8 @@ import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { facilitySpaces } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Our Facility | Hayat Care Center",
-  description: "Explore the thoughtfully designed spaces at Hayat Care Center, from the lobby and dining hall to wellness studios and garden courtyards.",
+  title: "Our Facility | Hayat Care Centers",
+  description: "Explore the thoughtfully designed spaces at Hayat Care Centers, from the lobby and dining hall to wellness studios and garden courtyards.",
 };
 
 const facilityGalleryItems = [
@@ -70,7 +70,7 @@ export default function OurFacilityPage() {
             data-reveal-delay={180}
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
-            Every area of Hayat Care Center has been thoughtfully planned to
+            Every area of Hayat Care Centers has been thoughtfully planned to
             feel welcoming, functional, and warm. From the moment you walk
             through the front doors, the setting reflects a commitment to
             hospitality and resident well-being.
@@ -186,7 +186,7 @@ export default function OurFacilityPage() {
                 Designed With Residents In Mind
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)]">
-                The layout of Hayat Care Center prioritizes accessibility,
+                The layout of Hayat Care Centers prioritizes accessibility,
                 natural light, and a residential feel. Wide hallways, clear
                 signage, and ground-level access make it easy for residents to
                 move through the building with confidence. Common areas are

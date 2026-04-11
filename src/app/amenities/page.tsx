@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { amenities } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Amenities | Hayat Care Center",
-  description: "See the amenities and comforts available at Hayat Care Center.",
+  title: "Amenities | Hayat Care Centers",
+  description: "See the amenities and comforts available at Hayat Care Centers.",
 };
 
 export default function AmenitiesPage() {

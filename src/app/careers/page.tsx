@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { careerOpenings, careerBenefits, contactDetails } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Careers | Hayat Care Center",
-  description: "Join the Hayat Care Center team. Explore open positions in senior care, dining, activities, and community support.",
+  title: "Careers | Hayat Care Centers",
+  description: "Join the Hayat Care Centers team. Explore open positions in senior care, dining, activities, and community support.",
 };
 
 export default function CareersPage() {
@@ -34,7 +34,7 @@ export default function CareersPage() {
             data-reveal-delay={180}
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
-            Hayat Care Center is looking for compassionate, reliable people
+            Hayat Care Centers is looking for compassionate, reliable people
             who want to be part of a team that supports older adults with
             dignity, warmth, and professionalism. If you find meaning in
             helping others thrive, we would love to hear from you.

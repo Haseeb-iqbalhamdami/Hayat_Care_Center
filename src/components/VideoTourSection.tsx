@@ -8,7 +8,7 @@ export default function VideoTourSection() {
           Walkthrough Tour
         </h2>
         <p className="text-[var(--text-muted)] mb-10 max-w-2xl mx-auto">
-          Take a virtual tour of Hayat Care Center and see our beautiful
+          Take a virtual tour of Hayat Care Centers and see our beautiful
           community, amenities, and living spaces.
         </p>
 
@@ -31,7 +31,7 @@ export default function VideoTourSection() {
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </button>
-              <p className="text-lg font-semibold">Hayat Care Center Walkthrough Tour</p>
+              <p className="text-lg font-semibold">Hayat Care Centers Walkthrough Tour</p>
               <p className="text-white/70 text-sm mt-1">2 minute preview</p>
             </div>
           </div>

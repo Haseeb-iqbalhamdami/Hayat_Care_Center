@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { photoCategories } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Photos | Hayat Care Center",
-  description: "Browse photos of Hayat Care Center's community spaces, suites, dining areas, and outdoor grounds.",
+  title: "Photos | Hayat Care Centers",
+  description: "Browse photos of Hayat Care Centers' community spaces, suites, dining areas, and outdoor grounds.",
 };
 
 export default function PhotosPage() {

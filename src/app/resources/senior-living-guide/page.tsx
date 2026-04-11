@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { seniorLivingGuideTopics } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Senior Living Guide | Hayat Care Center",
+  title: "Senior Living Guide | Hayat Care Centers",
   description: "A helpful resource for families exploring senior living options, covering timing, types of care, touring, conversations, and financial planning.",
 };
 

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { livingOptionBenefits, services } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Assisted Support | Hayat Care Center",
-  description: "Explore the assisted support services available at Hayat Care Center.",
+  title: "Care Services | Hayat Care Centers",
+  description:
+    "Explore personal care, companionship, meals, transportation, and family partnership—available through our center and home care agency.",
 };
 
 export default function ServicesPage() {
@@ -18,7 +19,7 @@ export default function ServicesPage() {
             data-reveal
             className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
           >
-            Care Options
+            Services
           </p>
           <div data-reveal data-reveal-delay={90}>
             <ScrollFloat
@@ -26,7 +27,7 @@ export default function ServicesPage() {
               containerClassName="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              Assisted Support That Adds Confidence To Everyday Living
+              Support That Fits—Center Days Or Visits At Home
             </ScrollFloat>
           </div>
           <p
@@ -34,9 +35,8 @@ export default function ServicesPage() {
             data-reveal-delay={180}
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
-            Hayat&apos;s approach is built around personalized support, strong
-            communication, and a community atmosphere that still feels bright,
-            social, and resident-centered.
+            Hayat plans care around preferences, safety, and dignity—whether services happen in our adult care center
+            or through scheduled home visits. Families receive practical updates and a team that listens.
           </p>
         </div>
       </section>

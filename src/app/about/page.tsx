@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { communityStats, trustPoints } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "About The Community | Hayat Care Center",
-  description: "Learn about Hayat Care Center, our atmosphere, and our community approach.",
+  title: "About Us | Hayat Care Centers",
+  description:
+    "Learn how Hayat Care Centers combines an adult care center and home care agency to support older adults with dignity.",
 };
 
 export default function AboutPage() {
@@ -18,7 +19,7 @@ export default function AboutPage() {
             data-reveal
             className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
           >
-            About The Community
+            About Hayat
           </p>
           <div data-reveal data-reveal-delay={90}>
             <ScrollFloat
@@ -26,8 +27,7 @@ export default function AboutPage() {
               containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              A Warm, Hospitality-First Setting For Daily Support And Senior
-              Living
+              Care That Meets Families Where They Are—At Home Or At Our Center
             </ScrollFloat>
           </div>
           <p
@@ -35,10 +35,10 @@ export default function AboutPage() {
             data-reveal-delay={180}
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
-            Hayat Care Center is designed for older adults who want both support
-            and a sense of everyday belonging. The community blends practical
-            assistance, welcoming shared spaces, and purposeful routines that
-            help residents feel settled and families feel reassured.
+            Hayat Care Centers serves older adults through two connected offerings: a welcoming adult care center for
+            structured daytime support, and a home care agency for personalized help where someone already lives. Our
+            approach blends practical assistance, clear communication, and hospitality so daily life feels steadier—not
+            more complicated.
           </p>
         </div>
       </section>

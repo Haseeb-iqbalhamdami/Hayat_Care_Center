@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { blogPosts } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Blog | Hayat Care Center",
-  description: "Articles on senior wellness, healthy aging, family guidance, and community life at Hayat Care Center.",
+  title: "Blog | Hayat Care Centers",
+  description: "Articles on senior wellness, healthy aging, family guidance, and community life at Hayat Care Centers.",
 };
 
 export default function BlogPage() {

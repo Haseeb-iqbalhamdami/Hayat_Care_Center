@@ -116,7 +116,8 @@ export default function AssessmentQuiz() {
                 </Link>
                 <button
                   onClick={resetQuiz}
-                  className="inline-flex items-center justify-center border-2 border-gray-300 text-[var(--foreground)] px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-colors"
+                  type="button"
+                  className="inline-flex items-center justify-center border-2 border-[#073D7A] bg-[#073D7A] px-8 py-3 text-white rounded-full font-semibold transition-colors hover:border-[#052a52] hover:bg-[#052a52]"
                 >
                   Retake Quiz
                 </button>

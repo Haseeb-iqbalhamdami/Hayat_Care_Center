@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { coverageOptions, processSteps } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Move-In Process | Hayat Care Center",
-  description: "Review the consultation and move-in process at Hayat Care Center.",
+  title: "Move-In Process | Hayat Care Centers",
+  description: "Review the consultation and move-in process at Hayat Care Centers.",
 };
 
 const planningChecklist = [

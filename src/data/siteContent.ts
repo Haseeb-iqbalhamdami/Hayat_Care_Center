@@ -641,6 +641,12 @@ export const blogPosts = [
     readTime: "5 min",
     date: "March 28, 2026",
     category: "Wellness",
+    image: "/images/home/gallery-comfortable-lounge.jpg",
+    imageAlt: "Older adults enjoying a calm lounge routine at a care center",
+    highlights: [
+      "Why predictable schedules reduce anxiety and confusion",
+      "Simple routines families can support at home",
+    ],
   },
   {
     title: "What Families Should Know Before Touring An Assisted Living Community",
@@ -648,6 +654,12 @@ export const blogPosts = [
     readTime: "6 min",
     date: "March 15, 2026",
     category: "Family Guide",
+    image: "/images/home/gallery-reception.jpg",
+    imageAlt: "Family arriving at a welcoming reception area",
+    highlights: [
+      "Tour checklist for safety staffing and service quality",
+      "How to compare communities beyond first impressions",
+    ],
   },
   {
     title: "The Role Of Social Connection In Healthy Aging",
@@ -655,6 +667,12 @@ export const blogPosts = [
     readTime: "4 min",
     date: "March 3, 2026",
     category: "Health",
+    image: "/images/home/gallery-dining-social.jpg",
+    imageAlt: "Residents sharing a social meal and conversation",
+    highlights: [
+      "Evidence linking social activity to cognitive outcomes",
+      "Group programs that encourage daily participation",
+    ],
   },
   {
     title: "Understanding The Difference Between Independent And Assisted Living",
@@ -662,6 +680,12 @@ export const blogPosts = [
     readTime: "7 min",
     date: "February 20, 2026",
     category: "Senior Living",
+    image: "/images/home/hero-community-care.jpg",
+    imageAlt: "Community lifestyle setting with guided care support",
+    highlights: [
+      "Care level differences and who each model is for",
+      "Questions to ask when planning the next care step",
+    ],
   },
   {
     title: "Nutrition Tips That Help Seniors Stay Energized Throughout The Day",
@@ -669,6 +693,12 @@ export const blogPosts = [
     readTime: "5 min",
     date: "February 8, 2026",
     category: "Nutrition",
+    image: "/images/home/gallery-wellness-programs.jpg",
+    imageAlt: "Nutritious wellness focused meal planning for seniors",
+    highlights: [
+      "Balanced plate examples for breakfast lunch and dinner",
+      "Hydration habits that support energy and focus",
+    ],
   },
   {
     title: "How Creative Activities Keep The Mind Sharp With Age",
@@ -676,6 +706,12 @@ export const blogPosts = [
     readTime: "5 min",
     date: "January 25, 2026",
     category: "Wellness",
+    image: "/images/home/gallery-compassionate-care.jpg",
+    imageAlt: "Creative and compassionate activity session for older adults",
+    highlights: [
+      "Why creative work helps memory attention and mood",
+      "Programs families can encourage during the week",
+    ],
   },
 ] as const;
 

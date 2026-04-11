@@ -65,7 +65,7 @@ export default function Footer() {
             <Link href="/contact" className="transition-colors hover:text-[var(--ink)]">
               Contact
             </Link>
-            <Link href="/#home-care-agency" className="transition-colors hover:text-[var(--ink)]">
+            <Link href="/home-care-agency" className="transition-colors hover:text-[var(--ink)]">
               Home care
             </Link>
           </div>

@@ -25,17 +25,17 @@ const navItems: NavItem[] = [
     children: [
       {
         label: "Adult care center",
-        href: "/#adult-day-center",
+        href: "/adult-care-center",
         description: "Daytime programs, supervision, and community connection in a welcoming center setting.",
       },
       {
         label: "Home care agency",
-        href: "/#home-care-agency",
+        href: "/home-care-agency",
         description: "Trusted caregivers in your home for personal care, companionship, and daily routines.",
       },
       {
         label: "Non-medical transportation",
-        href: "/#non-medical-transportation",
+        href: "/non-medical-transportation",
         description: "Scheduled rides for appointments and errands—safe, courteous, and coordinated with your care plan.",
       },
       {

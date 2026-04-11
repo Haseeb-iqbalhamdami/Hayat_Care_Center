@@ -25,6 +25,11 @@
   --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
   --scroll-progress: 0;
   --brand-orange1: #ffffff;
+  --cta-grad-1: #fff7dc;
+  --cta-grad-2: #ffd86a;
+  --cta-grad-3: #f5b942;
+  --cta-grad-4: #d5664b;
+  --cta-grad-5: #0a4a8f;
 }
 
 @theme inline {
@@ -88,6 +93,90 @@ h6 {
 @layer base {
   a {
     color: inherit;
+  }
+}
+
+@layer components {
+  :where(
+      button,
+      a[class*="inline-flex"][class*="rounded"],
+      a[class*="flex"][class*="rounded-full"]
+    ) {
+    position: relative;
+    isolation: isolate;
+    transition:
+      box-shadow 0.28s ease,
+      filter 0.28s ease;
+  }
+
+  :where(
+      button,
+      a[class*="inline-flex"][class*="rounded"],
+      a[class*="flex"][class*="rounded-full"]
+    )::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      120deg,
+      var(--cta-grad-1) 0%,
+      var(--cta-grad-2) 18%,
+      var(--cta-grad-3) 38%,
+      var(--cta-grad-4) 56%,
+      var(--cta-grad-5) 74%,
+      var(--cta-grad-2) 100%
+    );
+    background-size: 220% 220%;
+    background-position: 0% 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  :where(
+      button,
+      a[class*="inline-flex"][class*="rounded"],
+      a[class*="flex"][class*="rounded-full"]
+    ):is(:hover, :focus-visible)::before {
+    opacity: 1;
+    animation: ctaBorderFlow 2.2s linear infinite;
+  }
+
+  :where(
+      button,
+      a[class*="inline-flex"][class*="rounded"],
+      a[class*="flex"][class*="rounded-full"]
+    ):is(:hover, :focus-visible) {
+   
+    filter: saturate(1.2) brightness(1.06);
+  }
+
+  @keyframes ctaBorderFlow {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 220% 50%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @layer components {
+    :where(
+        button,
+        a[class*="inline-flex"][class*="rounded"],
+        a[class*="flex"][class*="rounded-full"]
+      ):is(:hover, :focus-visible)::before {
+      animation: none;
+    }
   }
 }
 

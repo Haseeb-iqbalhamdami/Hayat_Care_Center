@@ -20,7 +20,7 @@ const services = [
   },
   {
     text: "Non-medical transportation",
-    image: "/images/transport/non-medical-bus.jpg",
+    image: "/images/transport/medical-transportation.jpg",
     imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
   },
 ] as const;

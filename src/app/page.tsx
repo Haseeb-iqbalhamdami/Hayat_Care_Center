@@ -20,7 +20,7 @@ import {
 } from "@/data/siteContent";
 
 const photoAdultCare = "/images/seniors/senior-care-center-01.jpg";
-const photoNonMedicalTransport = "/images/transport/non-medical-bus.jpg";
+const photoNonMedicalTransport = "/images/transport/medical-transportation.jpg";
 
 const galleryStrip = [
   {
@@ -320,7 +320,7 @@ export default function Home() {
             <div data-reveal className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md">
               <Image
                 src={photoNonMedicalTransport}
-                alt="Transit vehicle interior representing scheduled non-medical transportation"
+                alt="Vehicle in motion representing scheduled non medical transportation rides"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

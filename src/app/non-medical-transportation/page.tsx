@@ -53,7 +53,7 @@ const relatedPaths = [
   },
 ] as const;
 
-const transportHeroImage = "/images/transport/non-medical-bus.jpg";
+const transportHeroImage = "/images/transport/medical-transportation.jpg";
 
 export default function NonMedicalTransportationPage() {
   return (
@@ -86,7 +86,7 @@ export default function NonMedicalTransportationPage() {
             >
               <Image
                 src={transportHeroImage}
-                alt="Comfortable vehicle interior for scheduled non medical transportation"
+                alt="Vehicle in motion for scheduled non medical transportation"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"

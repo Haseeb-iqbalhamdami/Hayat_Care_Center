@@ -1,5 +1,6 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
+import AboutAnimatedPin from "@/components/about/AboutAnimatedPin";
 import AboutJourneyShowcase from "@/components/about/AboutJourneyShowcase";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
@@ -16,10 +17,7 @@ export default function AboutPage() {
     <>
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
-          <p
-            data-reveal
-            className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
-          >
+          <p data-reveal className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
             About Hayat
           </p>
           <div data-reveal data-reveal-delay={90}>
@@ -48,6 +46,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4">
           <AboutJourneyShowcase />
 
+          <div className="mt-8" data-reveal data-reveal-delay={40}>
+            <AboutAnimatedPin />
+          </div>
+
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {communityStats.map((stat, index) => (
               <BorderGlow
@@ -60,9 +62,7 @@ export default function AboutPage() {
                 glowRadius={24}
               >
                 <article className="h-full rounded-2xl bg-white p-6">
-                  <p className="text-3xl font-bold text-[var(--brand-navy)]">
-                    {stat.value}
-                  </p>
+                  <p className="text-3xl font-bold text-[var(--brand-navy)]">{stat.value}</p>
                   <p className="mt-1 text-sm text-[var(--ink-soft)]">{stat.label}</p>
                 </article>
               </BorderGlow>
@@ -74,10 +74,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div data-reveal>
-            <ScrollFloat
-              as="h2"
-              containerClassName="text-center text-3xl font-bold text-[var(--ink)] md:text-4xl"
-            >
+            <ScrollFloat as="h2" containerClassName="text-center text-3xl font-bold text-[var(--ink)] md:text-4xl">
               Why Families Explore Hayat
             </ScrollFloat>
           </div>
@@ -93,12 +90,8 @@ export default function AboutPage() {
                 glowRadius={26}
               >
                 <article className="h-full rounded-2xl bg-[var(--bg)] p-6">
-                  <h3 className="text-xl font-bold text-[var(--ink)]">
-                    {point.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                    {point.text}
-                  </p>
+                  <h3 className="text-xl font-bold text-[var(--ink)]">{point.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">{point.text}</p>
                 </article>
               </BorderGlow>
             ))}

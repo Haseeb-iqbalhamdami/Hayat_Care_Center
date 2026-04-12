@@ -1,0 +1,326 @@
+.shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background:
+    radial-gradient(95% 68% at 10% -8%, rgba(212, 102, 75, 0.14), transparent 58%),
+    radial-gradient(90% 70% at 90% 0%, rgba(7, 61, 122, 0.16), transparent 58%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 24px 50px -32px rgba(7, 61, 122, 0.42);
+}
+
+.grid {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.05rem;
+}
+
+.eyebrow {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 209, 125, 0.9);
+  background: #fff8e9;
+  color: #97690f;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.34rem 0.62rem;
+}
+
+.heading {
+  margin: 0.74rem 0 0;
+  max-width: 35rem;
+  font-size: clamp(1.56rem, 3vw, 2.18rem);
+  line-height: 1.14;
+  color: #0f172a;
+}
+
+.body {
+  margin: 0.65rem 0 0;
+  max-width: 42rem;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.48rem;
+  color: #334155;
+  font-size: 0.89rem;
+  line-height: 1.52;
+}
+
+.list li::before {
+  content: "";
+  margin-top: 0.42rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #d5664b;
+  box-shadow: 0 0 0 4px rgba(212, 102, 75, 0.18);
+  flex-shrink: 0;
+}
+
+.actions {
+  margin-top: 0.92rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.62rem;
+}
+
+.stage {
+  position: relative;
+  min-height: 500px;
+  perspective: 1300px;
+  overflow: visible;
+}
+
+.pinEntry {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 430px);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.pinWrap {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  width: 240px;
+  height: 240px;
+  transform: translateX(-50%) translateZ(20px);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, rgba(212, 102, 75, 0.32) 0%, rgba(212, 102, 75, 0.12) 42%, transparent 72%),
+    radial-gradient(circle at 35% 65%, rgba(255, 219, 142, 0.25) 0%, transparent 64%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(246, 249, 255, 0.95)),
+    linear-gradient(130deg, rgba(7, 61, 122, 0.03), rgba(212, 102, 75, 0.05));
+  box-shadow: 0 30px 48px -32px rgba(15, 23, 42, 0.55);
+  padding: 0.88rem;
+  transform: translateZ(62px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    118deg,
+    rgba(255, 238, 196, 0.95) 0%,
+    rgba(245, 201, 100, 0.9) 18%,
+    rgba(212, 102, 75, 0.88) 44%,
+    rgba(7, 61, 122, 0.85) 72%,
+    rgba(255, 238, 196, 0.95) 100%
+  );
+  background-size: 220% 220%;
+  animation: pinBorderFlow 7.8s linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.livePill {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 209, 125, 0.8);
+  background: #fffaee;
+  color: #946810;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.58rem;
+}
+
+.cardTitle {
+  margin: 0.54rem 0 0;
+  color: #0f172a;
+  font-size: 1.35rem;
+  line-height: 1.16;
+}
+
+.cardBody {
+  margin: 0.44rem 0 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  min-height: 180px;
+  margin-top: 0.74rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.metrics {
+  margin-top: 0.72rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metrics div {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(203, 213, 225, 0.76);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.54rem 0.42rem;
+  text-align: center;
+}
+
+.metrics span {
+  display: block;
+  color: #64748b;
+  font-size: 0.69rem;
+  line-height: 1.2;
+}
+
+.metrics strong {
+  display: block;
+  margin-top: 0.2rem;
+  color: #0f172a;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.stem {
+  position: absolute;
+  left: 50%;
+  top: calc(100% - 2px);
+  width: 2px;
+  height: 84px;
+  transform: translateX(-50%) translateZ(18px);
+  background: linear-gradient(180deg, rgba(7, 61, 122, 0.75) 0%, rgba(212, 102, 75, 0.28) 100%);
+  border-radius: 999px;
+}
+
+.core {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 77px);
+  width: 16px;
+  height: 16px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #d5664b;
+  box-shadow:
+    0 0 0 6px rgba(212, 102, 75, 0.2),
+    0 0 24px rgba(212, 102, 75, 0.5);
+}
+
+.ringOne,
+.ringTwo {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 36px);
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 61, 122, 0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.ringOne {
+  animation: ping 2.4s ease-out infinite;
+}
+
+.ringTwo {
+  animation: ping 2.4s ease-out infinite 1.2s;
+}
+
+@keyframes pinBorderFlow {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 220% 50%;
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: translateX(-50%) scale(0.5);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: start;
+    gap: 1.15rem;
+    padding: 1.2rem 1.24rem 1.3rem;
+  }
+
+  .stage {
+    min-height: 540px;
+  }
+
+  .pinEntry {
+    width: min(100%, 460px);
+  }
+
+  .card {
+    padding: 0.96rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card::before,
+  .ringOne,
+  .ringTwo,
+  .pinWrap {
+    animation: none;
+  }
+}

@@ -67,8 +67,8 @@ export default function HomeCareAgencyPage() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md"
             >
               <Image
-                src="/images/seniors/senior-home-care-01.jpg"
-                alt="Home care agency caregiver supporting a client at home"
+                src="/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg"
+                alt="Home care agency caregiver supporting an older adult at home"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"

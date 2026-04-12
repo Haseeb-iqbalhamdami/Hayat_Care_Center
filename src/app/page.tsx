@@ -19,27 +19,27 @@ import {
   trustPoints,
 } from "@/data/siteContent";
 
-const photoAdultCare = "/images/seniors/senior-care-center-01.jpg";
+const photoAdultCare = "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg";
 const photoNonMedicalTransport = "/images/transport/medical-transportation.jpg";
 
 const galleryStrip = [
   {
-    src: "/images/new/1.png",
-    alt: "Welcoming reception area",
-    title: "Welcoming reception",
-    subtitle: "A calm, professional space for every arrival.",
+    src: "/images/home/georg-arthur-pflueger-TeWwYARfcM4-unsplash.jpg",
+    alt: "Caregiver helping an older adult use a smartphone",
+    title: "Digital connection support",
+    subtitle: "Helping seniors stay in touch with family and services.",
   },
   {
-    src: "/images/new/2.png",
-    alt: "Residents enjoying dining together",
-    title: "Shared dining",
-    subtitle: "Nutritious meals and community at the table.",
+    src: "/images/home/nappy-dcBO4nt4MRE-unsplash.jpg",
+    alt: "Clinician checking an older adults blood pressure",
+    title: "Everyday health monitoring",
+    subtitle: "Routine checks and attentive care in a calm setting.",
   },
   {
-    src: "/images/new/3.png",
-    alt: "Caregiver supporting a client with compassion",
-    title: "Compassionate care",
-    subtitle: "Respectful support, every day.",
+    src: "/images/home/age-cymru-IkfMxGU3yLc-unsplash.jpg",
+    alt: "Older adult and caregiver sharing a dance in a group activity room",
+    title: "Joyful social activities",
+    subtitle: "Movement and connection that make each day meaningful.",
   },
 ] as const;
 
@@ -150,7 +150,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.adult.tagline,
                   description: homeVerticalsDeepDive.adult.fitFor,
                   href: "/#adult-day-center",
-                  imageSrc: "/images/seniors/senior-care-center-01.jpg",
+                  imageSrc: "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg",
                   imageAlt: "Adult care center at Hayat",
                 },
                 {
@@ -159,7 +159,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.home.tagline,
                   description: homeVerticalsDeepDive.home.fitFor,
                   href: "/#home-care-agency",
-                  imageSrc: "/images/seniors/senior-home-care-01.jpg",
+                  imageSrc: "/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg",
                   imageAlt: "Home care support at Hayat",
                 },
                 {
@@ -257,7 +257,7 @@ export default function Home() {
           <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
           <div data-reveal className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md md:order-1">
             <Image
-              src="/images/seniors/senior-home-care-01.jpg"
+              src="/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg"
               alt="Home care support"
               fill
               className="object-cover"

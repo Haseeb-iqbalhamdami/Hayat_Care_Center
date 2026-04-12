@@ -10,12 +10,12 @@ import { contactDetails } from "@/data/siteContent";
 const services = [
   {
     text: "Adult day program",
-    image: "/images/seniors/senior-care-center-01.jpg",
+    image: "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg",
     imageAlt: "Hayat adult day program in Colorado — welcoming community daytime care",
   },
   {
     text: "Home care agency",
-    image: "/images/seniors/senior-home-care-01.jpg",
+    image: "/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg",
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
@@ -268,14 +268,14 @@ export default function HeroSection() {
     >
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <Image
-          src="/images/new/4.png"
+          src="/images/home/Gemini_Generated_Image_sr6al0sr6al0sr6a.png"
           alt=""
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#073D7A]/70" />
+        <div className="absolute inset-0 bg-[#073D7A]/20" />
         <div
           className="absolute inset-0"
           style={{

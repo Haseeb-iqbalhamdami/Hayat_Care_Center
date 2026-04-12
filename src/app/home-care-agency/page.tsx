@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StickyHomeCareJourney from "@/components/home-care/StickyHomeCareJourney";
 import { homeCareAgencySummary, homeVerticalsDeepDive } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -16,21 +17,6 @@ const btnOutline =
 const shell = "mx-auto w-full max-w-[1920px] px-4 sm:px-6 xl:px-10";
 const inner = "mx-auto w-full max-w-7xl";
 const sectionEyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-gold)]";
-
-const careAtHomeFlow = [
-  {
-    title: "In home assessment",
-    detail: "We review routines mobility and priorities in the actual home environment.",
-  },
-  {
-    title: "Caregiver matching and schedule design",
-    detail: "Hours and tasks are mapped to your family pace and level of support needed.",
-  },
-  {
-    title: "Ongoing visits and quality check ins",
-    detail: "Supervisors monitor consistency and adjust the plan as goals or health needs change.",
-  },
-] as const;
 
 const serviceExamples = [
   "Personal care including bathing dressing and grooming support",
@@ -136,29 +122,18 @@ export default function HomeCareAgencyPage() {
                 Care process
               </p>
               <h2 data-reveal data-reveal-delay={40} className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
-                How home care starts and stays consistent
+                Sticky reveal of the in home care journey
               </h2>
               <p data-reveal data-reveal-delay={70} className="mt-4 text-slate-600">
-                We keep the setup process clear and practical so families know exactly what to expect from day one.
+                Scroll through each phase to see how home care moves from assessment to routine support and family updates.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {careAtHomeFlow.map((step, index) => (
-                <article
-                  key={step.title}
-                  data-reveal
-                  data-reveal-delay={90 + index * 50}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-gold)]">Step {index + 1}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{step.detail}</p>
-                </article>
-              ))}
+            <div className="mt-10">
+              <StickyHomeCareJourney />
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+            <div className="mt-10 flex flex-wrap justify-center gap-2.5">
               {homeVerticalsDeepDive.home.outcomes.map((outcome) => (
                 <span
                   key={outcome}

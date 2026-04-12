@@ -38,16 +38,6 @@ const navItems: NavItem[] = [
         href: "/non-medical-transportation",
         description: "Scheduled rides for appointments and errands—safe, courteous, and coordinated with your care plan.",
       },
-      {
-        label: "Care services overview",
-        href: "/services",
-        description: "How we plan support, communicate with families, and match services to your goals.",
-      },
-      {
-        label: "Move-in & enrollment",
-        href: "/enrollment",
-        description: "Consultation, assessment, and a steady plan for transitioning into care.",
-      },
     ],
   },
   {
@@ -203,7 +193,8 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
+    const frame = window.requestAnimationFrame(() => setMobileOpen(false));
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {

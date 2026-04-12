@@ -92,10 +92,10 @@ export default function FloorPlansPage() {
               Request Pricing & Availability
             </Link>
             <Link
-              href="/enrollment"
+              href="/contact"
               className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
             >
-              Review The Move-In Process
+              Talk With Our Team
             </Link>
           </div>
         </div>

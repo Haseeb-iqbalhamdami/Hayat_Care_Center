@@ -72,7 +72,7 @@ export default function WellnessPage() {
             className="mt-10 flex flex-col gap-3 sm:flex-row"
           >
             <Link
-              href="/services"
+              href="/adult-care-center"
               className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
             >
               Explore Care Options

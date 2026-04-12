@@ -149,8 +149,8 @@ export default function AdultCareCenterPage() {
                   <Link href="/contact" className={btnPrimary}>
                     Talk with our team
                   </Link>
-                  <Link href="/services" className={btnOutline}>
-                    View all services
+                  <Link href="/home-care-agency" className={btnOutline}>
+                    Explore home care agency
                   </Link>
                 </div>
               </div>

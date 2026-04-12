@@ -285,8 +285,8 @@ export default function Home() {
               <Link href="/contact" className={btnPrimary}>
                 Home care info
               </Link>
-              <Link href="/services" className={btnOutline}>
-                Services
+              <Link href="/adult-care-center" className={btnOutline}>
+                Adult care center
               </Link>
             </div>
           </div>
@@ -315,8 +315,8 @@ export default function Home() {
                 <Link href="/contact" className={btnPrimary}>
                   Request ride information
                 </Link>
-                <Link href="/services" className={btnOutline}>
-                  All services
+                <Link href="/home-care-agency" className={btnOutline}>
+                  Home care agency
                 </Link>
               </div>
             </div>
@@ -441,8 +441,8 @@ export default function Home() {
             ))}
           </ol>
           <div data-reveal data-reveal-delay={260} className="mt-10 flex justify-center">
-            <Link href="/enrollment" className={btnOutline}>
-              Full enrollment details
+            <Link href="/contact" className={btnOutline}>
+              Book a consultation
             </Link>
           </div>
           </div>

@@ -74,8 +74,8 @@ export default function NonMedicalTransportationPage() {
                 <Link href="/contact" className={btnPrimary}>
                   Request ride information
                 </Link>
-                <Link href="/services" className={btnOutline}>
-                  Review care services
+                <Link href="/adult-care-center" className={btnOutline}>
+                  Explore adult care center
                 </Link>
               </div>
             </div>
@@ -220,8 +220,8 @@ export default function NonMedicalTransportationPage() {
                   <Link href="/contact" className={btnPrimary}>
                     Check ride availability
                   </Link>
-                  <Link href="/enrollment" className={btnOutline}>
-                    Start planning
+                  <Link href="/contact" className={btnOutline}>
+                    Talk with our team
                   </Link>
                 </div>
               </div>

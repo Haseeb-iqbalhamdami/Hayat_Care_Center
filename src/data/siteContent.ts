@@ -32,10 +32,23 @@ export const navGroups = [
   },
   {
     label: "Living Options",
-    href: "/services",
+    href: "/adult-care-center",
     links: [
-      { label: "Assisted Living", href: "/services", description: "Personalized care, daily support, and wellness oversight." },
-      { label: "Move-In Process", href: "/enrollment", description: "Consultation, assessment, and transition steps." },
+      {
+        label: "Adult Care Center",
+        href: "/adult-care-center",
+        description: "Structured daytime care with social engagement meals and supervision.",
+      },
+      {
+        label: "Home Care Agency",
+        href: "/home-care-agency",
+        description: "Personalized in home support for routines personal care and companionship.",
+      },
+      {
+        label: "Non-Medical Transportation",
+        href: "/non-medical-transportation",
+        description: "Scheduled rides for appointments errands and community visits.",
+      },
     ],
   },
   {
@@ -84,8 +97,9 @@ export const footerLinkGroups = [
   {
     title: "Living & Gallery",
     links: [
-      { label: "Assisted Living", href: "/services" },
-      { label: "Move-In Process", href: "/enrollment" },
+      { label: "Adult Care Center", href: "/adult-care-center" },
+      { label: "Home Care Agency", href: "/home-care-agency" },
+      { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
       { label: "Floor Plans", href: "/floor-plans" },
       { label: "Photos", href: "/gallery/photos" },
       { label: "Videos", href: "/gallery/videos" },
@@ -219,7 +233,7 @@ export const hayatBranches = [
       "Resource referrals when Hayat is not the right fit—we would rather point you honestly than oversell.",
     ],
     ctaLabel: "Book a consult",
-    href: "/enrollment",
+    href: "/contact",
   },
 ] as const;
 
@@ -302,9 +316,9 @@ export const homeQuickLinks = [
     description: "Programs that add structure, joy, and connection to the week.",
   },
   {
-    title: "Care services",
-    href: "/services",
-    description: "How we plan support, communicate, and adjust as needs change.",
+    title: "Adult care center",
+    href: "/adult-care-center",
+    description: "See how daytime support is structured with activities meals and supervision.",
   },
   {
     title: "Schedule a consult",

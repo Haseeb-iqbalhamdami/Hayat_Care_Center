@@ -132,17 +132,11 @@ export default function SiteAIAssistant() {
   }, []);
 
   const orbTransform = useMemo(() => {
-    const moveX = (mouse.x - 0.5) * 10;
-    const moveY = (mouse.y - 0.5) * 10;
-    const bob = Math.sin(scrollY * 0.02) * 2.5;
+    const moveX = (mouse.x - 0.5) * 4;
+    const moveY = (mouse.y - 0.5) * 4;
+    const bob = Math.sin(scrollY * 0.02) * 1.2;
     return `translate3d(${moveX.toFixed(2)}px, ${(moveY + bob).toFixed(2)}px, 0)`;
   }, [mouse.x, mouse.y, scrollY]);
-
-  const pupilStyle = useMemo(() => {
-    const x = (mouse.x - 0.5) * 8;
-    const y = (mouse.y - 0.5) * 8;
-    return { transform: `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px)` };
-  }, [mouse.x, mouse.y]);
 
   if (!armed) return null;
 
@@ -308,26 +302,18 @@ export default function SiteAIAssistant() {
         <button
           type="button"
           onClick={() => setPanelOpen((p) => !p)}
-          className="pointer-events-auto relative flex h-[72px] w-[72px] items-center justify-center rounded-full border border-white/35 bg-gradient-to-br from-[#073D7A] via-[#0b4c90] to-[#D5664B] text-white shadow-[0_14px_36px_-14px_rgba(0,0,0,0.7)] transition hover:scale-[1.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          className="pointer-events-auto relative flex h-[64px] w-[64px] items-center justify-center rounded-full border border-slate-200 bg-white text-[#073D7A] shadow-[0_14px_36px_-16px_rgba(2,8,23,0.35)] transition hover:scale-[1.04] hover:shadow-[0_18px_40px_-16px_rgba(2,8,23,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
           style={{ transform: orbTransform }}
           aria-label="Open AI assistant"
         >
-          <span className="absolute inset-1 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_55%)]" />
-          <span className="absolute inset-0 rounded-full border border-white/20" aria-hidden />
-          <span className="relative flex items-center gap-1.5">
-            <span className="flex items-center gap-1">
-              <span className="relative h-3.5 w-3.5 rounded-full bg-white">
-                <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#073D7A]" style={pupilStyle} />
-              </span>
-              <span className="relative h-3.5 w-3.5 rounded-full bg-white">
-                <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#073D7A]" style={pupilStyle} />
-              </span>
-            </span>
-            <Bot className="h-4 w-4 opacity-90" />
+          <span className="absolute inset-0 rounded-full border border-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]" aria-hidden />
+          <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#073D7A] to-[#0b4c90] text-white shadow-[0_8px_18px_-8px_rgba(7,61,122,0.8)]">
+            <Bot className="h-5 w-5" />
           </span>
-          <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#D5664B] px-1 text-[10px] font-bold text-white">
+          <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#D5664B] px-1 text-[10px] font-bold text-white shadow">
             {panelOpen ? <MessageCircle className="h-3 w-3" /> : <Sparkles className="h-3 w-3" />}
           </span>
+          <span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500" aria-hidden />
         </button>
       </div>
     </div>

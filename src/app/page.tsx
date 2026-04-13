@@ -19,8 +19,9 @@ import {
   trustPoints,
 } from "@/data/siteContent";
 
-const photoAdultCare = "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg";
-const photoNonMedicalTransport = "/images/transport/medical-transportation.jpg";
+const photoAdultCare = "/images/usedimages/adultcare.png";
+const photoHomeCare = "/images/usedimages/homcare.png";
+const photoNonMedicalTransport = "/images/usedimages/transportation.png";
 
 const galleryStrip = [
   {
@@ -71,7 +72,6 @@ export default function Home() {
             {communityStats.map((stat) => (
               <div
                 key={stat.label}
-                data-reveal
                 className="rounded-xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-sm"
               >
                 <p className="text-xl font-bold tabular-nums text-slate-900">{stat.value}</p>
@@ -108,15 +108,15 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div data-reveal data-reveal-delay={80} className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md">
-            <Image
-              src={photoAdultCare}
+          <div data-reveal data-reveal-delay={80} className="relative aspect-[3/2] overflow-hidden rounded-2xl  bg-white ">
+          <Image
+              src="/images/full.png"
               alt="Adult care center at Hayat"
-              fill
-              className="object-cover"
+            fill
+              className="object-cover bg-white"
               sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+          />
+        </div>
           </div>
         </div>
       </section>
@@ -150,7 +150,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.adult.tagline,
                   description: homeVerticalsDeepDive.adult.fitFor,
                   href: "/#adult-day-center",
-                  imageSrc: "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg",
+                  imageSrc: photoAdultCare,
                   imageAlt: "Adult care center at Hayat",
                 },
                 {
@@ -159,7 +159,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.home.tagline,
                   description: homeVerticalsDeepDive.home.fitFor,
                   href: "/#home-care-agency",
-                  imageSrc: "/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg",
+                  imageSrc: photoHomeCare,
                   imageAlt: "Home care support at Hayat",
                 },
                 {
@@ -217,7 +217,7 @@ export default function Home() {
             ))}
           </div>
           </div>
-        </div>
+            </div>
       </section>
 
       <section className="home-surface-soft border-b border-slate-200 py-14 md:py-16">
@@ -286,7 +286,7 @@ export default function Home() {
                 Adult care center
               </Link>
             </div>
-          </div>
+            </div>
           </div>
         </div>
       </section>
@@ -325,8 +325,8 @@ export default function Home() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
-          </div>
+                  </div>
+              </div>
         </div>
       </section>
 
@@ -363,7 +363,7 @@ export default function Home() {
               Why Hayat
             </p>
             <h2
-              data-reveal
+            data-reveal
               data-reveal-delay={40}
               className="mt-3 text-2xl font-semibold leading-tight text-slate-900 md:text-3xl"
             >
@@ -374,7 +374,7 @@ export default function Home() {
             {trustPoints.map((item, index) => (
               <div
                 key={item.title}
-                data-reveal
+            data-reveal
                 data-reveal-delay={index * 60}
                 className="rounded-xl border border-slate-200 bg-white p-6"
               >
@@ -402,7 +402,7 @@ export default function Home() {
               Whether you lean toward the center or home care, the first conversations look similar: we listen, clarify goals,
               and map a realistic path—without pressure to decide on the spot.
             </p>
-          </div>
+            </div>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {processSteps.map((step, index) => (
               <li
@@ -462,7 +462,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+            </div>
           </div>
         </div>
       </section>

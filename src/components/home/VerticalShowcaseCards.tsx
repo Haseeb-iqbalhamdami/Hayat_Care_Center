@@ -83,35 +83,41 @@ function VerticalCard({ item, revealDelay }: { item: VerticalShowcaseItem; revea
       data-reveal
       data-reveal-delay={revealDelay}
       data-vertical-card
-      className="group flex h-full max-h-[320px] min-h-[280px] flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_2px_16px_-4px_rgba(7,61,122,0.1)] ring-1 ring-slate-100 transition duration-300 ease-out hover:-translate-y-1 hover:border-[#073D7A]/20 hover:shadow-[0_12px_32px_-8px_rgba(7,61,122,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:max-h-[340px] sm:min-h-[300px] md:max-h-none md:min-h-[300px] md:aspect-[11/10]"
+      className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.25rem] border border-slate-200/80 bg-white shadow-[0_10px_28px_-14px_rgba(7,61,122,0.32)] ring-1 ring-white/80 transition duration-500 ease-out hover:-translate-y-1.5 hover:border-[#073D7A]/25 hover:shadow-[0_22px_44px_-16px_rgba(7,61,122,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0 md:min-h-[360px]"
       aria-label={`${item.title}: ${item.tagline}. Learn more.`}
     >
-      <div className="vertical-card__media relative h-[130px] w-full shrink-0 overflow-hidden bg-slate-100 sm:h-[142px] md:h-[48%] md:min-h-[120px]">
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" aria-hidden>
+        <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#073D7A]/10 blur-2xl" />
+        <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-[#D5664B]/15 blur-2xl" />
+      </div>
+
+      <div className="vertical-card__media relative h-[46%] min-h-[170px] w-full shrink-0 overflow-hidden bg-slate-100">
         <Image
           src={item.imageSrc}
           alt={item.imageAlt}
           fill
-          className="object-cover transition duration-700 ease-out motion-reduce:transition-none group-hover:scale-[1.04]"
+          className="object-cover object-center transition duration-700 ease-out motion-reduce:transition-none group-hover:scale-[1.07]"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-60 transition duration-500 group-hover:opacity-80"
+          className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-75 transition duration-500 group-hover:opacity-90"
           aria-hidden
         />
-        <span className="absolute left-3 top-3 inline-flex rounded-md bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#073D7A] shadow-sm ring-1 ring-slate-200/80 transition duration-300 group-hover:ring-[#073D7A]/25 sm:text-[11px]">
+        <span className="absolute left-3 top-3 inline-flex rounded-full border border-white/60 bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#073D7A] shadow-sm backdrop-blur-sm sm:text-[11px]">
           {item.index}
         </span>
+        <span className="absolute inset-x-3 bottom-3 h-px bg-gradient-to-r from-[#D5664B] via-white/80 to-transparent" aria-hidden />
       </div>
 
-      <div className="vertical-card__body flex min-h-0 flex-1 flex-col px-4 pb-4 pt-3 sm:px-5 sm:pb-4 sm:pt-3.5">
-        <h3 className="text-base font-bold leading-snug tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-[#073D7A] sm:text-lg">
+      <div className="vertical-card__body relative flex min-h-0 flex-1 flex-col px-4 pb-4 pt-3.5 sm:px-5 sm:pb-5">
+        <h3 className="text-lg font-bold leading-snug tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-[#073D7A]">
           {item.title}
         </h3>
-        <p className="mt-1 text-xs font-medium text-[#D5664B] transition duration-300 group-hover:text-[#c4553a] sm:text-sm">
+        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.11em] text-[#D5664B] transition duration-300 group-hover:text-[#c4553a] sm:text-[0.8rem]">
           {item.tagline}
         </p>
-        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">{item.description}</p>
-        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#073D7A] transition-[gap,transform] duration-300 ease-out group-hover:gap-2.5">
+        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">{item.description}</p>
+        <span className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#073D7A]/15 bg-[#073D7A]/5 px-3.5 py-1.5 text-sm font-semibold text-[#073D7A] transition-[gap,transform,background-color] duration-300 ease-out group-hover:gap-2.5 group-hover:bg-[#073D7A]/10">
           Learn more
           <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[#D5664B] transition-transform duration-300 group-hover:translate-x-0.5" />
         </span>

@@ -132,8 +132,8 @@ function MobileSection({
                 className={`block text-sm font-semibold transition-colors group-hover:text-white ${
                   pathname === child.href ? "text-[#073D7A] group-hover:text-white" : "text-black"
                 }`}
-              >
-                {child.label}
+            >
+              {child.label}
               </span>
               <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
                 {child.description}
@@ -243,20 +243,20 @@ export default function Header() {
             className="grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
           >
             <Link href="/" className="flex w-fit shrink-0 items-center gap-2" aria-label="Hayat Care Centers home">
-              <Image
+            <Image
                 src={heroOverlayNav ? "/whietlogoo.png" : "/logoo.png"}
                 alt=""
                 width={320}
                 height={115}
                 className={`w-auto max-w-[min(72vw,320px)] object-contain object-left transition-[height,min-height] duration-300 ${
                   heroOverlayNav
-                    ? "h-24 min-h-[3.5rem] sm:h-[4.25rem] sm:min-h-[4.25rem] md:h-[4.75rem] md:min-h-[4.75rem] lg:h-26 lg:min-h-20 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)]"
+                    ? "h-24 min-h-[3.5rem] sm:h-[4.25rem] sm:min-h-[4.25rem] md:h-[4.75rem] md:min-h-[4.75rem] lg:h-24 lg:min-h-20 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)]"
                     : "h-10 min-h-10 sm:h-12 sm:min-h-[3rem] drop-shadow-sm"
                 }`}
-                priority
-              />
-            </Link>
-      
+              priority
+            />
+          </Link>
+
 
             <div
               className="relative hidden min-w-0 justify-self-center lg:block"
@@ -311,32 +311,32 @@ export default function Header() {
                         <div
                           id={`desktop-nav-dropdown-${index}`}
                           className="dropdown-panel absolute left-0 top-full z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] translate-x-1 rounded-2xl border border-slate-200/90 bg-white/95 p-2 shadow-xl shadow-black/20 backdrop-blur-md"
-                          role="group"
+                  role="group"
                           aria-label={`${item.label} links`}
                           onMouseEnter={clearCloseTimer}
-                        >
+                >
                           {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
+                    <Link
+                      key={child.href}
+                      href={child.href}
                               className="group block rounded-xl px-4 py-3 transition-colors hover:bg-[#D5664B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
                               onClick={() => setOpenIndex(null)}
                             >
                               <span className="block text-sm font-semibold text-black transition-colors group-hover:text-white">
-                                {child.label}
-                              </span>
+                        {child.label}
+                      </span>
                               <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
-                                {child.description}
-                              </span>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+                        {child.description}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
                     </li>
                   );
                 })}
               </ul>
-            </div>
+          </div>
 
             <div className="flex items-center justify-end gap-2 sm:gap-3 lg:justify-self-end">
               <a
@@ -347,16 +347,16 @@ export default function Header() {
               >
                 {contactDetails.phoneLabel}
               </a>
-              <Link
-                href="/contact"
+            <Link
+              href="/contact"
                 className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D5664B] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#c4553a] sm:px-5 sm:py-2.5 sm:text-sm"
-              >
+            >
                 Get started
                 <svg className="h-3.5 w-3.5 opacity-90 sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M7 17L17 7M7 7h10v10" />
                 </svg>
-              </Link>
-              <button
+            </Link>
+          <button
                 type="button"
                 onClick={() => setMobileOpen((p) => !p)}
                 className={`inline-flex rounded-xl p-2.5 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
@@ -365,21 +365,21 @@ export default function Header() {
                     : "border border-slate-200/90 bg-white/90 text-black"
                 }`}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                aria-expanded={mobileOpen}
-                aria-controls="mobile-nav-panel"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {mobileOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18 18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-              </button>
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-panel"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18 18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
             </div>
-          </nav>
+        </nav>
 
-          {mobileOpen && (
+        {mobileOpen && (
             <div
               id="mobile-nav-panel"
               className="mt-2 max-h-[min(72vh,560px)] overflow-y-auto border-t border-slate-200/80 pt-3 lg:hidden"
@@ -396,24 +396,24 @@ export default function Header() {
                 >
                   Home
                 </Link>
-                {navItems.map((item) => (
+              {navItems.map((item) => (
                   <MobileSection
-                    key={item.label}
-                    item={item}
-                    pathname={pathname}
-                    onNavigate={() => setMobileOpen(false)}
-                  />
-                ))}
-                <Link
-                  href="/contact"
+                  key={item.label}
+                  item={item}
+                  pathname={pathname}
+                  onNavigate={() => setMobileOpen(false)}
+                />
+              ))}
+              <Link
+                href="/contact"
                   className="mt-2 flex w-full items-center justify-center rounded-full bg-[#D5664B] px-5 py-3 text-sm font-bold text-white"
-                  onClick={() => setMobileOpen(false)}
-                >
+                onClick={() => setMobileOpen(false)}
+              >
                   Get started
-                </Link>
-              </div>
+              </Link>
             </div>
-          )}
+          </div>
+        )}
         </div>
       </div>
     </header>

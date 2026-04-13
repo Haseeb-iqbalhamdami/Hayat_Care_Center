@@ -85,7 +85,7 @@ export default function NonMedicalTransportationPage() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md"
             >
               <Image
-                src={transportHeroImage}
+                src="/images/usedimages/trans.png"
                 alt="Vehicle in motion for scheduled non medical transportation"
                 fill
                 className="object-cover"

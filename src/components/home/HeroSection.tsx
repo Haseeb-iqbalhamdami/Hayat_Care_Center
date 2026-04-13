@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Phone, Star } from "lucide-react";
 import { contactDetails } from "@/data/siteContent";
 
@@ -11,19 +11,19 @@ const services = [
   {
     text: "Adult day program",
     description: "Structured daytime care with social engagement and support.",
-    image: "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg",
+    image: "/images/usedimages/adultcare.png",
     imageAlt: "Hayat adult day program in Colorado — welcoming community daytime care",
   },
   {
     text: "Home care agency",
     description: "Personalized in home assistance built around daily routines.",
-    image: "/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg",
+    image: "/images/usedimages/homcare.png",
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
     text: "Non-medical transportation",
     description: "Reliable rides for appointments errands and community visits.",
-    image: "/images/transport/medical-transportation.jpg",
+    image: "/images/usedimages/transportation.png",
     imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
   },
 ] as const;
@@ -153,53 +153,11 @@ function RotatingCards({ currentIndex }: { currentIndex: number }) {
                   aria-hidden
                 />
 
-                <div className="absolute inset-x-0 bottom-0 z-20 p-2.5 sm:p-3">
-                  <div
-                    className={`rounded-xl border backdrop-blur-md sm:rounded-2xl ${
-                      isFront ? "border-white/25 bg-black/40" : "border-white/15 bg-black/50"
-                    }`}
-                  >
-                    {isFront ? (
-                      <div
-                        className="h-0.5 w-full bg-gradient-to-r from-[#D5664B] via-[#e87860] to-transparent"
-                        aria-hidden
-                      />
-                    ) : null}
-                    <div className="px-3 py-2 sm:px-3.5 sm:py-2.5">
-                      <p className={`text-[9px] font-semibold uppercase tracking-[0.26em] sm:text-[10px] ${isFront ? "text-white/70" : "text-white/60"}`}>
-                        Hayat Colorado
-                      </p>
-                      <h3 className="mt-0.5 text-[0.9rem] font-bold tracking-tight text-white [text-shadow:0_3px_12px_rgba(0,0,0,0.95)] sm:text-[1rem] lg:text-[1.05rem]">
-                        {service.text}
-                      </h3>
-                      <p className={`mt-1 line-clamp-2 text-[0.72rem] leading-snug sm:text-[0.76rem] ${isFront ? "text-white/88" : "text-white/76"}`}>
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {/* Text overlay removed per design request (image-only cards). */}
               </div>
             </motion.div>
           );
         })}
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-1 lg:pb-2">
-        <div
-          className="flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-2 shadow-lg shadow-black/20 backdrop-blur-md"
-          aria-hidden
-        >
-          {services.map((_, i) => (
-            <span
-              key={i}
-              className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
-                i === currentIndex
-                  ? "w-7 bg-[#D5664B] shadow-[0_0_14px_rgba(213,102,75,0.55)]"
-                  : "w-1.5 bg-white/35 hover:bg-white/50"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -247,28 +205,17 @@ function Typewriter({ onWordChange }: { onWordChange: (index: number) => void })
 }
 
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const handleWordChange = useCallback((index: number) => {
     setCurrentServiceIndex(index);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-
   return (
     <section
-      ref={sectionRef}
       id="home"
       className="relative flex min-h-[100svh] items-center overflow-x-clip overflow-y-visible -mt-24 pt-24 sm:-mt-[5.75rem] sm:pt-[5.75rem]"
     >
-      <motion.div className="absolute inset-0" style={{ y: imageY }}>
+      <div className="absolute inset-0">
         <Image
           src="/images/home/Gemini_Generated_Image_sr6al0sr6al0sr6a.png"
           alt=""
@@ -277,7 +224,7 @@ export default function HeroSection() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#073D7A]/68 via-[#073D7A]/78 to-[#021022]/88" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#073D7A]/52 via-[#073D7A]/62 to-[#021022]/72" />
         <div
           className="absolute inset-0"
           style={{
@@ -285,12 +232,9 @@ export default function HeroSection() {
               "radial-gradient(ellipse 80% 55% at 20% 35%, rgba(213,102,75,0.12) 0%, transparent 55%)",
           }}
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        className="container relative z-10 mx-auto max-w-7xl py-16 sm:px-6 lg:py-24"
-        style={{ y: contentY, opacity: contentOpacity }}
-      >
+      <div className="container relative z-10 mx-auto max-w-7xl py-16 sm:px-6 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:overflow-visible">
           <div className="max-w-2xl">
             <motion.h1
@@ -389,7 +333,7 @@ export default function HeroSection() {
             <RotatingCards currentIndex={currentServiceIndex} />
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

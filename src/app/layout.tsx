@@ -3,8 +3,8 @@ import { Playfair_Display, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HelpDock from "@/components/HelpDock";
 import MotionEffects from "@/components/MotionEffects";
+import SiteAIAssistant from "@/components/SiteAIAssistant";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -42,7 +42,7 @@ export default function RootLayout({
         <main id="main-content" className="relative z-[1] flex-1 bg-white pt-24 sm:pt-[5.75rem]">
           {children}
         </main>
-        <HelpDock />
+        <SiteAIAssistant />
         <div className="relative z-0">
           <Footer />
         </div>

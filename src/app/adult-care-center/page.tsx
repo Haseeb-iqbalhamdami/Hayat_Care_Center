@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import StickyDayJourney from "@/components/adult-care/StickyDayJourney";
+import VerticalServiceHero from "@/components/VerticalServiceHero";
 import { adultCareCenterSummary, homeVerticalsDeepDive } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -34,44 +34,20 @@ const relatedPaths = [
 export default function AdultCareCenterPage() {
   return (
     <>
-      <section className="hero-grid border-b border-slate-200">
-        <div className={`${shell} py-16 md:py-20`}>
-          <div className={`${inner} grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]`}>
-            <div data-reveal>
-              <p className={sectionEyebrow}>{adultCareCenterSummary.eyebrow}</p>
-              <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-                Daytime care that combines supervision structure and genuine community
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
-                {adultCareCenterSummary.body}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className={btnPrimary}>
-                  Plan a center visit
-                </Link>
-                <Link href="/home-care-agency" className={btnOutline}>
-                  Explore home care
-                </Link>
-              </div>
-            </div>
-
-            <div
-              data-reveal
-              data-reveal-delay={80}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md"
-            >
-              <Image
-                src="/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg"
-                alt="Adult care consultation between an older adult and a clinician"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <VerticalServiceHero
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Our care", href: "/#our-verticals" },
+          { label: "Adult care center" },
+        ]}
+        title="Daytime care that combines supervision structure and genuine community"
+        subtitle={adultCareCenterSummary.title}
+        description={adultCareCenterSummary.body}
+        primaryCta={{ label: "Plan a center visit", href: "/contact" }}
+        secondaryCta={{ label: "Explore home care", href: "/home-care-agency" }}
+        imageSrc="/images/usedimages/adultcare.png"
+        imageAlt="Older adults and staff in a welcoming daytime care center"
+      />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">
         <div className={shell}>

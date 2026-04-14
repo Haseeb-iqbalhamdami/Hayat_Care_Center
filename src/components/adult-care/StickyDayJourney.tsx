@@ -16,7 +16,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Morning arrival and check in",
     detail:
-      "Each participant is welcomed and checked in with a short status review so the day starts calmly and safely.",
+      "Each participant is welcomed and checked in with a short status review so the day starts calmly and safely. We note sleep, appetite, mobility, and any family messages so the morning plan matches how someone is actually feeling—not yesterday’s chart alone.",
     image: "/images/seniors/senior-care-center-02.jpg",
     imageAlt: "Older adults seated in a warm community room at the start of the day",
     rightTitle: "Arrival sets the tone for the day",
@@ -26,7 +26,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Programs and purposeful activity",
     detail:
-      "Movement social interaction and structured activities are paced to ability so participants stay engaged without overload.",
+      "Movement, social interaction, and structured activities are paced to ability so participants stay engaged without overload. Staff rotate options through the day—discussion, music, light exercise, creative projects—so there is always a dignified way to join in or rest nearby.",
     image: "/images/seniors/senior-activity-01.jpg",
     imageAlt: "Two seniors talking and connecting during daytime activity hours",
     rightTitle: "Engagement with structure not pressure",
@@ -36,7 +36,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Meals hydration and rest",
     detail:
-      "Nutrition hydration and quiet breaks are built in to keep energy stable and reduce fatigue through the day.",
+      "Nutrition, hydration, and quiet breaks are built in to keep energy stable and reduce fatigue through the day. Dietary preferences and textures are honored when families share them, and slower eaters are never rushed through the dining room.",
     image: "/images/seniors/senior-comfort-01.jpg",
     imageAlt: "Senior care participant in a calm indoor care environment",
     rightTitle: "Balanced energy through the afternoon",
@@ -46,7 +46,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Family handoff and updates",
     detail:
-      "Pickup includes a clear handoff summary so families know what went well and where follow up may be needed.",
+      "Pickup includes a clear handoff summary so families know what went well and where follow up may be needed. If something needs a doctor follow-up or a schedule tweak, you hear it at pickup—not days later when small issues have grown.",
     image: "/images/seniors/senior-mobility-support-01.jpg",
     imageAlt: "Caregiver supporting an elderly participant with mobility at handoff time",
     rightTitle: "Clear handoff before pickup",
@@ -90,7 +90,7 @@ export default function StickyDayJourney() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
-      <div className="order-1 space-y-6 sm:space-y-8 lg:space-y-10">
+      <div className="order-1 space-y-3 sm:space-y-4 lg:space-y-5">
         {journeySteps.map((step, index) => (
           <article
             key={step.title}
@@ -98,15 +98,17 @@ export default function StickyDayJourney() {
             ref={(node) => {
               stepRefs.current[index] = node;
             }}
-            className={`min-h-[44vh] px-1 pb-8 pt-4 transition-opacity duration-300 md:pb-10 md:pt-5 ${
+            className={`min-h-[min(22rem,38svh)] scroll-mt-28 px-1 pb-5 pt-3 transition-opacity duration-300 md:min-h-[min(24rem,36svh)] md:pb-6 md:pt-4 ${
               index !== journeySteps.length - 1 ? "border-b border-slate-200/70" : ""
             } ${activeIndex === index ? "opacity-100" : "opacity-70"}`}
           >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-gold)]">Step {index + 1}</p>
-            <h3 className="mt-2 text-2xl font-semibold text-slate-900">{step.title}</h3>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">{step.detail}</p>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#c4553a] sm:text-xs">
+              Step {index + 1}
+            </p>
+            <h3 className="mt-1.5 text-2xl font-semibold text-slate-900">{step.title}</h3>
+            <p className="mt-2.5 max-w-2xl text-base leading-relaxed text-slate-600">{step.detail}</p>
 
-            <div className="mt-5 block lg:hidden">
+            <div className="mt-4 block lg:hidden">
               <div className="relative h-56 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
                 <Image src={step.image} alt={step.imageAlt} fill className="object-cover" sizes="100vw" />
               </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import MovingBusScene from "@/components/non-medical/MovingBusScene";
+import VerticalServiceHero from "@/components/VerticalServiceHero";
 import { homeVerticalsDeepDive, nonMedicalTransportationSummary } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -53,49 +53,23 @@ const relatedPaths = [
   },
 ] as const;
 
-const transportHeroImage = "/images/transport/medical-transportation.jpg";
-
 export default function NonMedicalTransportationPage() {
   return (
     <>
-      <section className="hero-grid border-b border-slate-200">
-        <div className={`${shell} py-16 md:py-20`}>
-          <div className={`${inner} grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]`}>
-            <div data-reveal>
-              <p className={sectionEyebrow}>{nonMedicalTransportationSummary.eyebrow}</p>
-              <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-                Reliable rides for appointments errands and everyday independence
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
-                {nonMedicalTransportationSummary.body}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className={btnPrimary}>
-                  Request ride information
-                </Link>
-                <Link href="/adult-care-center" className={btnOutline}>
-                  Explore adult care center
-                </Link>
-              </div>
-            </div>
-
-            <div
-              data-reveal
-              data-reveal-delay={80}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md"
-            >
-              <Image
-                src="/images/usedimages/trans.png"
-                alt="Vehicle in motion for scheduled non medical transportation"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <VerticalServiceHero
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Our care", href: "/#our-verticals" },
+          { label: "Non-medical transportation" },
+        ]}
+        title="Reliable rides for appointments errands and everyday independence"
+        subtitle={nonMedicalTransportationSummary.title}
+        description={nonMedicalTransportationSummary.body}
+        primaryCta={{ label: "Request ride information", href: "/contact" }}
+        secondaryCta={{ label: "Explore adult care center", href: "/adult-care-center" }}
+        imageSrc="/images/usedimages/trans.png"
+        imageAlt="Vehicle for scheduled non-medical transportation"
+      />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">
         <div className={shell}>

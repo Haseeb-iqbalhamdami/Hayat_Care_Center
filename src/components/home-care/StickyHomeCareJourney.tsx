@@ -16,7 +16,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Home assessment and routine mapping",
     detail:
-      "We review mobility, safety, medications, and daily rhythm inside the home so support starts from real-life needs.",
+      "We review mobility, safety, medications, and daily rhythm inside the home so support starts from real-life needs. Families walk through typical days with us—meals, sleep, fall risks, and what “good enough” looks like—so nothing important is assumed.",
     image: "/images/seniors/senior-home-care-01.jpg",
     imageAlt: "Caregiver assisting an older adult during an in-home support visit",
     rightTitle: "A care plan built around the home environment",
@@ -26,7 +26,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Caregiver match and weekly schedule",
     detail:
-      "Families are matched with caregivers based on personality, language, and care tasks to build consistency and trust.",
+      "Families are matched with caregivers based on personality, language, and care tasks to build consistency and trust. You get a written weekly rhythm—who is coming, when, and what they are responsible for—so expectations stay clear as the plan evolves.",
     image: "/images/seniors/senior-health-check-01.jpg",
     imageAlt: "Care professional reviewing health and support needs with an older adult",
     rightTitle: "Consistency before complexity",
@@ -36,7 +36,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Daily living support at home",
     detail:
-      "Visits include personal care, meal support, reminders, and companionship to keep the day steady and less stressful.",
+      "Visits include personal care, meal support, reminders, and companionship to keep the day steady and less stressful. Hours can flex for rough weeks—after a hospital stay, a family trip, or when a spouse needs backup—without starting the relationship from zero.",
     image: "/images/seniors/senior-health-check-02.jpg",
     imageAlt: "Senior receiving attentive care and wellness support during a home visit",
     rightTitle: "Support that protects independence",
@@ -46,7 +46,7 @@ const journeySteps: JourneyStep[] = [
   {
     title: "Ongoing supervision and family updates",
     detail:
-      "Supervisors check quality, monitor progress, and share updates so families remain informed without micromanaging care.",
+      "Supervisors check quality, monitor progress, and share updates so families remain informed without micromanaging care. If something shifts—sleep, appetite, mobility, or mood—we surface it early with practical options instead of leaving you to guess.",
     image: "/images/seniors/senior-mobility-support-01.jpg",
     imageAlt: "Caregiver helping an older adult with safe mobility and transfer support",
     rightTitle: "Reliable communication every week",
@@ -90,7 +90,7 @@ export default function StickyHomeCareJourney() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
-      <div className="order-1 space-y-6 sm:space-y-8 lg:space-y-10">
+      <div className="order-1 space-y-3 sm:space-y-4 lg:space-y-5">
         {journeySteps.map((step, index) => (
           <article
             key={step.title}
@@ -98,15 +98,17 @@ export default function StickyHomeCareJourney() {
             ref={(node) => {
               stepRefs.current[index] = node;
             }}
-            className={`min-h-[44vh] px-1 pb-8 pt-4 transition-opacity duration-300 md:pb-10 md:pt-5 ${
+            className={`min-h-[min(22rem,38svh)] scroll-mt-28 px-1 pb-5 pt-3 transition-opacity duration-300 md:min-h-[min(24rem,36svh)] md:pb-6 md:pt-4 ${
               index !== journeySteps.length - 1 ? "border-b border-slate-200/70" : ""
             } ${activeIndex === index ? "opacity-100" : "opacity-70"}`}
           >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-gold)]">Step {index + 1}</p>
-            <h3 className="mt-2 text-2xl font-semibold text-slate-900">{step.title}</h3>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">{step.detail}</p>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#c4553a] sm:text-xs">
+              Step {index + 1}
+            </p>
+            <h3 className="mt-1.5 text-2xl font-semibold text-slate-900">{step.title}</h3>
+            <p className="mt-2.5 max-w-2xl text-base leading-relaxed text-slate-600">{step.detail}</p>
 
-            <div className="mt-5 block lg:hidden">
+            <div className="mt-4 block lg:hidden">
               <div className="relative h-56 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
                 <Image src={step.image} alt={step.imageAlt} fill className="object-cover" sizes="100vw" />
               </div>

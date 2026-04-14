@@ -247,7 +247,7 @@ export default function Home() {
 
     
 
-      {/* Single location — reference-style hero card */}
+      {/* Single location — map + community card */}
       <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={homeInner}>
@@ -271,28 +271,63 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-10 flex justify-center px-0 sm:px-4">
-              <article
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+              <div
                 data-reveal
                 data-reveal-delay={90}
-                className="flex w-full max-w-lg flex-col rounded-xl border border-slate-200/90 bg-white p-6 shadow-sm sm:p-8 md:max-w-xl"
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
               >
-                <h3 className="font-[family-name:var(--font-playfair),serif] text-xl font-semibold leading-snug text-[#073d7a] md:text-2xl">
-                  {hayatPrimaryLocation.name}
-                </h3>
-                <p className="mt-2 text-sm font-semibold text-[var(--brand-gold)] md:text-base">{hayatPrimaryLocation.area}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{contactDetails.address}</p>
-                <ul className="mt-5 flex-1 space-y-2.5 text-sm leading-relaxed text-slate-600">
+                <iframe
+                  title="Hayat care center location map"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-89.72%2C39.72%2C-89.57%2C39.85&layer=mapnik&marker=39.7817%2C-89.6501"
+                  className="h-[290px] w-full md:h-[360px]"
+                  loading="lazy"
+                />
+              </div>
+
+              <article
+                data-reveal
+                data-reveal-delay={130}
+                className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm sm:p-6"
+              >
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-900">Communities We Serve</h3>
+                <div className="mt-5 rounded-xl border border-[#3152b7]/20 bg-[#3152b7] p-4 text-white shadow-sm">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex min-w-0 items-center gap-2.5">
+                      <span
+                        aria-hidden
+                        className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-xs font-bold"
+                      >
+                        ✓
+                      </span>
+                      <div className="min-w-0">
+                        <p className="truncate text-base font-semibold">{hayatPrimaryLocation.name}</p>
+                        <p className="mt-0.5 text-xs text-blue-100">{hayatPrimaryLocation.area}</p>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
+                      HQ
+                    </span>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">{contactDetails.address}</p>
+                <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate-600">
                   {hayatPrimaryLocation.lines.map((line) => (
                     <li key={line} className="flex gap-2">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden />
                       {line}
                     </li>
                   ))}
                 </ul>
-                <Link href={hayatPrimaryLocation.href}
-                  className={`${btnPrimary} mt-8 w-full justify-center text-center sm:mt-10`}
-                >
+
+                <div className="mt-7 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-[#e8eefc] px-3 py-1 text-xs font-semibold text-[#3152b7]">
+                    {hayatPrimaryLocation.name}
+                  </span>
+                </div>
+
+                <Link href={hayatPrimaryLocation.href} className={`${btnPrimary} mt-7 w-full justify-center text-center`}>
                   {hayatPrimaryLocation.ctaLabel}
                 </Link>
               </article>

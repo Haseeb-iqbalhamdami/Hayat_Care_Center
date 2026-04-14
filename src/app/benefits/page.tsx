@@ -109,8 +109,8 @@ export default function BenefitsPage() {
               className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-slate-200 shadow-md"
             >
               <Image
-                src="/images/home/gallery-dining-social.jpg"
-                alt="Residents enjoying a chef-prepared meal together in the Hayat dining room"
+                src="/images/meal-plan/meal-04.jpg"
+                alt="Chef-prepared meal presentation with fresh ingredients at Hayat"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

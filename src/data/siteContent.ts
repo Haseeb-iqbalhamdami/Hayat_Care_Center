@@ -1051,7 +1051,7 @@ export const benefitHighlights = [
     description:
       "Breakfast, lunch, and dinner crafted with seasonal ingredients, dietary accommodations, and the warmth of shared dining.",
     lucideIcon: "UtensilsCrossed",
-    image: "/images/home/gallery-dining-social.jpg",
+    image: "/images/meal-plan/meal-02.jpg",
   },
   {
     stat: "7",
@@ -1059,7 +1059,7 @@ export const benefitHighlights = [
     description:
       "Social gatherings, creative workshops, movement classes, and outings fill every day of the week—not just weekdays.",
     lucideIcon: "CalendarHeart",
-    image: "/images/home/gallery-wellness-programs.jpg",
+    image: "/images/seniors/senior-activity-01.jpg",
   },
   {
     stat: "24/7",
@@ -1067,7 +1067,7 @@ export const benefitHighlights = [
     description:
       "Round-the-clock oversight, medication reminders, and responsive communication so families never feel out of the loop.",
     lucideIcon: "HeartHandshake",
-    image: "/images/home/gallery-compassionate-care.jpg",
+    image: "/images/seniors/senior-health-check-01.jpg",
   },
   {
     stat: "1:1",
@@ -1075,7 +1075,7 @@ export const benefitHighlights = [
     description:
       "Every resident receives a tailored plan built around mobility, preferences, health goals, and family input—never a one-size template.",
     lucideIcon: "ClipboardCheck",
-    image: "/images/home/gallery-comfortable-lounge.jpg",
+    image: "/images/seniors/senior-comfort-01.jpg",
   },
 ] as const;
 

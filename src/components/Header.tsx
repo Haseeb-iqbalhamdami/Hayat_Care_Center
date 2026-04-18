@@ -213,17 +213,17 @@ export default function Header() {
   const linkActive = heroOverlayNav ? "text-white" : "text-[#073D7A]";
   const linkAccent = "text-[#D5664B]";
 
-  /** Match homepage / hero gutters (`max-w-[1920px] px-4 sm:px-6 xl:px-10`). */
-  const headerGutter = "mx-auto w-full max-w-[1920px] px-4 sm:px-6 xl:px-10";
+  /** Match homepage / hero gutters, with a tighter mobile left edge for the logo. */
+  const headerGutter = "mx-auto w-full max-w-[1920px] px-2 sm:px-6 xl:px-10";
 
   const shellTransition =
     "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out";
 
   const shellClassGlassMobile =
-    "w-full rounded-[2rem] border border-white/80 bg-white/92 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.22)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
+    "w-full rounded-[2rem] border border-white/80 bg-white/92 px-2 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.22)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
 
   const shellClassTransparent =
-    "w-full rounded-full border border-transparent bg-transparent px-3 py-2 sm:px-5 sm:py-2.5 shadow-none";
+    "w-full rounded-full border border-transparent bg-transparent px-1.5 py-2 sm:px-5 sm:py-2.5 shadow-none";
 
   /** Hero: floating pill (transparent, or rounded glass when mobile menu open). Scrolled: no inner pill. */
   const heroInnerShell = mobileOpen
@@ -248,7 +248,7 @@ export default function Header() {
             className="grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"
           >
             <Link href="/" className="flex w-fit shrink-0 items-center gap-2" aria-label="Hayat Care Centers home">
-            <Image
+              <Image
                 src={heroOverlayNav ? "/whietlogoo.png" : "/logoo.png"}
                 alt=""
                 width={320}
@@ -258,9 +258,9 @@ export default function Header() {
                     ? "h-24 min-h-[3.5rem] sm:h-[4.25rem] sm:min-h-[4.25rem] md:h-[4.75rem] md:min-h-[4.75rem] lg:h-24 lg:min-h-20 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)]"
                     : "h-10 min-h-10 sm:h-12 sm:min-h-[3rem] drop-shadow-sm"
                 }`}
-              priority
-            />
-          </Link>
+                priority
+              />
+            </Link>
 
 
             <div
@@ -352,16 +352,7 @@ export default function Header() {
               >
                 {contactDetails.phoneLabel}
               </a>
-            <Link
-              href="/contact"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D5664B] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#c4553a] sm:px-5 sm:py-2.5 sm:text-sm"
-            >
-                Get started
-                <svg className="h-3.5 w-3.5 opacity-90 sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M7 17L17 7M7 7h10v10" />
-                </svg>
-            </Link>
-          <button
+              <button
                 type="button"
                 onClick={() => setMobileOpen((p) => !p)}
                 className={`inline-flex rounded-xl p-2.5 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5664B] ${
@@ -370,17 +361,17 @@ export default function Header() {
                     : "border border-slate-200/90 bg-white/90 text-black"
                 }`}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav-panel"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18 18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-nav-panel"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18 18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
             </div>
         </nav>
 
@@ -409,13 +400,6 @@ export default function Header() {
                   onNavigate={() => setMobileOpen(false)}
                 />
               ))}
-              <Link
-                href="/contact"
-                  className="mt-2 flex w-full items-center justify-center rounded-full bg-[#D5664B] px-5 py-3 text-sm font-bold text-white"
-                onClick={() => setMobileOpen(false)}
-              >
-                  Get started
-              </Link>
             </div>
           </div>
         )}

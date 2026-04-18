@@ -234,7 +234,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-7xl py-16 sm:px-6 lg:py-24">
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:overflow-visible">
           <div className="max-w-2xl">
             <motion.h1
@@ -267,21 +267,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.65 }}
-              className="mb-14 flex flex-col gap-4 sm:flex-row"
+              className="mb-14 flex flex-row gap-2 sm:gap-4"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#D5664B] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-black/15 transition hover:bg-[#c4553a] group"
+                className="group inline-flex min-w-0 flex-1 items-center justify-center rounded-full bg-[#D5664B] px-3 py-2 text-[0.72rem] font-semibold text-white shadow-lg shadow-black/15 transition hover:bg-[#c4553a] sm:flex-none sm:px-8 sm:py-3.5 sm:text-sm sm:font-bold"
               >
-                Request a consult
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <span className="truncate">Request consult</span>
+                <ArrowRight className="ml-1.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1 sm:ml-2 sm:h-5 sm:w-5" />
               </Link>
               <a
                 href={contactDetails.phoneHref}
-                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
+                className="inline-flex min-w-0 flex-1 items-center justify-center rounded-full border border-white/25 bg-white/10 px-3 py-2 text-[0.72rem] font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 sm:flex-none sm:px-8 sm:py-3.5 sm:text-sm"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                {contactDetails.phoneLabel}
+                <Phone className="mr-1.5 h-3.5 w-3.5 shrink-0 sm:mr-2 sm:h-5 sm:w-5" />
+                <span className="truncate">{contactDetails.phoneLabel}</span>
               </a>
             </motion.div>
 

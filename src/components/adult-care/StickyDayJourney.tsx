@@ -18,7 +18,7 @@ const journeySteps: JourneyStep[] = [
     detail:
       "Each participant is welcomed and checked in with a short status review so the day starts calmly and safely. We note sleep, appetite, mobility, and any family messages so the morning plan matches how someone is actually feeling—not yesterday’s chart alone.",
     image: "/images/seniors/senior-care-center-02.jpg",
-    imageAlt: "Older adults seated in a warm community room at the start of the day",
+    imageAlt: "Young adults through older adults seated in a warm community room at the start of the day",
     rightTitle: "Arrival sets the tone for the day",
     rightDetail:
       "Staff greet each participant by name and align the day plan with comfort mobility and family notes.",

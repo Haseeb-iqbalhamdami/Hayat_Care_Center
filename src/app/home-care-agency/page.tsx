@@ -54,7 +54,7 @@ export default function HomeCareAgencyPage() {
         primaryCta={{ label: "Request home care information", href: "/contact" }}
         secondaryCta={{ label: "Explore adult care center", href: "/adult-care-center" }}
         imageSrc="/images/usedimages/homcare.png"
-        imageAlt="Caregiver supporting an older adult at home"
+        imageAlt="Caregiver supporting an adult participant at home"
       />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">

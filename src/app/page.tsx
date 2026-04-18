@@ -30,19 +30,19 @@ const photoNonMedicalTransport = "/images/usedimages/transportation.png";
 const galleryStrip = [
   {
     src: "/images/home/georg-arthur-pflueger-TeWwYARfcM4-unsplash.jpg",
-    alt: "Caregiver helping an older adult use a smartphone",
+    alt: "Caregiver helping an adult participant use a smartphone",
     title: "Digital connection support",
     subtitle: "Helping seniors stay in touch with family and services.",
   },
   {
     src: "/images/home/nappy-dcBO4nt4MRE-unsplash.jpg",
-    alt: "Clinician checking an older adults blood pressure",
+    alt: "Clinician checking an adult participant's blood pressure",
     title: "Everyday health monitoring",
     subtitle: "Routine checks and attentive care in a calm setting.",
   },
   {
     src: "/images/home/age-cymru-IkfMxGU3yLc-unsplash.jpg",
-    alt: "Older adult and caregiver sharing a dance in a group activity room",
+    alt: "Adult participant and caregiver sharing a dance in a group activity room",
     title: "Joyful social activities",
     subtitle: "Movement and connection that make each day meaningful.",
   },
@@ -351,7 +351,7 @@ export default function Home() {
 
                 <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
                   Hayat Care Centers is a Colorado Springs-based care provider
-                  supporting older adults and their families across the
+                  supporting young adults through older adults and their families across the
                   region. From our adult day center to home care and
                   non-medical transportation, every service is built around
                   dignity, consistency, and genuine human connection.

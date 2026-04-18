@@ -129,7 +129,7 @@ export const adultCareCenterSummary = {
   eyebrow: "Adult care center",
   title: "Daytime support that feels social, steady, and dignified",
   body:
-    "Hayat’s adult care center is designed for older adults who benefit from supervised daytime engagement—meaningful activities, nourishing meals, and a calm rhythm—while family caregivers work or recharge. It is a community setting with attentive staff, clear communication, and a focus on comfort rather than a clinical feel.",
+    "Hayat’s adult care center is designed for young adults through older adults who benefit from supervised daytime engagement—meaningful activities, nourishing meals, and a calm rhythm—while family caregivers work or recharge. It is a community setting with attentive staff, clear communication, and a focus on comfort rather than a clinical feel.",
   bullets: [
     "Structured programming: movement, creativity, conversation, and rest built into the day",
     "Supervision and assistance with personal care needs as part of the plan",
@@ -159,7 +159,7 @@ export const homeVerticalsDeepDive = {
     name: "Adult care center",
     tagline: "Structured daytime community care",
     fitFor:
-      "Older adults who thrive with routine, social connection, and on-site support during the day—while still sleeping at home with family at night.",
+      "Young adults through older adults who thrive with routine, social connection, and on-site support during the day—while still sleeping at home with family at night.",
     details: [
       "Arrival, welcome, and a predictable rhythm: meals, activities, rest, and personal care as outlined in the individual plan.",
       "On-site team for oversight, engagement, and gentle redirection when memory or mobility need extra attention.",
@@ -183,7 +183,7 @@ export const homeVerticalsDeepDive = {
     name: "Non-medical transportation",
     tagline: "Dependable rides for life outside the home",
     fitFor:
-      "Older adults and clients who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
+      "Clients from young adulthood through older adulthood who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
     details: [
       "Door-through-door or curb-to-curb options depending on mobility; drivers oriented to patience, pacing, and clear communication.",
       "Coordination with the center or home care team so pickup windows align with programming or visit schedules.",
@@ -640,25 +640,25 @@ export const blogPosts = [
   {
     slug: "daily-routines-emotional-wellness-senior-living",
     title: "How Daily Routines Support Emotional Wellness In Senior Living",
-    excerpt: "A consistent rhythm of meals, activities, and rest can help older adults feel more grounded, confident, and connected to their community.",
+    excerpt: "A consistent rhythm of meals, activities, and rest can help young adults through older adults feel more grounded, confident, and connected to their community.",
     readTime: "5 min",
     date: "March 28, 2026",
     category: "Wellness",
     author: "Hayat Care Team",
     image: "/images/home/gallery-comfortable-lounge.jpg",
-    imageAlt: "Older adults enjoying a calm lounge routine at a care center",
+    imageAlt: "Young adults through older adults enjoying a calm lounge routine at a care center",
     highlights: [
       "Why predictable schedules reduce anxiety and confusion",
       "Simple routines families can support at home",
     ],
     detail: {
       overview:
-        "Routine is more than a timetable. For many older adults, it creates emotional safety, reduces stress, and gives each day a clear sense of direction.",
+        "Routine is more than a timetable. For many young adults through older adults, it creates emotional safety, reduces stress, and gives each day a clear sense of direction.",
       sections: [
         {
           title: "Why predictability matters",
           content:
-            "When morning, mealtimes, social time, and rest happen in a familiar rhythm, older adults can anticipate what comes next. That predictability lowers uncertainty and supports steadier mood.",
+            "When morning, mealtimes, social time, and rest happen in a familiar rhythm, young adults through older adults can anticipate what comes next. That predictability lowers uncertainty and supports steadier mood.",
         },
         {
           title: "How routines build confidence",
@@ -784,7 +784,7 @@ export const blogPosts = [
         {
           title: "Independent living at a glance",
           content:
-            "Independent living is designed for older adults who can manage daily routines with minimal support and primarily want convenience, social access, and reduced home responsibilities.",
+            "Independent living is designed for young adults through older adults who can manage daily routines with minimal support and primarily want convenience, social access, and reduced home responsibilities.",
         },
         {
           title: "Assisted living at a glance",
@@ -808,7 +808,7 @@ export const blogPosts = [
   {
     slug: "nutrition-tips-for-senior-energy",
     title: "Nutrition Tips That Help Seniors Stay Energized Throughout The Day",
-    excerpt: "Small adjustments to meal timing, hydration, and nutrient balance can make a noticeable difference in how active and alert older adults feel.",
+    excerpt: "Small adjustments to meal timing, hydration, and nutrient balance can make a noticeable difference in how active and alert young adults through older adults feel.",
     readTime: "5 min",
     date: "February 8, 2026",
     category: "Nutrition",
@@ -821,7 +821,7 @@ export const blogPosts = [
     ],
     detail: {
       overview:
-        "Energy and focus in older adults are closely tied to consistent nutrition and hydration. Small meal planning improvements can produce meaningful day to day results.",
+        "Energy and focus in young adults through older adults are closely tied to consistent nutrition and hydration. Small meal planning improvements can produce meaningful day to day results.",
       sections: [
         {
           title: "Prioritize balanced meals",
@@ -836,7 +836,7 @@ export const blogPosts = [
         {
           title: "Hydration and practical habits",
           content:
-            "Older adults may not always feel thirst early. Keeping water visible, serving hydrating foods, and using regular reminders can improve hydration and support cognitive clarity.",
+            "Young adults through older adults may not always feel thirst early. Keeping water visible, serving hydrating foods, and using regular reminders can improve hydration and support cognitive clarity.",
         },
       ],
       actionSteps: [
@@ -856,7 +856,7 @@ export const blogPosts = [
     category: "Wellness",
     author: "Hayat Care Team",
     image: "/images/home/gallery-compassionate-care.jpg",
-    imageAlt: "Creative and compassionate activity session for older adults",
+    imageAlt: "Creative and compassionate activity session for young adults through older adults",
     highlights: [
       "Why creative work helps memory attention and mood",
       "Programs families can encourage during the week",
@@ -1013,7 +1013,7 @@ export const videoHighlights = [
 export const faqs = [
   {
     q: "Who is Hayat Care Centers for?",
-    a: "Hayat serves older adults and families through two offerings: an adult care center for structured daytime support, and a home care agency for personalized help at home. Many families use one service first and add the other later as needs change.",
+    a: "Hayat serves young adults through older adults and families with two offerings: an adult care center for structured daytime support, and a home care agency for personalized help at home. Many families use one service first and add the other later as needs change.",
   },
   {
     q: "What support is available?",

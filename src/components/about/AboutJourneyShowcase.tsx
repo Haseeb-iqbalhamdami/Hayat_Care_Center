@@ -20,7 +20,7 @@ const phases: Phase[] = [
       "Home care and center care can be combined in one path",
     ],
     image: "/images/home/gallery-comfortable-lounge.jpg",
-    imageAlt: "Older adults relaxing in a comfortable community lounge",
+    imageAlt: "Young adults through older adults relaxing in a comfortable community lounge",
   },
   {
     phase: "02",
@@ -44,7 +44,7 @@ const phases: Phase[] = [
       "Respectful support that protects dignity and independence",
     ],
     image: "/images/home/gallery-compassionate-care.jpg",
-    imageAlt: "Compassionate caregiver support for older adult well-being",
+    imageAlt: "Compassionate caregiver support for adult participant well-being",
   },
 ];
 

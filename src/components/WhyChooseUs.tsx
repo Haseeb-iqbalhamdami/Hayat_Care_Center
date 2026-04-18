@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
             </h2>
             <p className="text-[var(--text-muted)] mb-8 leading-relaxed">
               Our mission is to create an environment that fosters growth,
-              happiness, and fulfillment for older adults. We believe every
+              happiness, and fulfillment for young adults through older adults. We believe every
               person deserves to be treated with dignity, surrounded by
               community, and empowered to live their best life.
             </p>

@@ -46,7 +46,7 @@ export default function AdultCareCenterPage() {
         primaryCta={{ label: "Plan a center visit", href: "/contact" }}
         secondaryCta={{ label: "Explore home care", href: "/home-care-agency" }}
         imageSrc="/images/usedimages/adultcare.png"
-        imageAlt="Older adults and staff in a welcoming daytime care center"
+        imageAlt="Young adults through older adults and staff in a welcoming daytime care center"
       />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">

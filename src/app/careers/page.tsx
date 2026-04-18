@@ -35,7 +35,7 @@ export default function CareersPage() {
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
             Hayat Care Centers is looking for compassionate, reliable people
-            who want to be part of a team that supports older adults with
+            who want to be part of a team that supports young adults through older adults with
             dignity, warmth, and professionalism. If you find meaning in
             helping others thrive, we would love to hear from you.
           </p>

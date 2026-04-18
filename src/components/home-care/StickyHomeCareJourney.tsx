@@ -18,7 +18,7 @@ const journeySteps: JourneyStep[] = [
     detail:
       "We review mobility, safety, medications, and daily rhythm inside the home so support starts from real-life needs. Families walk through typical days with us—meals, sleep, fall risks, and what “good enough” looks like—so nothing important is assumed.",
     image: "/images/seniors/senior-home-care-01.jpg",
-    imageAlt: "Caregiver assisting an older adult during an in-home support visit",
+    imageAlt: "Caregiver assisting an adult participant during an in-home support visit",
     rightTitle: "A care plan built around the home environment",
     rightDetail:
       "The first visit focuses on comfort, safety, and routines so every next step is practical for the family.",
@@ -28,7 +28,7 @@ const journeySteps: JourneyStep[] = [
     detail:
       "Families are matched with caregivers based on personality, language, and care tasks to build consistency and trust. You get a written weekly rhythm—who is coming, when, and what they are responsible for—so expectations stay clear as the plan evolves.",
     image: "/images/seniors/senior-health-check-01.jpg",
-    imageAlt: "Care professional reviewing health and support needs with an older adult",
+    imageAlt: "Care professional reviewing health and support needs with an adult participant",
     rightTitle: "Consistency before complexity",
     rightDetail:
       "We start with a stable schedule and clear responsibilities, then adjust hours as needs change over time.",
@@ -48,7 +48,7 @@ const journeySteps: JourneyStep[] = [
     detail:
       "Supervisors check quality, monitor progress, and share updates so families remain informed without micromanaging care. If something shifts—sleep, appetite, mobility, or mood—we surface it early with practical options instead of leaving you to guess.",
     image: "/images/seniors/senior-mobility-support-01.jpg",
-    imageAlt: "Caregiver helping an older adult with safe mobility and transfer support",
+    imageAlt: "Caregiver helping an adult participant with safe mobility and transfer support",
     rightTitle: "Reliable communication every week",
     rightDetail:
       "Families receive clear updates on wellness, mood, and follow-up recommendations after each phase of care.",

@@ -45,8 +45,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={contactDetails.supportHref} className="transition-colors hover:text-[var(--ink)]">
-                {contactDetails.supportLine}
+              <a href={contactDetails.websiteHref} className="transition-colors hover:text-[var(--ink)]">
+                {contactDetails.websiteLabel}
               </a>
             </li>
             <li>{contactDetails.email}</li>

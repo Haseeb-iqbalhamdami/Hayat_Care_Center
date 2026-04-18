@@ -1,11 +1,13 @@
 export const contactDetails = {
-  phoneHref: "tel:+11234567890",
-  phoneLabel: "(123) 456-7890",
-  email: "info@hayatcarecenter.com",
-  address: "123 Care Boulevard, Springfield, IL 62701",
+  phoneHref: "tel:+17196786228",
+  phoneLabel: "+1 (719) 678-6228",
+  email: "info@hayatcarecenter.org",
+  websiteHref: "https://hayatcarecenter.org",
+  websiteLabel: "Hayatcarecenter.org",
+  address: "2030 Jet Wing Dr, Colorado Springs, CO 80916",
   hours: "Daily tours available from 9:00 AM - 6:00 PM",
-  supportLine: "(123) 555-0199",
-  supportHref: "tel:+11235550199",
+  supportLine: "+1 (719) 678-6228",
+  supportHref: "tel:+17196786228",
 } as const;
 
 export const navGroups = [
@@ -206,7 +208,7 @@ export const nonMedicalTransportationSummary = {
 /** Single campus / location — paired with `contactDetails.address` on the homepage */
 export const hayatPrimaryLocation = {
   name: "Main campus — Adult care center",
-  area: "Springfield, IL",
+  area: "Colorado Springs, CO",
   lines: [
     "Daytime programming, dining, activities, and supervised support—all from one welcoming building.",
     "Home care coordination and non-medical transportation are arranged through the same team, so families hear one clear plan.",
@@ -217,7 +219,7 @@ export const hayatPrimaryLocation = {
 } as const;
 
 export const hayatLocationSectionIntro =
-  "Hayat operates from one main campus in Springfield. Whether you need the adult care center, help at home, or ride coordination, you start here—same address, same people who know your name.";
+  "Hayat operates from one main campus in Colorado Springs. Whether you need the adult care center, help at home, or ride coordination, you start here—same address, same people who know your name.";
 
 /** Long-form testimonial blocks for the homepage */
 export const homeTestimonialStories = [

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { contactDetails } from "@/data/siteContent";
 
 export default function CTABanner() {
   return (
@@ -20,10 +21,10 @@ export default function CTABanner() {
             Schedule a Free Visit
           </Link>
           <a
-            href="tel:+1234567890"
+            href={contactDetails.phoneHref}
             className="inline-flex items-center justify-center border-2 border-[var(--primary)] text-[var(--primary)] px-8 py-3.5 rounded-full text-base font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors"
           >
-            Call (123) 456-7890
+            Call {contactDetails.phoneLabel}
           </a>
         </div>
       </div>

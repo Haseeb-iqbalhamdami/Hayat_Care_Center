@@ -15,7 +15,6 @@ import {
   hayatPrimaryLocation,
   homeCareAgencySummary,
   homeQuickLinks,
-  homeQuickPathsIntro,
   nonMedicalTransportationSummary,
   homeTestimonialStories,
   homeVerticalsDeepDive,
@@ -279,7 +278,7 @@ export default function Home() {
               >
                 <iframe
                   title="Hayat care center location map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-89.72%2C39.72%2C-89.57%2C39.85&layer=mapnik&marker=39.7817%2C-89.6501"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-104.758%2C38.796%2C-104.736%2C38.812&layer=mapnik&marker=38.804166%2C-104.747043"
                   className="h-[290px] w-full md:h-[360px]"
                   loading="lazy"
                 />
@@ -351,7 +350,7 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
-                  Hayat Care Centers is a Springfield-based care provider
+                  Hayat Care Centers is a Colorado Springs-based care provider
                   supporting older adults and their families across the
                   region. From our adult day center to home care and
                   non-medical transportation, every service is built around

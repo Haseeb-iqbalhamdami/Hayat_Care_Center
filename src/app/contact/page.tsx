@@ -69,9 +69,9 @@ export default function ContactPage() {
                 </a>
               </li>
               <li className="rounded-xl border border-white/20 bg-white/8 px-4 py-3 backdrop-blur-sm">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">Support line</p>
-                <a href={contactDetails.supportHref} className="mt-1 block text-base font-semibold text-white">
-                  {contactDetails.supportLine}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">Website</p>
+                <a href={contactDetails.websiteHref} className="mt-1 block text-base font-semibold text-white">
+                  {contactDetails.websiteLabel}
                 </a>
               </li>
               <li className="rounded-xl border border-white/20 bg-white/8 px-4 py-3 backdrop-blur-sm">

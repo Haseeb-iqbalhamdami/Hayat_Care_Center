@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { contactDetails } from "@/data/siteContent";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-[var(--foreground)]">Our Location</h3>
-                  <p className="text-[var(--text-muted)] text-sm">123 Care Boulevard, Springfield, IL 62701</p>
+                  <p className="text-[var(--text-muted)] text-sm">{contactDetails.address}</p>
                 </div>
               </div>
 
@@ -57,7 +58,9 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-semibold text-[var(--foreground)]">Phone</h3>
                   <p className="text-[var(--text-muted)] text-sm">
-                    <a href="tel:+1234567890" className="hover:text-[var(--primary)] transition-colors">(123) 456-7890</a>
+                    <a href={contactDetails.phoneHref} className="hover:text-[var(--primary)] transition-colors">
+                      {contactDetails.phoneLabel}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -70,7 +73,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-[var(--foreground)]">Email</h3>
-                  <p className="text-[var(--text-muted)] text-sm">info@hayatcarecenter.com</p>
+                  <p className="text-[var(--text-muted)] text-sm">{contactDetails.email}</p>
                 </div>
               </div>
 
@@ -132,7 +135,7 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent bg-white"
-                    placeholder="(123) 456-7890"
+                    placeholder={contactDetails.phoneLabel}
                   />
                 </div>
               </div>

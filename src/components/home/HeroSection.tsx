@@ -259,7 +259,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.45 }}
               className="mb-10 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl"
             >
-              Adult day programs, home care, and non-medical transportation—one coordinated team for families across
+              Adult day programs, home care, and non-medical transportation one coordinated team for families across
               Colorado.
             </motion.p>
 

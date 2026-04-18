@@ -11,7 +11,7 @@ export type ServiceInquiryPayload = {
 function getMailConfig() {
   const user = process.env.SMTP_USER?.trim();
   const pass = process.env.SMTP_PASS?.trim();
-  const ownerEmail = process.env.OWNER_EMAIL?.trim() || "Hayatcarecenters@gmail.com";
+  const ownerEmail = process.env.OWNER_EMAIL?.trim() || "info@hayatcarecenter.org";
   const fromName = process.env.MAIL_FROM_NAME?.trim() || "Hayat Care Centers";
 
   if (!user || !pass) {

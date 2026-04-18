@@ -4,7 +4,7 @@ import Link from "next/link";
 import AboutJourneyShowcase from "@/components/about/AboutJourneyShowcase";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
-import { communityStats, trustPoints } from "@/data/siteContent";
+import { communityStats, contactDetails, trustPoints } from "@/data/siteContent";
 
 export const metadata: Metadata = {
   title: "About Us | Hayat Care Centers",
@@ -76,7 +76,7 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <p className="text-sm font-bold text-[var(--ink)]">Hayat Care Center</p>
-                    <p className="text-xs text-[var(--ink-soft)]">Springfield, Colorado</p>
+                    <p className="text-xs text-[var(--ink-soft)]">{contactDetails.address}</p>
                   </div>
                 </div>
 

@@ -274,14 +274,32 @@ export default function Home() {
               <div
                 data-reveal
                 data-reveal-delay={90}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+                className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
               >
                 <iframe
                   title="Hayat care center location map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-104.758%2C38.796%2C-104.736%2C38.812&layer=mapnik&marker=38.804166%2C-104.747043"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-104.7498%2C38.8019%2C-104.7443%2C38.8064&layer=mapnik"
                   className="h-[290px] w-full md:h-[360px]"
                   loading="lazy"
                 />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-full"
+                >
+                  <svg
+                    className="h-20 w-14 drop-shadow-[0_18px_22px_rgba(213,102,75,0.45)] md:h-24 md:w-16"
+                    viewBox="0 0 48 64"
+                    fill="none"
+                  >
+                    <path
+                      d="M24 62S4 39.7 4 23.9C4 12.2 12.9 3 24 3s20 9.2 20 20.9C44 39.7 24 62 24 62Z"
+                      fill="#D5664B"
+                      stroke="white"
+                      strokeWidth="4"
+                    />
+                    <circle cx="24" cy="24" r="8" fill="white" />
+                  </svg>
+                </div>
               </div>
 
               <article

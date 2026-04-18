@@ -91,15 +91,10 @@ export default function DiningPage() {
                 >
                   View 7 Day Meal Plan
                 </Link>
-                <Link
-                  href="/amenities"
-                  className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
-                >
-                  Explore Amenities
-                </Link>
+               
                 <Link
                   href="/contact"
-                  className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
+                  className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
                 >
                   Schedule A Visit
                 </Link>

@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div className="md:pl-10">
               <div className="relative overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/usedimages/4.png"
+                  src="/hayat_center.jpeg"
                   alt="Hayat Care Center team and facility"
                   width={640}
                   height={400}

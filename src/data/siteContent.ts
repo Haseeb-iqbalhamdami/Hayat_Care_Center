@@ -144,6 +144,7 @@ export const homeCareAgencySummary = {
     "When staying home is the goal, Hayat’s home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, transportation, and friendly companionship. Care plans are written around your schedule, your priorities, and what “independence with backup” should look like for your household.",
   bullets: [
     "Flexible scheduling—from a few hours a week to more comprehensive coverage",
+    "Skilled and non-skilled staff options available based on the care plan",
     "Consistent staffing orientation so visits feel familiar, not fragmented",
     "Transparent communication with family members and care partners",
   ],
@@ -174,10 +175,16 @@ export const homeVerticalsDeepDive = {
       "Individuals who want to remain at home with help for bathing, dressing, errands, companionship, or post-hospital recovery—on a schedule that matches your household.",
     details: [
       "Care plans spell out tasks, frequency, and goals; supervisors check in so quality stays consistent visit to visit.",
+      "Skilled and non-skilled staff options are matched to the level of support needed at home.",
       "We prioritize caregiver continuity so clients see familiar faces, and we communicate early when a change is unavoidable.",
       "Home care can stand alone or pair with the center—for example, evenings and weekends at home after weekday programming.",
     ],
-    outcomes: ["Flexible hours", "Privacy and familiarity of home", "Caregiver notes families can review"],
+    outcomes: [
+      "Flexible hours",
+      "Skilled and non-skilled staff options",
+      "Privacy and familiarity of home",
+      "Caregiver notes families can review",
+    ],
   },
   transport: {
     name: "Non-medical transportation",
@@ -186,16 +193,10 @@ export const homeVerticalsDeepDive = {
       "Clients from young adulthood through older adulthood who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
     details: [
       "Door-through-door or curb-to-curb options depending on mobility; drivers oriented to patience, pacing, and clear communication.",
-      "Skilled and non-skilled support staff are available when arranged in advance for rides that need extra assistance.",
       "Coordination with the center or home care team so pickup windows align with programming or visit schedules.",
       "Advance booking preferred; same-day requests handled when capacity allows.",
     ],
-    outcomes: [
-      "Predictable scheduling",
-      "Trained, vetted drivers",
-      "Skilled and non-skilled staff options",
-      "Works alongside center & home care plans",
-    ],
+    outcomes: ["Predictable scheduling", "Trained, vetted drivers", "Works alongside center & home care plans"],
   },
 } as const;
 
@@ -207,7 +208,6 @@ export const nonMedicalTransportationSummary = {
   bullets: [
     "Scheduled pickups aligned with your care plan and family preferences",
     "Vehicles and assistance levels matched to walkers, wheelchairs, or step-free needs when arranged in advance",
-    "Skilled and non-skilled support staff available when arranged in advance for added ride assistance",
     "Clear communication if a delay happens—we call families, not the other way around",
   ],
 } as const;

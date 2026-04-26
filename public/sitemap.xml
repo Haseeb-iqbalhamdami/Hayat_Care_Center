@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Core Services -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/adult-care-center</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/home-care-agency</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/non-medical-transportation</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/meal-plan</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experience & Lifestyle -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/activities-events</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/amenities</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/wellness</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/dining</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/floor-plans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/benefits</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/our-facility</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/gallery/photos</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/gallery/videos</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Resources -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/resources/blog</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/resources/senior-living-guide</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Important Conversion Pages -->
+  <url>
+    <loc>https://www.hayatcarecenter.org/faq</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/careers</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hayatcarecenter.org/contact</loc>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

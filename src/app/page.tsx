@@ -80,8 +80,28 @@ export default function Home() {
   const [featuredStory, ...moreStories] = homeTestimonialStories;
   const faqPreview = faqs.slice(0, 4);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqPreview.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="home-theme-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+
       <HeroSection />
 
       <CommunityStatsMarquee items={communityStats} />

@@ -35,8 +35,54 @@ const mealOrder: Record<string, number> = {
 };
 
 export default function MealPlanPage() {
+
+  // ✅ ADDED SCHEMA ONLY
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Senior Meal Plan in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Senior Meal Program",
+        url: "https://www.hayatcarecenter.org/meal-plan",
+        description:
+          "Weekly breakfast, lunch, dinner, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Meal Plan",
+            item: "https://www.hayatcarecenter.org/meal-plan",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      {/* ✅ SCHEMA SCRIPT */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p data-reveal className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-blue)]">
@@ -121,7 +167,7 @@ export default function MealPlanPage() {
                       <ul className="mt-2 space-y-1.5 text-sm leading-6 text-slate-700">
                         {meal.ingredients.map((ingredient) => (
                           <li key={ingredient} className="flex gap-2">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D5664B]" aria-hidden />
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D5664B]" />
                             {ingredient}
                           </li>
                         ))}

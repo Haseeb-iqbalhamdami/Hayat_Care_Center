@@ -59,8 +59,51 @@ const relatedPaths = [
 ] as const;
 
 export default function HomeCareAgencyPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Home Care Agency in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Home Care",
+        url: "https://www.hayatcarecenter.org/home-care-agency",
+        description:
+          "Personal care, companionship, meal support, medication reminders, and in-home assistance for seniors in Colorado Springs.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Home Care Agency",
+            item: "https://www.hayatcarecenter.org/home-care-agency",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <VerticalServiceHero
         breadcrumbs={[
           { label: "Home", href: "/" },

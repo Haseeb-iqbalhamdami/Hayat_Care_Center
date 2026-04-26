@@ -78,27 +78,50 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const localBusinessSchema = {
+  const siteSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Hayat Care Center",
-    url: "https://www.hayatcarecenter.org",
-    telephone: "+1-719-678-6228",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2030 Jet Wing Dr",
-      addressLocality: "Colorado Springs",
-      addressRegion: "CO",
-      postalCode: "80916",
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type": "City",
-      name: "Colorado Springs",
-    },
-    description:
-      "Hayat Care Center provides adult day programs, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs.",
-    sameAs: ["https://www.hayatcarecenter.org"],
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.hayatcarecenter.org/#organization",
+        name: "Hayat Care Center",
+        url: "https://www.hayatcarecenter.org",
+        telephone: "+1-719-678-6228",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "2030 Jet Wing Dr",
+          addressLocality: "Colorado Springs",
+          addressRegion: "CO",
+          postalCode: "80916",
+          addressCountry: "US",
+        },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.hayatcarecenter.org/#localbusiness",
+        name: "Hayat Care Center",
+        url: "https://www.hayatcarecenter.org",
+        telephone: "+1-719-678-6228",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "2030 Jet Wing Dr",
+          addressLocality: "Colorado Springs",
+          addressRegion: "CO",
+          postalCode: "80916",
+          addressCountry: "US",
+        },
+        areaServed: {
+          "@type": "City",
+          name: "Colorado Springs",
+        },
+        description:
+          "Hayat Care Center provides adult day programs, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs.",
+        sameAs: ["https://www.hayatcarecenter.org"],
+        parentOrganization: {
+          "@id": "https://www.hayatcarecenter.org/#organization",
+        },
+      },
+    ],
   };
 
   return (
@@ -107,7 +130,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: JSON.stringify(siteSchema),
           }}
         />
         <a href="#main-content" className="skip-link">

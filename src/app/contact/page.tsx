@@ -1,16 +1,65 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { contactDetails } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Contact | Hayat Care Centers",
-  description: "Contact Hayat Care Centers to schedule a visit or request a callback.",
+  title: "Contact Adult Day Care in Colorado Springs | Hayat Care Center",
+  description:
+    "Contact Hayat Care Center in Colorado Springs to schedule a tour, request a callback, or learn about adult day care, home care, and senior services.",
+  keywords: [
+    "contact adult day care Colorado Springs",
+    "Hayat Care Center contact",
+    "senior care contact Colorado Springs",
+    "schedule tour Hayat Care Center",
+    "adult day care phone Colorado Springs",
+    "senior care center contact Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Hayat Care Center in Colorado Springs",
+    description:
+      "Schedule a tour, request a callback, or learn about adult day care and senior services at Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/contact",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {
+
+  // ✅ SCHEMA ADDED
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Hayat Care Center",
+    url: "https://www.hayatcarecenter.org",
+    telephone: contactDetails.phoneLabel,
+    email: contactDetails.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: contactDetails.address,
+      addressLocality: "Colorado Springs",
+      addressRegion: "CO",
+      addressCountry: "US",
+    },
+    openingHours: contactDetails.hours,
+    areaServed: "Colorado Springs, CO",
+    description:
+      "Contact Hayat Care Center for adult day care, home care, and senior services in Colorado Springs.",
+  };
+
   return (
     <>
+      {/* ✅ SCHEMA SCRIPT */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

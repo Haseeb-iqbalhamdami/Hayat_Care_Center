@@ -1,17 +1,80 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { diningFeatures } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Dining Experience | Hayat Care Centers",
-  description: "Learn about meals, nutrition, and dining at Hayat Care Centers.",
+  title: "Senior Dining Program in Colorado Springs | Hayat Care Center",
+  description:
+    "Learn about Hayat Care Center's senior dining program in Colorado Springs, including meals, nutrition, hospitality, routine, dietary support, and social connection.",
+  keywords: [
+    "senior dining program Colorado Springs",
+    "adult day care meals Colorado Springs",
+    "senior meals Colorado Springs",
+    "nutritious meals for seniors Colorado Springs",
+    "adult day care dining Colorado Springs",
+    "meal support for seniors Colorado Springs",
+    "Hayat Care Center dining",
+  ],
+  alternates: {
+    canonical: "/dining",
+  },
+  openGraph: {
+    title: "Senior Dining Program in Colorado Springs | Hayat Care Center",
+    description:
+      "Meals, nutrition, hospitality, routine, dietary support, and social connection at Hayat Care Center in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/dining",
+    type: "website",
+  },
 };
 
 export default function DiningPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Senior Dining Program in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Senior Dining Program",
+        url: "https://www.hayatcarecenter.org/dining",
+        description:
+          "Hayat Care Center provides a senior dining program in Colorado Springs with meals, nutrition, hospitality, routine, dietary support, and social connection.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Dining",
+            item: "https://www.hayatcarecenter.org/dining",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

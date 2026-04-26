@@ -5,9 +5,28 @@ import VerticalServiceHero from "@/components/VerticalServiceHero";
 import { homeCareAgencySummary, homeVerticalsDeepDive } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Home Care Agency | Hayat Care Centers",
+  title: "Home Care Agency in Colorado Springs | Personal & Companion Care",
   description:
-    "Learn about Hayat home care agency services with personal care companionship meal support and flexible in home scheduling.",
+    "Hayat Care Center offers trusted home care services in Colorado Springs including personal care, companionship, meal support, medication reminders, and in-home assistance for seniors.",
+  keywords: [
+    "home care agency Colorado Springs",
+    "home care Colorado Springs",
+    "non medical home care Colorado Springs",
+    "companion care Colorado Springs",
+    "personal care assistance Colorado Springs",
+    "help with bathing and dressing Colorado Springs",
+    "medication reminders Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/home-care-agency",
+  },
+  openGraph: {
+    title: "Home Care Agency in Colorado Springs | Hayat Care Center",
+    description:
+      "Professional home care services including personal care, companionship, and in-home support in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/home-care-agency",
+    type: "website",
+  },
 };
 
 const btnPrimary =
@@ -54,7 +73,7 @@ export default function HomeCareAgencyPage() {
         primaryCta={{ label: "Request home care information", href: "/contact" }}
         secondaryCta={{ label: "Explore adult care center", href: "/adult-care-center" }}
         imageSrc="/images/usedimages/homcare.png"
-        imageAlt="Caregiver supporting an adult participant at home"
+        imageAlt="Home care services for seniors in Colorado Springs with caregiver assistance"
       />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">
@@ -78,7 +97,9 @@ export default function HomeCareAgencyPage() {
               className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 shadow-sm md:p-8"
             >
               <h2 className="text-2xl font-semibold text-slate-900">Who this path fits best</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">{homeVerticalsDeepDive.home.fitFor}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
+                {homeVerticalsDeepDive.home.fitFor}
+              </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-6 text-slate-600">
                 {homeCareAgencySummary.bullets.map((item) => (
                   <li key={item} className="flex gap-2.5">
@@ -131,12 +152,11 @@ export default function HomeCareAgencyPage() {
             <div className="grid gap-8 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:grid-cols-[1.05fr_0.95fr] md:p-9">
               <div data-reveal>
                 <p className={sectionEyebrow}>Related services</p>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl">
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
                   Add services as routines or health needs change
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
-                  Home care can stand alone or connect with center based programs and transportation. We help families
-                  sequence support in a way that is realistic and sustainable.
+                <p className="mt-4 text-sm text-slate-600 md:text-base">
+                  Home care can stand alone or connect with center based programs and transportation.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link href="/contact" className={btnPrimary}>
@@ -153,12 +173,10 @@ export default function HomeCareAgencyPage() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    data-reveal
-                    data-reveal-delay={80 + index * 40}
-                    className="group rounded-xl border border-slate-200 bg-slate-50/70 p-5 transition hover:border-slate-300 hover:bg-white"
+                    className="group rounded-xl border border-slate-200 bg-slate-50/70 p-5"
                   >
-                    <h3 className="text-base font-semibold text-slate-900 group-hover:text-[#073D7A]">{item.title}</h3>
-                    <p className="mt-1.5 text-sm leading-6 text-slate-600">{item.description}</p>
+                    <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
+                    <p className="mt-1.5 text-sm text-slate-600">{item.description}</p>
                   </Link>
                 ))}
               </div>

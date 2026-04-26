@@ -1,17 +1,90 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { careerOpenings, careerBenefits, contactDetails } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Careers | Hayat Care Centers",
-  description: "Join the Hayat Care Centers team. Explore open positions in senior care, dining, activities, and community support.",
+  title: "Caregiver Jobs in Colorado Springs | Careers at Hayat Care Center",
+  description:
+    "Explore caregiver jobs and senior care careers in Colorado Springs at Hayat Care Center. Apply for roles in care, dining, activities, and community support.",
+  keywords: [
+    "caregiver jobs Colorado Springs",
+    "senior care jobs Colorado Springs",
+    "healthcare jobs Colorado Springs",
+    "adult day care jobs Colorado Springs",
+    "Hayat Care Center careers",
+    "care assistant jobs Colorado Springs",
+    "senior living jobs Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/careers",
+  },
+  openGraph: {
+    title: "Caregiver Jobs in Colorado Springs | Hayat Care Center",
+    description:
+      "Apply for caregiver and senior care jobs in Colorado Springs at Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/careers",
+    type: "website",
+  },
 };
 
 export default function CareersPage() {
+
+  // ✅ SCHEMA ADDED
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "JobPosting",
+        title: "Caregiver and Senior Care Jobs",
+        hiringOrganization: {
+          "@type": "Organization",
+          name: "Hayat Care Center",
+        },
+        employmentType: "FULL_TIME",
+        jobLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Colorado Springs",
+            addressRegion: "CO",
+            addressCountry: "US",
+          },
+        },
+        description:
+          "Caregiver, support staff, and senior care roles at Hayat Care Center in Colorado Springs.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Careers",
+            item: "https://www.hayatcarecenter.org/careers",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      {/* ✅ SCHEMA SCRIPT */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

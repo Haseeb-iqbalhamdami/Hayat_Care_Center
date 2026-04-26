@@ -63,19 +63,121 @@ const includedServiceItems: ReadonlyArray<{
 ];
 
 export const metadata: Metadata = {
-  title: "Benefits | Hayat Care Centers",
+  title: "Benefits of Adult Day Care in Colorado Springs | Hayat Care Center",
   description:
-    "Discover the full range of benefits at Hayat Care Centers—meals, activities, wellness, companionship, and family peace of mind.",
+    "Learn the benefits of adult day care in Colorado Springs at Hayat Care Center, including supervision, meals, wellness, activities, companionship, transportation, and family peace of mind.",
+  keywords: [
+    "benefits of adult day care Colorado Springs",
+    "adult day care benefits Colorado Springs",
+    "senior care benefits Colorado Springs",
+    "adult day program benefits Colorado Springs",
+    "senior companionship Colorado Springs",
+    "adult day care meals and activities Colorado Springs",
+    "family caregiver support Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/benefits",
+  },
+  openGraph: {
+    title: "Benefits of Adult Day Care in Colorado Springs | Hayat Care Center",
+    description:
+      "Explore adult day care benefits including meals, activities, wellness, companionship, transportation, and peace of mind for families in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/benefits",
+    type: "website",
+  },
 };
 
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-gold)]";
 
 export default function BenefitsPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Benefits of Adult Day Care in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Adult Day Care Benefits",
+        url: "https://www.hayatcarecenter.org/benefits",
+        description:
+          "Hayat Care Center provides adult day care benefits in Colorado Springs including supervision, meals, wellness programs, activities, companionship, transportation, and family support.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Benefits",
+            item: "https://www.hayatcarecenter.org/benefits",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       {/* ── Hero — full image with animated heading ── */}
       <BenefitsHero />
+
+      <section className="border-b border-slate-200 bg-white py-14 md:py-16">
+        <div className="mx-auto max-w-5xl px-4">
+          <p data-reveal className={sectionEyebrow}>
+            Adult day care benefits
+          </p>
+          <h1
+            data-reveal
+            data-reveal-delay={40}
+            className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl"
+          >
+            Benefits of Adult Day Care in Colorado Springs
+          </h1>
+          <p data-reveal data-reveal-delay={80} className="mt-5 text-base leading-7 text-slate-600 md:text-lg">
+            Adult day care gives seniors and adults a safe, structured, and social environment during the day while giving
+            families dependable support and peace of mind. At Hayat Care Center in Colorado Springs, daily care is built
+            around supervision, companionship, nutritious meals, wellness programs, meaningful activities, personal care
+            support, and reliable transportation.
+          </p>
+          <p data-reveal data-reveal-delay={120} className="mt-4 text-base leading-7 text-slate-600 md:text-lg">
+            For many families, the biggest benefit is knowing their loved one is not spending the day alone. Instead, they
+            are part of a caring community where routines are predictable, needs are noticed, and every day includes
+            opportunities for connection, movement, comfort, and dignity.
+          </p>
+          <div data-reveal data-reveal-delay={160} className="mt-7 flex flex-wrap gap-3">
+            <Link
+              href="/adult-care-center"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--brand-gold-bright)]"
+            >
+              Explore adult day care
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[#073D7A] bg-[#073D7A] px-6 py-3 text-sm font-semibold text-white transition hover:border-[#052a52] hover:bg-[#052a52]"
+            >
+              Schedule a tour
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ── Highlight stats — timeline scroll ── */}
       <section className="border-b border-slate-200 bg-white py-16 md:py-24">
@@ -110,7 +212,7 @@ export default function BenefitsPage() {
             >
               <Image
                 src="/images/meal-plan/meal-04.jpg"
-                alt="Chef-prepared meal presentation with fresh ingredients at Hayat"
+                alt="Healthy meals for seniors in adult day care Colorado Springs"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -198,7 +300,7 @@ export default function BenefitsPage() {
       <section className="relative h-64 overflow-hidden border-b border-slate-200 sm:h-80 md:h-96">
         <Image
           src="/images/home/gallery-outdoor-spaces.jpg"
-          alt="Outdoor walking paths and garden spaces at Hayat Care Centers"
+          alt="Outdoor walking paths and safe garden spaces for adult day care in Colorado Springs"
           fill
           className="object-cover"
           sizes="100vw"
@@ -268,9 +370,9 @@ export default function BenefitsPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { src: "/images/home/gallery-reception.jpg", alt: "Welcoming reception at Hayat", caption: "Warm welcomes" },
-              { src: "/images/home/gallery-comfortable-lounge.jpg", alt: "Comfortable community lounge", caption: "Comfortable living" },
-              { src: "/images/home/gallery-wellness-programs.jpg", alt: "Wellness programs in action", caption: "Active wellness" },
+              { src: "/images/home/gallery-reception.jpg", alt: "Welcoming reception at Hayat Care Center in Colorado Springs", caption: "Warm welcomes" },
+              { src: "/images/home/gallery-comfortable-lounge.jpg", alt: "Comfortable community lounge for senior social activities", caption: "Comfortable living" },
+              { src: "/images/home/gallery-wellness-programs.jpg", alt: "Senior wellness programs and adult day care activities", caption: "Active wellness" },
             ].map((img, index) => (
               <div
                 key={img.src}

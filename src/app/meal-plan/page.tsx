@@ -5,9 +5,27 @@ import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { weeklyMealPlan } from "@/data/mealPlan";
 
 export const metadata: Metadata = {
-  title: "Weekly Meal Plan | Hayat Care Centers",
+  title: "Senior Meal Plan in Colorado Springs | Weekly Meals | Hayat Care Center",
   description:
-    "Review the full seven day Hayat meal plan with breakfast lunch and dinner recipe names and ingredient lists for each day.",
+    "View Hayat Care Center's weekly senior meal plan in Colorado Springs with breakfast, lunch, dinner, ingredients, and dietary adjustment options for older adults.",
+  keywords: [
+    "senior meal plan Colorado Springs",
+    "adult day care with meals Colorado Springs",
+    "weekly meal plan for seniors Colorado Springs",
+    "nutritious meals for seniors Colorado Springs",
+    "senior dining program Colorado Springs",
+    "meal support for seniors Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/meal-plan",
+  },
+  openGraph: {
+    title: "Senior Meal Plan in Colorado Springs | Hayat Care Center",
+    description:
+      "Weekly breakfast, lunch, dinner, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/meal-plan",
+    type: "website",
+  },
 };
 
 const mealOrder: Record<string, number> = {

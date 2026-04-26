@@ -1,17 +1,83 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { videoHighlights } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Videos | Hayat Care Centers",
-  description: "Watch walkthrough tours, resident stories, and community highlights from Hayat Care Centers.",
+  title: "Hayat Care Center Videos in Colorado Springs | Video Gallery",
+  description:
+    "Watch Hayat Care Center videos in Colorado Springs, including walkthrough tours, community highlights, resident stories, daily activities, and senior care video previews.",
+  keywords: [
+    "Hayat Care Center videos Colorado Springs",
+    "adult day care videos Colorado Springs",
+    "senior care video gallery Colorado Springs",
+    "Hayat Care Center video tour",
+    "senior care community videos Colorado Springs",
+    "adult day care video tour Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/gallery/videos",
+  },
+  openGraph: {
+    title: "Hayat Care Center Videos in Colorado Springs | Video Gallery",
+    description:
+      "Watch walkthrough tours, community highlights, resident stories, daily activities, and senior care video previews from Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/gallery/videos",
+    type: "website",
+  },
 };
 
 export default function VideosPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "VideoGallery",
+        name: "Hayat Care Center Videos in Colorado Springs",
+        url: "https://www.hayatcarecenter.org/gallery/videos",
+        description:
+          "Video gallery of Hayat Care Center in Colorado Springs, including walkthrough tours, resident stories, community highlights, daily activities, and senior care previews.",
+        publisher: {
+          "@type": "Organization",
+          name: "Hayat Care Center",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Gallery",
+            item: "https://www.hayatcarecenter.org/gallery/photos",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Videos",
+            item: "https://www.hayatcarecenter.org/gallery/videos",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

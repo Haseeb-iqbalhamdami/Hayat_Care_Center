@@ -5,9 +5,27 @@ import VerticalServiceHero from "@/components/VerticalServiceHero";
 import { adultCareCenterSummary, homeVerticalsDeepDive } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Adult Care Center | Hayat Care Centers",
+  title: "Adult Day Care Center in Colorado Springs | Hayat Care Center",
   description:
-    "Explore Hayat adult care center services including supervised daytime support social engagement meals and personalized care planning.",
+    "Hayat Care Center provides supervised adult day care in Colorado Springs with social activities, meals, daily structure, family support, and personalized care planning.",
+  keywords: [
+    "adult day care center Colorado Springs",
+    "adult day care Colorado Springs",
+    "adult day program Colorado Springs",
+    "supervised adult day care Colorado Springs",
+    "senior day care Colorado Springs",
+    "daytime care for elderly parents Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/adult-care-center",
+  },
+  openGraph: {
+    title: "Adult Day Care Center in Colorado Springs | Hayat Care Center",
+    description:
+      "Supervised adult day care with meals, activities, social engagement, and personalized support in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/adult-care-center",
+    type: "website",
+  },
 };
 
 const btnPrimary =
@@ -46,7 +64,7 @@ export default function AdultCareCenterPage() {
         primaryCta={{ label: "Plan a center visit", href: "/contact" }}
         secondaryCta={{ label: "Explore home care", href: "/home-care-agency" }}
         imageSrc="/images/usedimages/adultcare.png"
-        imageAlt="Young adults through older adults and staff in a welcoming daytime care center"
+        imageAlt="Adult day care center in Colorado Springs with supervised daytime care"
       />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">

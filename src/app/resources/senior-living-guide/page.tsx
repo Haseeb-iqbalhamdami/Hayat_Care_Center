@@ -1,17 +1,84 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { seniorLivingGuideTopics } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Senior Living Guide | Hayat Care Centers",
-  description: "A helpful resource for families exploring senior living options, covering timing, types of care, touring, conversations, and financial planning.",
+  title: "Senior Living Guide in Colorado Springs | Hayat Care Center",
+  description:
+    "Read Hayat Care Center's senior living guide for Colorado Springs families, covering care options, timing, tours, family conversations, planning, and next steps.",
+  keywords: [
+    "senior living guide Colorado Springs",
+    "senior care guide Colorado Springs",
+    "adult day care guide Colorado Springs",
+    "senior living options Colorado Springs",
+    "family caregiver guide Colorado Springs",
+    "senior care planning Colorado Springs",
+    "Hayat Care Center senior living guide",
+  ],
+  alternates: {
+    canonical: "/resources/senior-living-guide",
+  },
+  openGraph: {
+    title: "Senior Living Guide in Colorado Springs | Hayat Care Center",
+    description:
+      "A practical senior living guide for Colorado Springs families exploring care options, timing, tours, planning, and next steps.",
+    url: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+    type: "website",
+  },
 };
 
 export default function SeniorLivingGuidePage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Guide",
+        name: "Senior Living Guide in Colorado Springs",
+        url: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+        description:
+          "A practical senior living guide for Colorado Springs families covering care options, timing, tours, family conversations, planning, and next steps.",
+        publisher: {
+          "@type": "Organization",
+          name: "Hayat Care Center",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Resources",
+            item: "https://www.hayatcarecenter.org/resources/blog",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Senior Living Guide",
+            item: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

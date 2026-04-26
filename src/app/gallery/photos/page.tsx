@@ -1,17 +1,83 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { photoCategories } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Photos | Hayat Care Centers",
-  description: "Browse photos of Hayat Care Centers' community spaces, suites, dining areas, and outdoor grounds.",
+  title: "Hayat Care Center Photos in Colorado Springs | Photo Gallery",
+  description:
+    "Browse photos of Hayat Care Center in Colorado Springs, including community spaces, suites, dining areas, wellness facilities, outdoor grounds, and common areas.",
+  keywords: [
+    "Hayat Care Center photos Colorado Springs",
+    "adult day care photos Colorado Springs",
+    "senior care photo gallery Colorado Springs",
+    "Hayat Care Center gallery",
+    "senior care facility photos Colorado Springs",
+    "adult day care community photos Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/gallery/photos",
+  },
+  openGraph: {
+    title: "Hayat Care Center Photos in Colorado Springs | Photo Gallery",
+    description:
+      "View photos of community spaces, suites, dining areas, outdoor grounds, wellness facilities, and common areas at Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/gallery/photos",
+    type: "website",
+  },
 };
 
 export default function PhotosPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ImageGallery",
+        name: "Hayat Care Center Photos in Colorado Springs",
+        url: "https://www.hayatcarecenter.org/gallery/photos",
+        description:
+          "Photo gallery of Hayat Care Center in Colorado Springs, including community spaces, suites, dining areas, wellness facilities, outdoor grounds, and common areas.",
+        publisher: {
+          "@type": "Organization",
+          name: "Hayat Care Center",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Gallery",
+            item: "https://www.hayatcarecenter.org/gallery/photos",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Photos",
+            item: "https://www.hayatcarecenter.org/gallery/photos",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

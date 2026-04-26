@@ -37,8 +37,51 @@ const weeklyRhythm = [
 ] as const;
 
 export default function ActivitiesEventsPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Senior Activities and Events in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Senior Activities and Life Enrichment",
+        url: "https://www.hayatcarecenter.org/activities-events",
+        description:
+          "Social programs, creative workshops, movement sessions, family gatherings, and enrichment activities for seniors in Colorado Springs.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Activities & Events",
+            item: "https://www.hayatcarecenter.org/activities-events",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

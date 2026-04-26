@@ -72,8 +72,51 @@ const relatedPaths = [
 ] as const;
 
 export default function NonMedicalTransportationPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Non-Medical Transportation in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Non-Medical Transportation",
+        url: "https://www.hayatcarecenter.org/non-medical-transportation",
+        description:
+          "Safe senior transportation for appointments, errands, adult day care pickup, and community visits in Colorado Springs.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Non-Medical Transportation",
+            item: "https://www.hayatcarecenter.org/non-medical-transportation",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <VerticalServiceHero
         breadcrumbs={[
           { label: "Home", href: "/" },

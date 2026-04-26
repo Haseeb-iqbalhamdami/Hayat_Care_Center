@@ -5,9 +5,27 @@ import VerticalServiceHero from "@/components/VerticalServiceHero";
 import { homeVerticalsDeepDive, nonMedicalTransportationSummary } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Non-Medical Transportation | Hayat Care Centers",
+  title: "Non-Medical Transportation in Colorado Springs | Senior Rides",
   description:
-    "Review Hayat non medical transportation services for scheduled rides to appointments errands and community activities.",
+    "Hayat Care Center provides safe non-medical transportation in Colorado Springs for seniors, appointments, errands, adult day care pickup, and community visits.",
+  keywords: [
+    "non medical transportation Colorado Springs",
+    "senior transportation Colorado Springs",
+    "senior transportation to doctor appointments Colorado Springs",
+    "wheelchair friendly transportation Colorado Springs",
+    "adult day care with transportation Colorado Springs",
+    "medical appointment transportation for seniors Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/non-medical-transportation",
+  },
+  openGraph: {
+    title: "Non-Medical Transportation in Colorado Springs | Hayat Care Center",
+    description:
+      "Safe senior transportation for appointments, errands, adult day care pickup, and community visits in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/non-medical-transportation",
+    type: "website",
+  },
 };
 
 const btnPrimary =
@@ -68,7 +86,7 @@ export default function NonMedicalTransportationPage() {
         primaryCta={{ label: "Request ride information", href: "/contact" }}
         secondaryCta={{ label: "Explore adult care center", href: "/adult-care-center" }}
         imageSrc="/hayat_transport.jpeg"
-        imageAlt="Vehicle for scheduled non-medical transportation"
+        imageAlt="Senior non-medical transportation vehicle in Colorado Springs"
       />
 
       <section className="border-b border-slate-200 bg-white py-16 md:py-20">

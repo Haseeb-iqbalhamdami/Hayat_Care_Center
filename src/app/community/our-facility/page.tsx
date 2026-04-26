@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import CircularGallery from "@/components/reactbits/CircularGallery";
@@ -6,54 +6,80 @@ import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { facilitySpaces } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Our Facility | Hayat Care Centers",
-  description: "Explore the thoughtfully designed spaces at Hayat Care Centers, from the lobby and dining hall to wellness studios and garden courtyards.",
+  title: "Senior Care Facility in Colorado Springs | Hayat Care Center",
+  description:
+    "Explore Hayat Care Center facility in Colorado Springs, including reception areas, dining spaces, wellness studios, lounges, and outdoor courtyards designed for comfort and care.",
+  keywords: [
+    "senior care facility Colorado Springs",
+    "adult day care facility Colorado Springs",
+    "Hayat Care Center facility",
+    "senior care center spaces Colorado Springs",
+    "adult day care building Colorado Springs",
+    "senior community spaces Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/our-facility",
+  },
+  openGraph: {
+    title: "Senior Care Facility in Colorado Springs | Hayat Care Center",
+    description:
+      "Explore community spaces, dining areas, wellness studios, lounges, and outdoor courtyards at Hayat Care Center.",
+    url: "https://www.hayatcarecenter.org/our-facility",
+    type: "website",
+  },
 };
 
 const facilityGalleryItems = [
-  {
-    image: "/images/home/gallery-reception.jpg",
-    text: "Reception Lobby",
-  },
-  {
-    image: "/images/home/gallery-compassionate-care.jpg",
-    text: "Care Hallway",
-  },
-  {
-    image: "/images/home/gallery-dining-social.jpg",
-    text: "Dining Area",
-  },
-  {
-    image: "/images/home/gallery-comfortable-lounge.jpg",
-    text: "Resident Lounge",
-  },
-  {
-    image: "/images/home/gallery-wellness-programs.jpg",
-    text: "Wellness Studio",
-  },
-  {
-    image: "/images/home/gallery-outdoor-spaces.jpg",
-    text: "Garden Courtyard",
-  },
-  {
-    image: "/images/community/suite-interior.jpg",
-    text: "Suite Interior",
-  },
-  {
-    image: "/images/community/quiet-reading-room.jpg",
-    text: "Quiet Reading Room",
-  },
+  { image: "/images/home/gallery-reception.jpg", text: "Reception Lobby" },
+  { image: "/images/home/gallery-compassionate-care.jpg", text: "Care Hallway" },
+  { image: "/images/home/gallery-dining-social.jpg", text: "Dining Area" },
+  { image: "/images/home/gallery-comfortable-lounge.jpg", text: "Resident Lounge" },
+  { image: "/images/home/gallery-wellness-programs.jpg", text: "Wellness Studio" },
+  { image: "/images/home/gallery-outdoor-spaces.jpg", text: "Garden Courtyard" },
+  { image: "/images/community/suite-interior.jpg", text: "Suite Interior" },
+  { image: "/images/community/quiet-reading-room.jpg", text: "Quiet Reading Room" },
 ];
 
 export default function OurFacilityPage() {
+
+  // ✅ SCHEMA ADDED
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        name: "Hayat Care Center Facility",
+        url: "https://www.hayatcarecenter.org/our-facility",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Colorado Springs",
+          addressRegion: "CO",
+          addressCountry: "US",
+        },
+        description:
+          "Facility spaces at Hayat Care Center in Colorado Springs including dining areas, wellness studios, lounges, and outdoor courtyards.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.hayatcarecenter.org" },
+          { "@type": "ListItem", position: 2, name: "Our Facility", item: "https://www.hayatcarecenter.org/our-facility" },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      {/* ✅ SCHEMA SCRIPT */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
-          <p
-            data-reveal
-            className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
-          >
+          <p data-reveal className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
             Our Facility
           </p>
           <div data-reveal data-reveal-delay={90}>
@@ -65,11 +91,7 @@ export default function OurFacilityPage() {
               Spaces Designed For Comfort, Connection, And Everyday Living
             </ScrollFloat>
           </div>
-          <p
-            data-reveal
-            data-reveal-delay={180}
-            className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
-          >
+          <p data-reveal data-reveal-delay={180} className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg">
             Every area of Hayat Care Centers has been thoughtfully planned to
             feel welcoming, functional, and warm. From the moment you walk
             through the front doors, the setting reflects a commitment to
@@ -80,10 +102,7 @@ export default function OurFacilityPage() {
 
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <p
-            data-reveal
-            className="text-center text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
-          >
+          <p data-reveal className="text-center text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
             Facility Gallery
           </p>
           <div data-reveal data-reveal-delay={70}>
@@ -94,22 +113,12 @@ export default function OurFacilityPage() {
               Explore Hayat Spaces Through A Circular Gallery
             </ScrollFloat>
           </div>
-          <p
-            data-reveal
-            data-reveal-delay={120}
-            className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-[var(--ink-soft)]"
-          >
+          <p data-reveal data-reveal-delay={120} className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-[var(--ink-soft)]">
             Drag across the gallery to browse core spaces in the community,
             including reception, dining, wellness, and resident lounges.
           </p>
 
-          <BorderGlow
-            data-reveal
-            data-reveal-delay={180}
-            className="mt-8 overflow-hidden"
-            borderRadius={26}
-            glowRadius={30}
-          >
+          <BorderGlow data-reveal data-reveal-delay={180} className="mt-8 overflow-hidden" borderRadius={26} glowRadius={30}>
             <div className="h-[420px] rounded-3xl bg-white p-3 md:h-[520px] md:p-4">
               <CircularGallery
                 items={facilityGalleryItems}
@@ -134,11 +143,7 @@ export default function OurFacilityPage() {
               A Closer Look At Our Community Spaces
             </ScrollFloat>
           </div>
-          <p
-            data-reveal
-            data-reveal-delay={70}
-            className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-[var(--ink-soft)]"
-          >
+          <p data-reveal data-reveal-delay={70} className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-[var(--ink-soft)]">
             Each space within the community serves a purpose, whether it is
             encouraging social interaction, providing a quiet retreat, or
             supporting daily wellness routines.
@@ -174,42 +179,21 @@ export default function OurFacilityPage() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <BorderGlow
-            data-reveal
-            data-tilt
-            className="h-full"
-            borderRadius={24}
-            glowRadius={30}
-          >
+          <BorderGlow data-reveal data-tilt className="h-full" borderRadius={24} glowRadius={30}>
             <div className="h-full rounded-3xl bg-[var(--bg)] p-8 md:p-10">
               <h2 className="text-3xl font-bold text-[var(--ink)] md:text-4xl">
                 Designed With Residents In Mind
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)]">
                 The layout of Hayat Care Centers prioritizes accessibility,
-                natural light, and a residential feel. Wide hallways, clear
-                signage, and ground-level access make it easy for residents to
-                move through the building with confidence. Common areas are
-                positioned to encourage organic interaction, while private spaces
-                provide the quiet that everyone needs from time to time.
+                natural light, and a residential feel...
               </p>
-              <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--ink-soft)]">
-                Ongoing improvements to finishes, furnishings, and shared spaces
-                reflect a commitment to maintaining a high standard of living.
-                Families are welcome to visit anytime and see the community
-                firsthand.
-              </p>
+
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/gallery/photos"
-                  className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
-                >
+                <Link href="/gallery/photos" className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white">
                   View Photo Gallery
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
-                >
+                <Link href="/contact" className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white">
                   Schedule A Tour
                 </Link>
               </div>

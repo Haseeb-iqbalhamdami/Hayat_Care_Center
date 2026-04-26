@@ -1,17 +1,79 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { floorPlans } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Floor Plans | Hayat Care Centers",
-  description: "Compare suite layouts and floor plan options at Hayat Care Centers.",
+  title: "Adult Day Care Floor Plans in Colorado Springs | Hayat Care Center",
+  description:
+    "Compare floor plans and suite layouts at Hayat Care Center in Colorado Springs, including living space options, comfort features, and support settings for different routines.",
+  keywords: [
+    "adult day care floor plans Colorado Springs",
+    "senior care floor plans Colorado Springs",
+    "Hayat Care Center floor plans",
+    "senior suite layouts Colorado Springs",
+    "adult day care layouts Colorado Springs",
+    "care center floor plans Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/floor-plans",
+  },
+  openGraph: {
+    title: "Adult Day Care Floor Plans in Colorado Springs | Hayat Care Center",
+    description:
+      "Compare suite layouts, living space options, comfort features, and support settings at Hayat Care Center in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/floor-plans",
+    type: "website",
+  },
 };
 
 export default function FloorPlansPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Adult Day Care Floor Plans in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Care Center Floor Plans",
+        url: "https://www.hayatcarecenter.org/floor-plans",
+        description:
+          "Hayat Care Center provides floor plan and suite layout information in Colorado Springs for families comparing living space, comfort, and support settings.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Floor Plans",
+            item: "https://www.hayatcarecenter.org/floor-plans",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import InHouseActivitySchedule from "@/components/activities/InHouseActivitySchedule";
 import BorderGlow from "@/components/reactbits/BorderGlow";
@@ -6,8 +6,27 @@ import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { activityCategories } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Activities & Events | Hayat Care Centers",
-  description: "Explore the activity calendar and social programming at Hayat Care Centers.",
+  title: "Senior Activities & Events in Colorado Springs | Hayat Care Center",
+  description:
+    "Explore senior activities and events at Hayat Care Center in Colorado Springs, including social programs, movement sessions, creative workshops, family gatherings, and enrichment activities.",
+  keywords: [
+    "senior activities Colorado Springs",
+    "adult day care activities Colorado Springs",
+    "social activities for seniors Colorado Springs",
+    "senior events Colorado Springs",
+    "life enrichment activities Colorado Springs",
+    "adult day program activities Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/activities-events",
+  },
+  openGraph: {
+    title: "Senior Activities & Events in Colorado Springs | Hayat Care Center",
+    description:
+      "Social programs, creative workshops, movement sessions, family gatherings, and enrichment activities for seniors in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/activities-events",
+    type: "website",
+  },
 };
 
 const weeklyRhythm = [

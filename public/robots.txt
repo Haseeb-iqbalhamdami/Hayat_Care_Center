@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary system paths (optional but good practice)
+Disallow: /api/
+Disallow: /_next/
+
+# Allow important assets
+Allow: /_next/static/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://www.hayatcarecenter.org/sitemap.xml

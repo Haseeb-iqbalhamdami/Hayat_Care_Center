@@ -1,17 +1,79 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { amenities } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Amenities | Hayat Care Centers",
-  description: "See the amenities and comforts available at Hayat Care Centers.",
+  title: "Adult Day Care Amenities in Colorado Springs | Hayat Care Center",
+  description:
+    "Explore adult day care amenities at Hayat Care Center in Colorado Springs, including comfortable shared spaces, practical services, activities, and supportive daily conveniences.",
+  keywords: [
+    "adult day care amenities Colorado Springs",
+    "senior care amenities Colorado Springs",
+    "adult day care comforts Colorado Springs",
+    "senior community amenities Colorado Springs",
+    "Hayat Care Center amenities",
+    "adult day center amenities Colorado Springs",
+  ],
+  alternates: {
+    canonical: "/amenities",
+  },
+  openGraph: {
+    title: "Adult Day Care Amenities in Colorado Springs | Hayat Care Center",
+    description:
+      "Comfortable shared spaces, practical services, activities, and daily conveniences at Hayat Care Center in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org/amenities",
+    type: "website",
+  },
 };
 
 export default function AmenitiesPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: "Adult Day Care Amenities in Colorado Springs",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Hayat Care Center",
+        },
+        areaServed: "Colorado Springs, CO",
+        serviceType: "Adult Day Care Amenities",
+        url: "https://www.hayatcarecenter.org/amenities",
+        description:
+          "Hayat Care Center offers adult day care amenities in Colorado Springs, including welcoming shared spaces, activities, practical services, and daily comforts for seniors and adults.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.hayatcarecenter.org",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Amenities",
+            item: "https://www.hayatcarecenter.org/amenities",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
+
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
           <p

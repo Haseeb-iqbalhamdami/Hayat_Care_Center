@@ -21,9 +21,56 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Hayat Care Centers | Adult Care Center & Home Care Agency",
+  title: {
+    default: "Adult Day Care, Home Care & Senior Transportation in Colorado Springs | Hayat Care Center",
+    template: "%s | Hayat Care Center",
+  },
   description:
-    "Hayat Care Centers offers an adult care center for daytime support and a home care agency for trusted in-home help—personal care, companionship, and family-centered coordination.",
+    "Hayat Care Center provides adult day programs, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs. Schedule a tour today.",
+  keywords: [
+    "adult day care Colorado Springs",
+    "adult care center Colorado Springs",
+    "home care agency Colorado Springs",
+    "non medical home care Colorado Springs",
+    "senior transportation Colorado Springs",
+    "non medical transportation Colorado Springs",
+    "companion care Colorado Springs",
+    "personal care assistance Colorado Springs",
+    "respite care Colorado Springs",
+    "Hayat Care Center",
+  ],
+  metadataBase: new URL("https://www.hayatcarecenter.org"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Adult Day Care, Home Care & Senior Transportation in Colorado Springs | Hayat Care Center",
+    description:
+      "Hayat Care Center provides adult day programs, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs.",
+    url: "https://www.hayatcarecenter.org",
+    siteName: "Hayat Care Center",
+    images: [
+      {
+        url: "/newimage.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hayat Care Center adult day care and home care services in Colorado Springs",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adult Day Care, Home Care & Senior Transportation in Colorado Springs | Hayat Care Center",
+    description:
+      "Adult day care, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs.",
+    images: ["/newimage.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -31,9 +78,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Hayat Care Center",
+    url: "https://www.hayatcarecenter.org",
+    telephone: "+1-719-678-6228",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2030 Jet Wing Dr",
+      addressLocality: "Colorado Springs",
+      addressRegion: "CO",
+      postalCode: "80916",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Colorado Springs",
+    },
+    description:
+      "Hayat Care Center provides adult day programs, home care, personal care, companionship, meals, and non-medical transportation in Colorado Springs.",
+    sameAs: ["https://www.hayatcarecenter.org"],
+  };
+
   return (
     <html lang="en" className={`${roboto.variable} ${playfair.variable} h-full scroll-pt-24`}>
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--ink)]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

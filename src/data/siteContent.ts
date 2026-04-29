@@ -645,45 +645,59 @@ export const facilitySpaces = [
 
 export const blogPosts = [
   {
-    slug: "daily-routines-emotional-wellness-senior-living",
-    title: "Daily Routines For Seniors In Colorado Springs: Improve Emotional Wellness",
+    slug: "adult-day-care-colorado-springs-guide",
+    title: "Adult Day Care In Colorado Springs: Complete Guide For Families In 2026",
     excerpt:
-      "Structured daily routines in senior care centers in Colorado Springs help reduce anxiety, improve mood, and create emotional stability for seniors.",
-    readTime: "5 min",
-    date: "March 28, 2026",
-    category: "Wellness",
+      "Everything families need to know about adult day care in Colorado Springs — who it serves, what a typical day looks like, costs, and how to choose the right program.",
+    readTime: "8 min",
+    date: "April 29, 2026",
+    category: "Senior Living",
     author: "Hayat Care Team",
-    image: "/images/home/gallery-comfortable-lounge.jpg",
-    imageAlt: "Seniors following a calm daily routine in adult day care Colorado Springs",
+    image: "/images/usedimages/adultcare.png",
+    imageAlt: "Adult day care program in Colorado Springs with seniors engaged in activities",
     highlights: [
-      "Why predictable schedules reduce anxiety and confusion",
-      "Simple routines families can support at home",
+      "Who benefits most from adult day care in Colorado Springs",
+      "What a structured day at a care center actually looks like",
+      "How to compare programs before making a decision",
+    ],
+    relatedLinks: [
+      { label: "Adult Care Center", href: "/adult-care-center" },
+      { label: "Benefits", href: "/benefits" },
+      { label: "Schedule A Tour", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
     ],
     detail: {
       overview:
-        "Routine is more than a timetable. For many seniors and adults, a consistent daily rhythm creates emotional safety, reduces stress, and supports a clearer sense of direction. In adult day care centers in Colorado Springs, structured routines can help participants feel more grounded, confident, and connected.",
+        "Adult day care in Colorado Springs gives families a supervised, structured daytime option for aging parents, adults with disabilities, or loved ones recovering from an illness — without requiring a full-time move into a residential facility. Programs like Hayat's adult care center offer meals, activities, personal care assistance, and consistent social engagement during the day, while participants return home to family each evening. This guide covers who benefits, what to expect, and how to evaluate a program before enrolling.",
       sections: [
         {
-          title: "Why predictability matters",
+          title: "Who adult day care is designed for",
           content:
-            "When morning routines, mealtimes, social time, activities, and rest happen in a familiar rhythm, seniors can better anticipate what comes next. That predictability lowers uncertainty and supports steadier mood in senior care settings.",
+            "Adult day care serves a wide range: older adults who need supervision and social engagement, younger adults with physical or cognitive disabilities, individuals managing early-to-mid-stage dementia, and anyone whose family caregiver works during the day. In Colorado Springs, programs typically serve participants from their twenties through their nineties. The common thread is that participants benefit from a safe, staffed environment during daytime hours — not because they need around-the-clock residential care, but because being home alone is no longer the safest or most fulfilling option.",
         },
         {
-          title: "How routines build confidence",
+          title: "What a typical day at an adult care center looks like",
           content:
-            "Repeating meaningful daily actions, such as joining breakfast, attending activities, and taking short walks, helps residents feel capable and connected. Small wins throughout the day can improve emotional balance and confidence.",
+            "A well-run adult day program in Colorado Springs follows a predictable rhythm that creates emotional security for participants. Morning usually begins with a welcome routine, light stretching or movement, and breakfast or a morning snack. Mid-morning programming might include creative workshops, cognitive games, or group conversation. After a full lunch with the group, afternoons rotate between quieter activities — reading, music, gentle crafts — and more social programs like seasonal celebrations or guest speakers. Families can expect a structured handoff at pickup with updates on how the day went. That consistency is what separates a quality program from one that simply provides supervision.",
         },
         {
-          title: "How families can reinforce routine",
+          title: "Key things to evaluate before choosing a program",
           content:
-            "Families can support emotional wellness by aligning visits, calls, and appointments with existing routines. Coordinating around known activity windows helps loved ones stay engaged without feeling overwhelmed.",
+            "Not all adult day care programs in Colorado Springs operate at the same standard. When comparing options, look at staff-to-participant ratios during peak hours, whether care plans are written and updated regularly, how the team communicates with families when something changes, and what the physical environment actually feels like during an active program day — not just during a scheduled tour. Ask whether transportation is available, how dietary needs are handled at mealtimes, and whether the activity calendar matches the interests and ability levels of your loved one. Hayat's adult care center encourages families to visit during a live program session before enrolling.",
+        },
+        {
+          title: "How adult day care fits into a broader care plan",
+          content:
+            "For many Colorado Springs families, adult day care is the first formal care service they use — and the one that makes every other part of life more manageable. A working caregiver who places a parent in a day program gains reliable weekday coverage, which often delays or prevents the need for residential placement. Adult day care can also run alongside home care services: a participant might attend the center three weekdays and receive in-home support on the other days or evenings. Hayat coordinates both verticals so families hear one consistent plan rather than managing two separate agencies.",
         },
       ],
       actionSteps: [
-        "Keep wake up and bedtime consistent most days",
-        "Plan social activity during the time of day with best energy",
-        "Use a visible schedule with simple language and cues",
-        "Review and adjust routines as mobility or health needs change",
+        "Visit at least two programs during an active session, not a quiet period",
+        "Ask for a written sample schedule before enrolling",
+        "Confirm how the team handles medical or behavioral changes during the day",
+        "Review the meal menu and check that dietary needs can be accommodated",
+        "Ask whether transportation to and from the center is available",
+        "Request references from families of current participants",
       ],
     },
   },

@@ -37,10 +37,7 @@ function escapeHtml(text: string) {
     .replace(/"/g, "&quot;");
 }
 
-/**
- * Local dev only: set EMAIL_DEV_BYPASS=true in `.env.local` to skip SMTP (logs payload, returns success).
- * Never enable in production.
- */
+
 export function isSmtpConfigured(): boolean {
   const user = process.env.SMTP_USER?.trim();
   const pass = process.env.SMTP_PASS?.trim();

@@ -141,7 +141,7 @@ export const homeCareAgencySummary = {
   eyebrow: "Home care agency",
   title: "The help you need at home—personal care, companionship, and peace of mind",
   body:
-    "When staying home is the goal, Hayat's home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, transportation, and friendly companionship. Care plans are written around your schedule, your priorities, and what "independence with backup" should look like for your household.",
+    "When staying home is the goal, Hayat's home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, transportation, and friendly companionship. Care plans are written around your schedule, your priorities, and what 'independence with backup' should look like for your household.",
   bullets: [
     "Flexible scheduling—from a few hours a week to more comprehensive coverage",
     "Skilled and non-skilled staff options available based on the care plan",

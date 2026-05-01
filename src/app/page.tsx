@@ -154,9 +154,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* (Rest of your file remains EXACTLY SAME — no changes) */}
+      {/* Venue Rental Promo */}
+      <section className="border-t border-slate-200 py-16 md:py-20">
+        <div className={homeShell}>
+          <div className={homeInner}>
+            <div className="overflow-hidden rounded-3xl bg-[var(--brand-navy)] px-8 py-12 md:px-14 md:py-16 lg:flex lg:items-center lg:gap-12">
+              <div className="flex-1">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-coral)]">
+                  Hall &amp; Venue Rental
+                </p>
+                <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+                  Need A Space For Your Next Event?
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-7 text-white/80">
+                  Our facility hall is available for private events, ceremonies,
+                  and celebrations. On working days we open the hall{" "}
+                  <strong className="text-white">after 5 PM</strong>, and on
+                  weekends it is available{" "}
+                  <strong className="text-white">all day</strong>.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/venue-rental"
+                    className="inline-flex items-center justify-center rounded-full bg-[var(--brand-coral)] px-7 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-[var(--brand-coral-hover)]"
+                  >
+                    Learn More &amp; Book
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-full border-2 border-white px-7 py-3.5 text-sm font-bold text-white transition hover:bg-white hover:text-[var(--brand-navy)]"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+              </div>
 
-      <HeroSection />
+              <div className="mt-10 flex shrink-0 flex-col gap-4 lg:mt-0 lg:min-w-[240px]">
+                <div className="rounded-2xl bg-white/10 px-6 py-5 text-center">
+                  <p className="text-3xl font-extrabold text-white">After 5 PM</p>
+                  <p className="mt-1 text-sm text-white/70">Weekdays · Mon – Fri</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 px-6 py-5 text-center">
+                  <p className="text-3xl font-extrabold text-white">All Day</p>
+                  <p className="mt-1 text-sm text-white/70">Weekends · Sat &amp; Sun</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

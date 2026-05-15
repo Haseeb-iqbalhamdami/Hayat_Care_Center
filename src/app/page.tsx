@@ -15,7 +15,6 @@ import {
   hayatPrimaryLocation,
   homeCareAgencySummary,
   homeQuickLinks,
-  homeQuickPathsIntro,
   nonMedicalTransportationSummary,
   homeTestimonialStories,
   homeVerticalsDeepDive,
@@ -666,6 +665,12 @@ export default function Home() {
               className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-8 py-3 text-sm font-bold text-white hover:bg-[var(--brand-gold-bright)]"
             >
               Contact us
+            </Link>
+            <Link
+              href="/admission-form"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[var(--brand-gold)] px-8 py-3 text-sm font-bold text-[var(--brand-gold)] transition hover:bg-[var(--brand-gold)] hover:text-white"
+            >
+              Admission form
             </Link>
             <Link href="/faq" className={btnOutline}>
               FAQ

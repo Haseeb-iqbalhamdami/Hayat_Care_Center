@@ -663,39 +663,39 @@ export const blogPosts = [
   // Primary KW: adult day care Colorado Springs
   // ─────────────────────────────────────────────
   {
-    slug: "adult-day-care-colorado-springs-guide"
+    slug: "adult-day-care-colorado-springs-guide",
 
-title: "Adult Day Care In Colorado Springs: Complete Guide For Families In 2026"
+    title: "Adult Day Care In Colorado Springs: Complete Guide For Families In 2026",
 
-metaTitle: "Adult Day Care In Colorado Springs: Complete Guide For Families In 2026 | Hayat Care Center"
+    metaTitle: "Adult Day Care In Colorado Springs: Complete Guide For Families In 2026 | Hayat Care Center",
 
-metaDescription: "Everything Colorado Springs families need to know about adult day care — who it serves, what a typical day looks like, costs, and how to choose the right program. Updated 2026."
+    metaDescription: "Everything Colorado Springs families need to know about adult day care — who it serves, what a typical day looks like, costs, and how to choose the right program. Updated 2026.",
 
-canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/adult-day-care-colorado-springs-guide"
+    canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/adult-day-care-colorado-springs-guide",
 
-keywords: "adult day care Colorado Springs, adult day program Colorado Springs, senior day program Colorado Springs, daytime senior care Colorado Springs, adult care center Colorado Springs, respite care Colorado Springs, dementia day program Colorado Springs, disabled adult day care Colorado Springs, caregiver respite Colorado Springs, structured day program elderly Colorado Springs, adult day services El Paso County, affordable senior day care Colorado Springs"
+    keywords: "adult day care Colorado Springs, adult day program Colorado Springs, senior day program Colorado Springs, daytime senior care Colorado Springs, adult care center Colorado Springs, respite care Colorado Springs, dementia day program Colorado Springs, disabled adult day care Colorado Springs, caregiver respite Colorado Springs, structured day program elderly Colorado Springs, adult day services El Paso County, affordable senior day care Colorado Springs",
 
-excerpt: "Everything families need to know about adult day care in Colorado Springs — who it serves, what a typical day looks like, costs, and how to choose the right program."
+    excerpt: "Everything families need to know about adult day care in Colorado Springs — who it serves, what a typical day looks like, costs, and how to choose the right program.",
 
-readTime: "8 min"
+    readTime: "8 min",
 
-date: "April 29, 2026"
+    date: "April 29, 2026",
 
-category: "Senior Living"
+    category: "Senior Living",
 
-author: "Hayat Care Team"
+    author: "Hayat Care Team",
 
-image: "/images/usedimages/adultcare.png"
+    image: "/images/usedimages/adultcare.png",
 
-imageAlt: "Adult day care program in Colorado Springs with seniors engaged in activities"
+    imageAlt: "Adult day care program in Colorado Springs with seniors engaged in activities",
 
-highlights: [
+    highlights: [
   "Who benefits most from adult day care in Colorado Springs",
   "What a structured day at a care center actually looks like",
   "How to compare programs before making a decision",
-]
+],
 
-relatedLinks: [
+    relatedLinks: [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Benefits", href: "/benefits" },
   { label: "Home Care Agency", href: "/home-care-agency" },
@@ -704,17 +704,17 @@ relatedLinks: [
   { label: "Activities & Events", href: "/activities-events" },
   { label: "Schedule A Tour", href: "/contact" },
   { label: "FAQ", href: "/faq" },
-]
+],
 
-schemas: [
+    schemas: [
   "Article",
   "LocalBusiness",
   "FAQPage",
   "HowTo",
   "BreadcrumbList",
-]
+],
 
-detail: {
+    detail: {
 
   overview: "Adult day care in Colorado Springs gives families a supervised, structured daytime option for aging parents, adults with disabilities, or loved ones recovering from an illness — without requiring a full-time move into a residential facility. Programs like Hayat's adult care center offer meals, activities, personal care assistance, and consistent social engagement during the day, while participants return home to family each evening. This guide covers who benefits, what to expect, and how to evaluate a program before enrolling.",
 
@@ -810,7 +810,7 @@ detail: {
 
   ],
 
-}
+  },
   },
 
   // ─────────────────────────────────────────────
@@ -818,39 +818,39 @@ detail: {
   // Primary KW: does Medicare cover adult day care
   // ─────────────────────────────────────────────
   {
-   slug: "medicare-adult-day-care-coverage-colorado-springs",
-title: "Does Medicare Cover Adult Day Care In Colorado Springs? What Families Must Know",
-metaTitle: "Does Medicare Cover Adult Day Care In Colorado Springs? What Families Must Know | Hayat Care Center",
-metaDescription: "Medicare coverage for adult day care in Colorado Springs is limited — but options exist. Learn what Medicare pays for, what it doesn't, and how Colorado families can fill the gap. Updated 2026.",
-canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/medicare-adult-day-care-coverage-colorado-springs",
-keywords: "does Medicare cover adult day care Colorado Springs, Medicare adult day care Colorado, Medicare Advantage adult day care Colorado Springs, Medicaid waiver adult day care Colorado, Colorado HCBS waiver adult day care, how to pay for adult day care Colorado Springs, adult day care financial assistance Colorado Springs, VA benefits adult day care Colorado Springs, long term care insurance adult day care, affordable adult day care Colorado Springs, Colorado HCPF waiver application, EBD waiver Colorado adult day services, DD waiver Colorado adult day services, adult day care cost Colorado Springs 2026, senior care financial planning Colorado Springs",
-excerpt: "Medicare coverage for adult day care in Colorado Springs is limited but options exist. Learn what Medicare pays for, what it doesn't, and how Colorado families can fill the gap.",
-readTime: "6 min",
-date: "April 28, 2026",
-category: "Financial Planning",
-author: "Hayat Care Team",
-image: "/images/home/hero-community-care.jpg",
-imageAlt: "Families reviewing Medicare coverage options for adult day care in Colorado Springs",
-highlights: [
+    slug: "medicare-adult-day-care-coverage-colorado-springs",
+    title: "Does Medicare Cover Adult Day Care In Colorado Springs? What Families Must Know",
+    metaTitle: "Does Medicare Cover Adult Day Care In Colorado Springs? What Families Must Know | Hayat Care Center",
+    metaDescription: "Medicare coverage for adult day care in Colorado Springs is limited — but options exist. Learn what Medicare pays for, what it doesn't, and how Colorado families can fill the gap. Updated 2026.",
+    canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/medicare-adult-day-care-coverage-colorado-springs",
+    keywords: "does Medicare cover adult day care Colorado Springs, Medicare adult day care Colorado, Medicare Advantage adult day care Colorado Springs, Medicaid waiver adult day care Colorado, Colorado HCBS waiver adult day care, how to pay for adult day care Colorado Springs, adult day care financial assistance Colorado Springs, VA benefits adult day care Colorado Springs, long term care insurance adult day care, affordable adult day care Colorado Springs, Colorado HCPF waiver application, EBD waiver Colorado adult day services, DD waiver Colorado adult day services, adult day care cost Colorado Springs 2026, senior care financial planning Colorado Springs",
+    excerpt: "Medicare coverage for adult day care in Colorado Springs is limited but options exist. Learn what Medicare pays for, what it doesn't, and how Colorado families can fill the gap.",
+    readTime: "6 min",
+    date: "April 28, 2026",
+    category: "Financial Planning",
+    author: "Hayat Care Team",
+    image: "/images/home/hero-community-care.jpg",
+    imageAlt: "Families reviewing Medicare coverage options for adult day care in Colorado Springs",
+    highlights: [
   "What original Medicare does and does not cover for day programs",
   "How Medicaid waivers and other funding sources fill the gap",
   "Questions to ask a benefits counselor before enrolling",
 ],
-relatedLinks: [
+    relatedLinks: [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Home Care Agency", href: "/home-care-agency" },
   { label: "Benefits", href: "/benefits" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
 ],
-schemas: [
+    schemas: [
   "Article",
   "LocalBusiness",
   "FAQPage",
   "HowTo",
   "BreadcrumbList",
 ],
-detail: {
+    detail: {
   overview: "Cost is the first question most Colorado Springs families ask when exploring adult day care, and Medicare is usually the first place they look. The short answer is that original Medicare (Parts A and B) does not cover standard adult day care programs. However, there are several other coverage paths — including Medicaid waivers, Medicare Advantage plans, Veterans benefits, and long-term care insurance — that can significantly reduce out-of-pocket costs. Understanding the difference helps families plan ahead rather than discover gaps after enrollment.",
   sections: [
     {
@@ -925,7 +925,7 @@ detail: {
       answer: "Contact Hayat Care Center directly at (719) 678-6228 to ask about accepted payment methods, insurance plans, and Medicaid waiver participation for the current enrollment period. The team can also help guide families toward the right funding resources for their situation.",
     },
   ],
-},
+  },
   },
 
   // ─────────────────────────────────────────────
@@ -934,38 +934,38 @@ detail: {
   // ─────────────────────────────────────────────
   {
     slug: "non-medical-transportation-seniors-colorado-springs",
-title: "Non-Medical Transportation For Seniors In Colorado Springs: Complete Overview",
-metaTitle: "Non-Medical Transportation For Seniors In Colorado Springs: Complete Overview | Hayat Care Center",
-metaDescription: "Non-medical transportation in Colorado Springs helps seniors get to appointments, errands, and social visits safely. Learn what it covers, who provides it, and how to book rides. Updated 2026.",
-canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/non-medical-transportation-seniors-colorado-springs",
-keywords: "non-medical transportation Colorado Springs, senior transportation Colorado Springs, non-emergency medical transport Colorado Springs, rides for seniors Colorado Springs, wheelchair accessible transport Colorado Springs, senior ride service Colorado Springs, transportation for elderly Colorado Springs, adult day care transportation Colorado Springs, medical appointment rides Colorado Springs, assisted transportation seniors Colorado Springs, dialysis transportation Colorado Springs, transportation for adults with disabilities Colorado Springs, senior van service Colorado Springs, non-medical transport El Paso County, how to get rides to doctor appointments Colorado Springs",
-excerpt: "Non-medical transportation in Colorado Springs helps seniors get to appointments, errands, and social visits safely. Learn what it covers, who provides it, and how to book rides.",
-readTime: "5 min",
-date: "April 27, 2026",
-category: "Transportation",
-author: "Hayat Care Team",
-image: "/images/usedimages/transportation.png",
-imageAlt: "Senior being assisted into a non-medical transport vehicle in Colorado Springs",
-highlights: [
+    title: "Non-Medical Transportation For Seniors In Colorado Springs: Complete Overview",
+    metaTitle: "Non-Medical Transportation For Seniors In Colorado Springs: Complete Overview | Hayat Care Center",
+    metaDescription: "Non-medical transportation in Colorado Springs helps seniors get to appointments, errands, and social visits safely. Learn what it covers, who provides it, and how to book rides. Updated 2026.",
+    canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/non-medical-transportation-seniors-colorado-springs",
+    keywords: "non-medical transportation Colorado Springs, senior transportation Colorado Springs, non-emergency medical transport Colorado Springs, rides for seniors Colorado Springs, wheelchair accessible transport Colorado Springs, senior ride service Colorado Springs, transportation for elderly Colorado Springs, adult day care transportation Colorado Springs, medical appointment rides Colorado Springs, assisted transportation seniors Colorado Springs, dialysis transportation Colorado Springs, transportation for adults with disabilities Colorado Springs, senior van service Colorado Springs, non-medical transport El Paso County, how to get rides to doctor appointments Colorado Springs",
+    excerpt: "Non-medical transportation in Colorado Springs helps seniors get to appointments, errands, and social visits safely. Learn what it covers, who provides it, and how to book rides.",
+    readTime: "5 min",
+    date: "April 27, 2026",
+    category: "Transportation",
+    author: "Hayat Care Team",
+    image: "/images/usedimages/transportation.png",
+    imageAlt: "Senior being assisted into a non-medical transport vehicle in Colorado Springs",
+    highlights: [
   "Difference between non-medical and emergency medical transport",
   "Types of trips covered and how scheduling works",
   "What to look for when choosing a provider",
 ],
-relatedLinks: [
+    relatedLinks: [
   { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Home Care Agency", href: "/home-care-agency" },
   { label: "Benefits", href: "/benefits" },
   { label: "Contact Us", href: "/contact" },
 ],
-schemas: [
+    schemas: [
   "Article",
   "LocalBusiness",
   "FAQPage",
   "HowTo",
   "BreadcrumbList",
 ],
-detail: {
+    detail: {
   overview: "Non-medical transportation for seniors in Colorado Springs fills a specific gap: the everyday rides that keep life running — doctor appointments, therapy sessions, pharmacy pickups, grocery runs, trips to the adult day care center, and social visits — for individuals who can no longer drive safely or reliably. It is not emergency medical transport or ambulance service. It is scheduled, courteous, assistance-level transport operated by trained drivers who understand the pacing, mobility, and communication needs of older adults and adults with disabilities.",
   sections: [
     {
@@ -1040,7 +1040,7 @@ detail: {
       answer: "Hayat's drivers are trained to wait when appointments run over the expected time. Families receive a direct contact to communicate with if there is a significant delay or change. This is one of the core differences between a senior non-medical transport provider and a standard rideshare service, which does not wait and cannot be relied on for medically adjacent appointments.",
     },
   ],
-},
+  },
   },
 
   // ─────────────────────────────────────────────
@@ -1049,38 +1049,38 @@ detail: {
   // ─────────────────────────────────────────────
   {
     slug: "signs-parent-needs-adult-day-care",
-title: "5 Signs Your Parent Needs Adult Day Care In Colorado Springs",
-metaTitle: "5 Signs Your Parent Needs Adult Day Care In Colorado Springs | Hayat Care Center",
-metaDescription: "Not sure if adult day care is the right step? These five signs tell Colorado Springs families it may be time to explore a structured daytime program for an aging parent. Updated 2026.",
-canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/signs-parent-needs-adult-day-care",
-keywords: "signs parent needs adult day care Colorado Springs, when to consider adult day care Colorado Springs, caregiver burnout Colorado Springs, senior isolation signs Colorado Springs, parent left alone unsafe Colorado Springs, dementia day program Colorado Springs, signs aging parent needs help Colorado Springs, senior wandering safety Colorado Springs, sundowning dementia Colorado Springs, post-hospital care Colorado Springs, caregiver fatigue Colorado Springs, adult day care for parents with dementia Colorado Springs, how to talk to parent about adult day care, senior safety at home Colorado Springs, aging parent care options Colorado Springs",
-excerpt: "Not sure if adult day care is the right step? These five signs tell Colorado Springs families it may be time to explore a structured daytime program for an aging parent.",
-readTime: "5 min",
-date: "April 26, 2026",
-category: "Family Guide",
-author: "Hayat Care Team",
-image: "/images/home/gallery-compassionate-care.jpg",
-imageAlt: "Family caregiver recognizing signs a parent needs adult day care in Colorado Springs",
-highlights: [
+    title: "5 Signs Your Parent Needs Adult Day Care In Colorado Springs",
+    metaTitle: "5 Signs Your Parent Needs Adult Day Care In Colorado Springs | Hayat Care Center",
+    metaDescription: "Not sure if adult day care is the right step? These five signs tell Colorado Springs families it may be time to explore a structured daytime program for an aging parent. Updated 2026.",
+    canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/signs-parent-needs-adult-day-care",
+    keywords: "signs parent needs adult day care Colorado Springs, when to consider adult day care Colorado Springs, caregiver burnout Colorado Springs, senior isolation signs Colorado Springs, parent left alone unsafe Colorado Springs, dementia day program Colorado Springs, signs aging parent needs help Colorado Springs, senior wandering safety Colorado Springs, sundowning dementia Colorado Springs, post-hospital care Colorado Springs, caregiver fatigue Colorado Springs, adult day care for parents with dementia Colorado Springs, how to talk to parent about adult day care, senior safety at home Colorado Springs, aging parent care options Colorado Springs",
+    excerpt: "Not sure if adult day care is the right step? These five signs tell Colorado Springs families it may be time to explore a structured daytime program for an aging parent.",
+    readTime: "5 min",
+    date: "April 26, 2026",
+    category: "Family Guide",
+    author: "Hayat Care Team",
+    image: "/images/home/gallery-compassionate-care.jpg",
+    imageAlt: "Family caregiver recognizing signs a parent needs adult day care in Colorado Springs",
+    highlights: [
   "Behavioral and safety signs to watch for at home",
   "How to bring up the conversation with a resistant parent",
   "What the transition into a day program typically looks like",
 ],
-relatedLinks: [
+    relatedLinks: [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Schedule A Tour", href: "/contact" },
   { label: "Benefits", href: "/benefits" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
 ],
-schemas: [
+    schemas: [
   "Article",
   "LocalBusiness",
   "FAQPage",
   "HowTo",
   "BreadcrumbList",
 ],
-detail: {
+    detail: {
   overview: "Most families in Colorado Springs do not go looking for adult day care until a specific moment forces the conversation — a fall, a missed medication, a neighbor calling because something seemed off. But waiting for a crisis is one of the costliest mistakes caregiving families make. Recognizing the earlier, quieter signs that a parent or loved one needs structured daytime support can prevent a crisis, preserve independence longer, and make the transition into a program far smoother for everyone involved.",
   sections: [
     {
@@ -1155,7 +1155,7 @@ detail: {
       answer: "Yes. Hayat Care Center encourages families to tour during a live program session rather than a quiet period so you see the real daily environment. Tours are available daily from 9:00 AM to 6:00 PM at 2030 Jet Wing Dr, Colorado Springs, CO 80916. Call (719) 678-6228 or visit the contact page to schedule.",
     },
   ],
-},
+  },
   },
 
   // ─────────────────────────────────────────────
@@ -1164,38 +1164,38 @@ detail: {
   // ─────────────────────────────────────────────
   {
     slug: "respite-care-colorado-springs-guide",
-title: "Respite Care In Colorado Springs: A Practical Guide For Family Caregivers",
-metaTitle: "Respite Care In Colorado Springs: A Practical Guide For Family Caregivers | Hayat Care Center",
-metaDescription: "Respite care in Colorado Springs gives family caregivers a planned break while a loved one receives quality supervision. Learn how it works, what it costs, and where to find it. Updated 2026.",
-canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/respite-care-colorado-springs-guide",
-keywords: "respite care Colorado Springs, family caregiver respite Colorado Springs, caregiver break Colorado Springs, adult day care respite Colorado Springs, in-home respite care Colorado Springs, short term respite care Colorado Springs, caregiver burnout relief Colorado Springs, respite care funding Colorado Springs, Colorado Medicaid respite waiver, HCBS respite care Colorado, VA caregiver support program Colorado, respite care for dementia caregivers Colorado Springs, how to get a break from caregiving Colorado Springs, temporary senior care Colorado Springs, caregiver support Colorado Springs",
-excerpt: "Respite care in Colorado Springs gives family caregivers a planned break while a loved one receives quality supervision. Learn how it works, what it costs, and where to find it.",
-readTime: "6 min",
-date: "April 25, 2026",
-category: "Caregiver Health",
-author: "Hayat Care Team",
-image: "/images/home/gallery-comfortable-lounge.jpg",
-imageAlt: "Family caregiver taking a needed break while loved one receives respite care in Colorado Springs",
-highlights: [
+    title: "Respite Care In Colorado Springs: A Practical Guide For Family Caregivers",
+    metaTitle: "Respite Care In Colorado Springs: A Practical Guide For Family Caregivers | Hayat Care Center",
+    metaDescription: "Respite care in Colorado Springs gives family caregivers a planned break while a loved one receives quality supervision. Learn how it works, what it costs, and where to find it. Updated 2026.",
+    canonicalUrl: "https://www.hayatcarecenter.org/resources/blog/respite-care-colorado-springs-guide",
+    keywords: "respite care Colorado Springs, family caregiver respite Colorado Springs, caregiver break Colorado Springs, adult day care respite Colorado Springs, in-home respite care Colorado Springs, short term respite care Colorado Springs, caregiver burnout relief Colorado Springs, respite care funding Colorado Springs, Colorado Medicaid respite waiver, HCBS respite care Colorado, VA caregiver support program Colorado, respite care for dementia caregivers Colorado Springs, how to get a break from caregiving Colorado Springs, temporary senior care Colorado Springs, caregiver support Colorado Springs",
+    excerpt: "Respite care in Colorado Springs gives family caregivers a planned break while a loved one receives quality supervision. Learn how it works, what it costs, and where to find it.",
+    readTime: "6 min",
+    date: "April 25, 2026",
+    category: "Caregiver Health",
+    author: "Hayat Care Team",
+    image: "/images/home/gallery-comfortable-lounge.jpg",
+    imageAlt: "Family caregiver taking a needed break while loved one receives respite care in Colorado Springs",
+    highlights: [
   "What respite care is and the different types available",
   "How adult day care functions as flexible respite in Colorado Springs",
   "Financial assistance options for respite services",
 ],
-relatedLinks: [
+    relatedLinks: [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Home Care Agency", href: "/home-care-agency" },
   { label: "Benefits", href: "/benefits" },
   { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
   { label: "Contact Us", href: "/contact" },
 ],
-schemas: [
+    schemas: [
   "Article",
   "LocalBusiness",
   "FAQPage",
   "HowTo",
   "BreadcrumbList",
 ],
-detail: {
+    detail: {
   overview: "Respite care is any supervised care arrangement that gives a primary family caregiver a temporary, planned break. In Colorado Springs, respite can take several forms — adult day programs, in-home respite visits, short-term residential stays, or overnight care — and it exists for one fundamental reason: long-term family caregiving is not sustainable without recovery time built in. Families who use respite services regularly report lower rates of burnout, fewer caregiver health crises, and — crucially — longer periods of successful home-based care for their loved one before residential placement becomes necessary.",
   sections: [
     {
@@ -1270,7 +1270,7 @@ detail: {
       answer: "No. Using respite care is one of the most responsible decisions a family caregiver can make. Caregiver burnout leads to more errors, higher rates of caregiver health events, and — ultimately — worse outcomes for the care recipient. Regular respite is not abandonment. It is what keeps a caregiver healthy enough to continue the role over months and years rather than burning out in weeks.",
     },
   ],
-},
+  },
   },
 
   // ─────────────────────────────────────────────

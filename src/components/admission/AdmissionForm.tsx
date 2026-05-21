@@ -99,7 +99,7 @@ const stateOptions = [
 ] as const;
 
 const backendBaseUrl =
-  process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") || "https://hmt4c7sf-5000.asse.devtunnels.ms/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") || "https://hayatbackend.onrender.com/api";
 
 type AdmissionApiError = {
   success?: boolean;

@@ -1,7 +1,7 @@
 export const EMPLOY_ONBOARDING_STORAGE_KEY = "hayat_employ_onboarding_unlocked";
 
 /** Password staff enter on the protected page (UI gate only). */
-export const EMPLOY_ONBOARDING_PAGE_PASSWORD = "Hayatcare345*";
+export const EMPLOY_ONBOARDING_PAGE_PASSWORD = "Hayat2244";
 
 /** Sent in POST body — must match backend EMPLOY_ONBOARDING_ACCESS_KEY (.env). */
 export const EMPLOY_ONBOARDING_API_ACCESS_KEY =

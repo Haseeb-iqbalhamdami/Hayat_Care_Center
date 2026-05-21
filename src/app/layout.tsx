@@ -86,7 +86,7 @@ export default function RootLayout({
         "@id": "https://www.hayatcarecenter.org/#organization",
         name: "Hayat Care Center",
         url: "https://www.hayatcarecenter.org",
-        telephone: "+1-719-678-6228",
+        telephone: "+1-719-499-6620",
         address: {
           "@type": "PostalAddress",
           streetAddress: "2030 Jet Wing Dr",
@@ -101,7 +101,7 @@ export default function RootLayout({
         "@id": "https://www.hayatcarecenter.org/#localbusiness",
         name: "Hayat Care Center",
         url: "https://www.hayatcarecenter.org",
-        telephone: "+1-719-678-6228",
+        telephone: "+1-719-499-6620",
         address: {
           "@type": "PostalAddress",
           streetAddress: "2030 Jet Wing Dr",

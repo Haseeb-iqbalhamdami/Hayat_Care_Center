@@ -1,13 +1,13 @@
 export const contactDetails = {
-  phoneHref: "tel:+17196786228",
-  phoneLabel: "+1 (719) 678-6228",
+  phoneHref: "tel:+17194996620",
+  phoneLabel: "+1 (719) 499-6620",
   email: "info@hayatcarecenter.org",
   websiteHref: "https://hayatcarecenter.org",
   websiteLabel: "Hayatcarecenter.org",
   address: "2030 Jet Wing Dr, Colorado Springs, CO 80916",
   hours: "Daily tours available from 9:00 AM - 6:00 PM",
-  supportLine: "+1 (719) 678-6228",
-  supportHref: "tel:+17196786228",
+  supportLine: "+1 (719) 499-6620",
+  supportHref: "tel:+17194996620",
 } as const;
 
 export const navGroups = [
@@ -785,7 +785,7 @@ export const blogPosts = [
 
     {
       question: "How much does adult day care cost in Colorado Springs?",
-      answer: "Costs vary by program, services included, and number of days attended per week. Some Colorado Springs families access financial assistance through Medicaid waiver programs (particularly the Colorado HCBS waiver), VA benefits for eligible veterans, or long-term care insurance. Contact Hayat Care Center at (719) 678-6228 to discuss current rates and payment options.",
+      answer: "Costs vary by program, services included, and number of days attended per week. Some Colorado Springs families access financial assistance through Medicaid waiver programs (particularly the Colorado HCBS waiver), VA benefits for eligible veterans, or long-term care insurance. Contact Hayat Care Center at (719) 499-6620 to discuss current rates and payment options.",
     },
 
     {
@@ -805,7 +805,7 @@ export const blogPosts = [
 
     {
       question: "Can I tour Hayat Care Center before making a decision?",
-      answer: "Yes, and Hayat specifically encourages tours during a live program session rather than a quiet period. Tours are available daily from 9:00 AM to 6:00 PM at 2030 Jet Wing Dr, Colorado Springs, CO 80916. Call (719) 678-6228 or visit the contact page to schedule.",
+      answer: "Yes, and Hayat specifically encourages tours during a live program session rather than a quiet period. Tours are available daily from 9:00 AM to 6:00 PM at 2030 Jet Wing Dr, Colorado Springs, CO 80916. Call (719) 499-6620 or visit the contact page to schedule.",
     },
 
   ],
@@ -922,7 +922,7 @@ export const blogPosts = [
     },
     {
       question: "Does Hayat Care Center accept Medicaid waivers or insurance?",
-      answer: "Contact Hayat Care Center directly at (719) 678-6228 to ask about accepted payment methods, insurance plans, and Medicaid waiver participation for the current enrollment period. The team can also help guide families toward the right funding resources for their situation.",
+      answer: "Contact Hayat Care Center directly at (719) 499-6620 to ask about accepted payment methods, insurance plans, and Medicaid waiver participation for the current enrollment period. The team can also help guide families toward the right funding resources for their situation.",
     },
   ],
   },
@@ -1025,7 +1025,7 @@ export const blogPosts = [
     },
     {
       question: "Are Hayat's vehicles wheelchair accessible?",
-      answer: "Hayat Care Center can accommodate passengers using walkers and wheelchairs when mobility needs are communicated at the time of booking. Contact Hayat directly at (719) 678-6228 to confirm availability and arrange any necessary accommodations before the first scheduled pickup.",
+      answer: "Hayat Care Center can accommodate passengers using walkers and wheelchairs when mobility needs are communicated at the time of booking. Contact Hayat directly at (719) 499-6620 to confirm availability and arrange any necessary accommodations before the first scheduled pickup.",
     },
     {
       question: "Can non-medical transport be coordinated with adult day care attendance?",
@@ -1033,7 +1033,7 @@ export const blogPosts = [
     },
     {
       question: "How far in advance do I need to book a ride with Hayat?",
-      answer: "Advance scheduling of 24 to 48 hours is preferred for non-medical transportation with Hayat Care Center. Same-day requests are accommodated when capacity allows. Contact the team at (719) 678-6228 to discuss recurring scheduling needs, which can often be set up on a standing weekly basis for regular appointments.",
+      answer: "Advance scheduling of 24 to 48 hours is preferred for non-medical transportation with Hayat Care Center. Same-day requests are accommodated when capacity allows. Contact the team at (719) 499-6620 to discuss recurring scheduling needs, which can often be set up on a standing weekly basis for regular appointments.",
     },
     {
       question: "What happens if my loved one's appointment runs long?",
@@ -1144,7 +1144,7 @@ export const blogPosts = [
     },
     {
       question: "How long does it take for a parent to adjust to adult day care?",
-      answer: "Most participants reach a comfortable level with the routine and the people around them within two to four weeks. The first week often involves some tiredness or quiet resistance, which is normal. A quality program will communicate proactively with families during this adjustment period. Hayat's team at (719) 678-6228 can answer questions about what to expect during the first month.",
+      answer: "Most participants reach a comfortable level with the routine and the people around them within two to four weeks. The first week often involves some tiredness or quiet resistance, which is normal. A quality program will communicate proactively with families during this adjustment period. Hayat's team at (719) 499-6620 can answer questions about what to expect during the first month.",
     },
     {
       question: "What is the difference between adult day care and placing a parent in a nursing home?",
@@ -1152,7 +1152,7 @@ export const blogPosts = [
     },
     {
       question: "Can I tour Hayat Care Center before deciding?",
-      answer: "Yes. Hayat Care Center encourages families to tour during a live program session rather than a quiet period so you see the real daily environment. Tours are available daily from 9:00 AM to 6:00 PM at 2030 Jet Wing Dr, Colorado Springs, CO 80916. Call (719) 678-6228 or visit the contact page to schedule.",
+      answer: "Yes. Hayat Care Center encourages families to tour during a live program session rather than a quiet period so you see the real daily environment. Tours are available daily from 9:00 AM to 6:00 PM at 2030 Jet Wing Dr, Colorado Springs, CO 80916. Call (719) 499-6620 or visit the contact page to schedule.",
     },
   ],
   },
@@ -1251,7 +1251,7 @@ export const blogPosts = [
     },
     {
       question: "Is respite care covered by Medicare or Medicaid in Colorado?",
-      answer: "Original Medicare covers respite care only in a very narrow context — hospice-related inpatient respite for terminally ill patients. It does not cover standard community respite or adult day care. Colorado's HCBS Medicaid waivers (EBD and DD) do cover respite services for eligible participants. The VA Caregiver Support Program covers respite for eligible Veterans' family caregivers. Contact Colorado HCPF or call Hayat at (719) 678-6228 for help navigating eligibility.",
+      answer: "Original Medicare covers respite care only in a very narrow context — hospice-related inpatient respite for terminally ill patients. It does not cover standard community respite or adult day care. Colorado's HCBS Medicaid waivers (EBD and DD) do cover respite services for eligible participants. The VA Caregiver Support Program covers respite for eligible Veterans' family caregivers. Contact Colorado HCPF or call Hayat at (719) 499-6620 for help navigating eligibility.",
     },
     {
       question: "How do I find respite care funding in Colorado Springs?",
@@ -1263,7 +1263,7 @@ export const blogPosts = [
     },
     {
       question: "How many days per week should I use adult day care for respite?",
-      answer: "That depends on your caregiving schedule and your loved one's needs. Many Colorado Springs families start with two or three days per week and expand from there as the participant adjusts to the routine. Hayat's team can help you design a schedule that provides meaningful relief without overwhelming a care recipient who is new to the program. Call (719) 678-6228 to talk through options.",
+      answer: "That depends on your caregiving schedule and your loved one's needs. Many Colorado Springs families start with two or three days per week and expand from there as the participant adjusts to the routine. Hayat's team can help you design a schedule that provides meaningful relief without overwhelming a care recipient who is new to the program. Call (719) 499-6620 to talk through options.",
     },
     {
       question: "Is it selfish to use respite care?",

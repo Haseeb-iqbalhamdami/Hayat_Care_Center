@@ -1,6 +1,6 @@
 export const backendBaseUrl =
   process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") ||
-  "https://hmt4c7sf-5000.asse.devtunnels.ms/api";
+  "https://hayatbackend.onrender.com/api";
 
 export type ApiFieldErrors = Record<string, string[]>;
 

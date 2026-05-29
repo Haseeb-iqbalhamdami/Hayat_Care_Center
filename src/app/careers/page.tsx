@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
-import { careerOpenings, careerBenefits, contactDetails } from "@/data/siteContent";
+import { careerBenefits, contactDetails } from "@/data/siteContent";
+import {
+  formatEmploymentType,
+  formatSalaryRange,
+  getJobs,
+  type Job,
+} from "@/lib/careersApi";
 
 export const metadata: Metadata = {
   title: "Caregiver Jobs in Colorado Springs | Careers at Hayat Care Center",
@@ -29,7 +35,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CareersPage() {
+export const dynamic = "force-dynamic";
+
+function jobSummary(description: string) {
+  const trimmed = description.trim();
+  if (trimmed.length <= 180) return trimmed;
+  return `${trimmed.slice(0, 177)}…`;
+}
+
+export default async function CareersPage() {
+  let jobs: Job[] = [];
+  let fetchError: string | null = null;
+
+  try {
+    jobs = await getJobs();
+  } catch (error) {
+    fetchError =
+      error instanceof Error
+        ? error.message
+        : "Unable to load openings from the server right now.";
+  }
 
   // ✅ SCHEMA ADDED
   const schema = {
@@ -134,30 +159,64 @@ export default function CareersPage() {
             even if a specific position is not listed below.
           </p>
 
+          {fetchError ? (
+            <p className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+              {fetchError} Please refresh the page or contact us at{" "}
+              <a href={contactDetails.phoneHref} className="font-semibold underline">
+                {contactDetails.phoneLabel}
+              </a>
+              .
+            </p>
+          ) : null}
+
+          {jobs.length === 0 && !fetchError ? (
+            <p className="mt-6 rounded-2xl border border-slate-200 bg-white px-4 py-6 text-sm text-[var(--ink-soft)]">
+              There are no open positions listed right now. You can still email your resume to{" "}
+              <a href={`mailto:${contactDetails.email}`} className="font-semibold text-[var(--brand-navy)]">
+                {contactDetails.email}
+              </a>{" "}
+              and we will keep it on file.
+            </p>
+          ) : null}
+
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {careerOpenings.map((job, index) => (
-              <BorderGlow
-                key={job.title}
-                data-reveal
-                data-reveal-delay={index * 80}
-                data-tilt
-                className="h-full"
-                borderRadius={16}
-                glowRadius={24}
-              >
-                <article className="h-full rounded-2xl bg-white p-6">
-                  <span className="inline-block rounded-full bg-[var(--brand-blue)]/10 px-3 py-1 text-xs font-bold text-[var(--brand-blue)]">
-                    {job.type}
-                  </span>
-                  <h3 className="mt-3 text-lg font-bold text-[var(--ink)]">
-                    {job.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                    {job.description}
-                  </p>
-                </article>
-              </BorderGlow>
-            ))}
+            {jobs.map((job, index) => {
+              const salary = formatSalaryRange(job.salaryMin, job.salaryMax);
+
+              return (
+                <BorderGlow
+                  key={job._id}
+                  data-reveal
+                  data-reveal-delay={index * 80}
+                  data-tilt
+                  className="h-full"
+                  borderRadius={16}
+                  glowRadius={24}
+                >
+                  <article className="flex h-full flex-col rounded-2xl bg-white p-6">
+                    <span className="inline-block rounded-full bg-[var(--brand-blue)]/10 px-3 py-1 text-xs font-bold text-[var(--brand-blue)]">
+                      {formatEmploymentType(job.employmentType)}
+                    </span>
+                    <h3 className="mt-3 text-lg font-bold text-[var(--ink)]">{job.title}</h3>
+                    {job.location ? (
+                      <p className="mt-1 text-xs font-medium text-[var(--ink-soft)]">{job.location}</p>
+                    ) : null}
+                    {salary ? (
+                      <p className="mt-1 text-xs font-medium text-[var(--ink-soft)]">{salary}</p>
+                    ) : null}
+                    <p className="mt-2 flex-1 text-sm leading-6 text-[var(--ink-soft)]">
+                      {jobSummary(job.description)}
+                    </p>
+                    <Link
+                      href={`/careers/${job._id}`}
+                      className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand-navy)] px-5 py-2.5 text-sm font-bold text-white"
+                    >
+                      View details
+                    </Link>
+                  </article>
+                </BorderGlow>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { backendBaseUrl } from "@/lib/apiBase";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -97,9 +98,6 @@ const stateOptions = [
   "WI",
   "WY",
 ] as const;
-
-const backendBaseUrl =
-  process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") || "https://hayatbackend.onrender.com/api";
 
 type AdmissionApiError = {
   success?: boolean;

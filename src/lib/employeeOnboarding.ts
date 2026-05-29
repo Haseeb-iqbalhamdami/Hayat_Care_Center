@@ -81,6 +81,11 @@ export type EmployeeOnboardingPayload = {
   signature: {
     legalName: string;
     signedDate: string;
+    /** PNG data URL of the drawn electronic signature */
+    signatureImage: string;
+    method: "drawn";
+    signedAt: string;
+    contractAcknowledged: boolean;
   };
   meta?: {
     packetVersion?: string;

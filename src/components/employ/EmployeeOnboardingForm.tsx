@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { backendBaseUrl, getApiErrorMessage, type ApiErrorPayload } from "@/lib/apiBase";
+import ElectronicSignaturePad from "@/components/employ/ElectronicSignaturePad";
 import {
   EMPLOY_ONBOARDING_API_ACCESS_KEY,
   POLICY_ACKNOWLEDGEMENTS,
@@ -90,6 +91,7 @@ export default function EmployeeOnboardingForm() {
   const [packetId, setPacketId] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [directDeposit, setDirectDeposit] = useState("");
+  const [signatureImage, setSignatureImage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -129,6 +131,27 @@ export default function EmployeeOnboardingForm() {
         setStatus("error");
         return;
       }
+    }
+
+    const legalName = String(fd.get("legalName") ?? "").trim();
+    const signedDate = String(fd.get("signedDate") ?? "").trim();
+
+    if (!fd.get("contractAcknowledged")) {
+      setErrorMessage("You must acknowledge the employment contract and HR packet before signing.");
+      setStatus("error");
+      return;
+    }
+
+    if (!signatureImage) {
+      setErrorMessage("Please draw your electronic signature in the signature box.");
+      setStatus("error");
+      return;
+    }
+
+    if (!legalName) {
+      setErrorMessage("Please enter your legal name as it appears on your contract.");
+      setStatus("error");
+      return;
     }
 
     const positionApplied =
@@ -193,8 +216,12 @@ export default function EmployeeOnboardingForm() {
         physicianPhone: String(fd.get("physicianPhone") ?? "").trim() || undefined,
       },
       signature: {
-        legalName: String(fd.get("legalName") ?? "").trim(),
-        signedDate: String(fd.get("signedDate") ?? "").trim(),
+        legalName,
+        signedDate,
+        signatureImage,
+        method: "drawn",
+        signedAt: new Date().toISOString(),
+        contractAcknowledged: true,
       },
       meta: {
         packetVersion: "2026-hr-packet",
@@ -232,6 +259,7 @@ export default function EmployeeOnboardingForm() {
       setShowSuccessModal(true);
       form.reset();
       setDirectDeposit("");
+      setSignatureImage(null);
     } catch {
       setErrorMessage("Could not reach the backend API. Please try again later.");
       setStatus("error");
@@ -535,18 +563,45 @@ export default function EmployeeOnboardingForm() {
         </section>
 
         <section className={sectionClassName}>
-          <h2 className="text-2xl font-bold text-[var(--ink)]">Final Signature</h2>
-          <p className="mt-2 text-sm text-[var(--ink-soft)]">
-            By signing, you confirm that you have reviewed the Hayat New Employee HR Packet and agree to
-            comply with all policies.
+          <h2 className="text-2xl font-bold text-[var(--ink)]">Contract & Electronic Signature</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+            Review the Hayat New Employee HR Packet and employment policies. Your drawn signature below
+            serves as your electronic signature on the contract and all required acknowledgments in this
+            submission.
           </p>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
+
+          <label className="mt-5 flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-4 text-sm leading-6 text-[var(--ink-soft)]">
+            <input
+              name="contractAcknowledged"
+              type="checkbox"
+              required
+              className="mt-1 h-4 w-4 accent-[#D5664B]"
+            />
+            <span>
+              I have read and agree to the Hayat Care Center employment contract, HR packet, and all
+              policy acknowledgments listed above. I understand this electronic signature is legally
+              binding to the same extent as a handwritten signature.
+            </span>
+          </label>
+
+          <div className="mt-6">
+            <p className="text-sm font-semibold text-[var(--ink)]">Draw your signature *</p>
+            <div className="mt-2">
+              <ElectronicSignaturePad
+                value={signatureImage}
+                onChange={setSignatureImage}
+                disabled={status === "submitting"}
+              />
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             <label className="text-sm font-semibold text-[var(--ink)] md:col-span-2">
-              Legal Name (typed signature)
+              Legal name (must match signature)
               <input name="legalName" required maxLength={200} className={inputClassName} />
             </label>
             <label className="text-sm font-semibold text-[var(--ink)]">
-              Signed Date
+              Signed date
               <input
                 name="signedDate"
                 type="date"

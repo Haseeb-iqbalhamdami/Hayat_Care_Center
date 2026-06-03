@@ -22,8 +22,10 @@ export default function EmployeeOnboardingPage() {
             New Employee HR Packet
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-[var(--ink-soft)] md:text-base">
-            Complete your onboarding and compliance documentation online. This page is not listed in
-            the public menu — use the direct link and access key provided by HR.
+            Complete your onboarding online: personal details, policy acknowledgments, electronic
+            signature, and required uploads (W-4, I-9, photo ID, SSN card, and more per the New Hire
+            Checklist). This page is not listed in the public menu — use the direct link and access key
+            from HR.
           </p>
           <p className="mt-4 text-sm font-medium text-[var(--ink-soft)]">
             Direct link: <span className="text-[var(--brand-navy)]">/employee-onboarding</span>

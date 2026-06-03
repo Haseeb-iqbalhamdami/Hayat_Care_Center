@@ -84,8 +84,8 @@ export default function AdmissionFormPage() {
               <li>Social history, interests, and family goals</li>
             </ul>
             <p className="mt-5 text-sm leading-6 text-white/75">
-              This page is wired for the dedicated admission backend contract and can submit
-              directly to the HayatCare API instead of the generic inquiry email flow.
+              Upload required PDFs and complete the form in one step. Everything is sent together
+              to the Hayat admission API for intake review.
             </p>
           </div>
         </div>

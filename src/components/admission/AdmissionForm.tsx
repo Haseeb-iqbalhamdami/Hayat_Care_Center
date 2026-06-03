@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { backendBaseUrl } from "@/lib/apiBase";
+import ElectronicSignaturePad from "@/components/employ/ElectronicSignaturePad";
+import {
+  ADMISSION_DOCUMENT_FIELDS,
+  validateAdmissionFile,
+} from "@/lib/admissionApi";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -198,12 +202,21 @@ function isAdmissionSuccess(response: Response, data: AdmissionApiSuccess | Admi
   if (!response.ok) return false;
 
   const payload = data as AdmissionApiSuccess | null;
-  return payload?.ok === true || payload?.success === true;
+  return (
+    payload?.ok === true ||
+    payload?.success === true ||
+    Boolean(payload?.submissionId || payload?.data?.submissionId || payload?.data?.id)
+  );
 }
 
 function getSubmissionId(data: AdmissionApiSuccess | null) {
   if (!data) return null;
-  return data.submissionId || data.data?.id || null;
+  return (
+    data.submissionId ||
+    data.data?.submissionId ||
+    data.data?.id ||
+    null
+  );
 }
 
 export default function AdmissionForm() {
@@ -211,6 +224,9 @@ export default function AdmissionForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [submissionId, setSubmissionId] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [clientSignatureImage, setClientSignatureImage] = useState<string | null>(null);
+  const [responsiblePartySignatureImage, setResponsiblePartySignatureImage] =
+    useState<string | null>(null);
 
   useEffect(() => {
     if (!showSuccessModal) return;
@@ -306,63 +322,117 @@ export default function AdmissionForm() {
       return;
     }
 
-    const fullAddress = [streetAddress, city, state, zip].filter(Boolean).join(", ");
+    const clientSignatureName = String(fd.get("clientSignatureName") ?? "").trim();
+    const clientSignedDate = String(fd.get("clientSignedDate") ?? "").trim();
+
+    if (!clientSignatureImage) {
+      setErrorMessage("Please draw the client or representative electronic signature.");
+      setStatus("error");
+      return;
+    }
+
+    if (!clientSignatureName) {
+      setErrorMessage("Please enter the client or representative legal name for the signature.");
+      setStatus("error");
+      return;
+    }
+
+    for (const doc of ADMISSION_DOCUMENT_FIELDS) {
+      const file = fd.get(doc.name);
+      const fileError = validateAdmissionFile(
+        file instanceof File ? file : new File([], ""),
+        doc.required,
+      );
+      if (fileError) {
+        setErrorMessage(`${doc.label}: ${fileError}`);
+        setStatus("error");
+        return;
+      }
+    }
+
+    const outbound = new FormData();
+
+    const textFields: Record<string, string | boolean> = {
+      clientName,
+      nickname,
+      dateOfBirth,
+      programStartDate,
+      clientPhone,
+      streetAddress,
+      city,
+      state,
+      zip,
+      caseManager: String(fd.get("caseManager") ?? "").trim(),
+      emergencyName,
+      emergencyPhone,
+      emergencyRelationship,
+      contactName,
+      contactRelationship,
+      contactAddress,
+      contactHomePhone,
+      contactCellPhone,
+      contactWorkPhone,
+      contactEmail,
+      employer,
+      scheduleStart,
+      scheduleEnd,
+      transportation,
+      physicianName,
+      physicianPhone,
+      physicianFax,
+      hospitalPreference,
+      primaryDiagnosis,
+      healthConditions,
+      allergies,
+      dietaryRestrictions,
+      medications,
+      mobility,
+      maritalStatus,
+      spousePartner,
+      birthplace,
+      languages,
+      workHistory,
+      hobbies,
+      favoriteFood,
+      favoriteMusic,
+      organizations,
+      familyGoals,
+      clientSignatureName,
+      clientSignedDate,
+      responsiblePartySignatureName: String(fd.get("responsiblePartySignatureName") ?? "").trim(),
+      responsiblePartySignedDate: String(fd.get("responsiblePartySignedDate") ?? "").trim(),
+      policiesAccepted: "true",
+      contactConsent: "true",
+      submittedFrom: "hayat-website-admission-form",
+      packetVersion: "2026-admission-packet",
+    };
+
+    for (const [key, value] of Object.entries(textFields)) {
+      if (typeof value === "string" && value) outbound.append(key, value);
+      if (typeof value === "boolean" && value) outbound.append(key, "true");
+    }
+
+    preferredDays.forEach((day) => outbound.append("preferredDays", day));
+    equipmentAids.forEach((item) => outbound.append("equipmentAids", item));
+
+    outbound.append("clientSignatureImage", clientSignatureImage);
+    if (responsiblePartySignatureImage) {
+      outbound.append("responsiblePartySignatureImage", responsiblePartySignatureImage);
+    }
+
+    for (const doc of ADMISSION_DOCUMENT_FIELDS) {
+      const file = fd.get(doc.name);
+      if (file instanceof File && file.size > 0) {
+        outbound.append(doc.name, file, file.name);
+      }
+    }
 
     setStatus("submitting");
 
     try {
-      const response = await fetch(`${backendBaseUrl}/admission-form`, {
+      const response = await fetch("/api/admission-form", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          clientName,
-          nickname,
-          dateOfBirth,
-          programStartDate,
-          clientPhone,
-          streetAddress,
-          city,
-          state,
-          zip,
-          emergencyName,
-          emergencyPhone,
-          emergencyRelationship,
-          contactName,
-          contactRelationship,
-          contactAddress,
-          contactHomePhone,
-          contactCellPhone,
-          contactWorkPhone,
-          contactEmail,
-          employer,
-          preferredDays,
-          scheduleStart,
-          scheduleEnd,
-          transportation,
-          physicianName,
-          physicianPhone,
-          physicianFax,
-          hospitalPreference,
-          primaryDiagnosis,
-          healthConditions,
-          allergies,
-          dietaryRestrictions,
-          medications,
-          mobility,
-          equipmentAids,
-          maritalStatus,
-          spousePartner,
-          birthplace,
-          languages,
-          workHistory,
-          hobbies,
-          favoriteFood,
-          favoriteMusic,
-          organizations,
-          familyGoals,
-          policiesAccepted,
-          contactConsent,
-        }),
+        body: outbound,
       });
 
       const data = (await response.json().catch(() => null)) as
@@ -380,8 +450,10 @@ export default function AdmissionForm() {
       setStatus("success");
       setShowSuccessModal(true);
       form.reset();
+      setClientSignatureImage(null);
+      setResponsiblePartySignatureImage(null);
     } catch {
-      setErrorMessage("Could not reach the backend API. Make sure the backend is running.");
+      setErrorMessage("Could not reach the admission API. Please try again or call us.");
       setStatus("error");
     }
   }
@@ -432,6 +504,11 @@ export default function AdmissionForm() {
           <label className="text-sm font-semibold text-[var(--ink)]">
             Program Start Date
             <input name="programStartDate" type="date" className={inputClassName} />
+          </label>
+
+          <label className="text-sm font-semibold text-[var(--ink)]">
+            Case Manager / Intake Staff
+            <input name="caseManager" maxLength={200} className={inputClassName} placeholder="If assigned" />
           </label>
 
           <label className="text-sm font-semibold text-[var(--ink)]">
@@ -727,12 +804,40 @@ export default function AdmissionForm() {
       </section>
 
       <section className={sectionClassName}>
-        <h2 className="text-2xl font-bold text-[var(--ink)]">Acknowledgment</h2>
+        <h2 className="text-2xl font-bold text-[var(--ink)]">Required Documents (PDF or image)</h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+          Upload the supporting documents listed in the Hayat admission packet. Each file can be PDF,
+          JPG, or PNG (max 10MB). Required items are marked with *.
+        </p>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          {ADMISSION_DOCUMENT_FIELDS.map((doc) => (
+            <label key={doc.name} className="text-sm font-semibold text-[var(--ink)] md:col-span-2">
+              {doc.label}
+              {doc.required ? " *" : " (optional)"}
+              <input
+                name={doc.name}
+                type="file"
+                accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/*"
+                required={doc.required}
+                className="mt-1.5 block w-full text-sm text-[var(--ink-soft)] file:mr-4 file:rounded-full file:border-0 file:bg-[var(--brand-navy)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+              />
+            </label>
+          ))}
+        </div>
+      </section>
+
+      <section className={sectionClassName}>
+        <h2 className="text-2xl font-bold text-[var(--ink)]">Policies & Electronic Signatures</h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+          Per the admission packet, the client or representative and the responsible party acknowledge
+          Hayat policies and CDPHE requirements with an electronic signature.
+        </p>
         <div className="mt-5 space-y-4">
           <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-4 text-sm leading-6 text-[var(--ink-soft)]">
             <input name="policiesAccepted" type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 accent-[#D5664B]" />
             <span>
-              I confirm that the information above is correct and I have reviewed the packet policies, required documents, and intake expectations.
+              I confirm that the information above is correct and I have reviewed the packet policies,
+              client rights, CDPHE requirements, and intake expectations.
             </span>
           </label>
 
@@ -744,9 +849,55 @@ export default function AdmissionForm() {
           </label>
         </div>
 
+        <div className="mt-8 space-y-8">
+          <div>
+            <h3 className="text-lg font-bold text-[var(--ink)]">Client / representative signature *</h3>
+            <ElectronicSignaturePad
+              value={clientSignatureImage}
+              onChange={setClientSignatureImage}
+              disabled={status === "submitting"}
+            />
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <label className="text-sm font-semibold text-[var(--ink)] md:col-span-2">
+                Legal name (must match signature)
+                <input name="clientSignatureName" required maxLength={200} className={inputClassName} />
+              </label>
+              <label className="text-sm font-semibold text-[var(--ink)]">
+                Signed date
+                <input
+                  name="clientSignedDate"
+                  type="date"
+                  required
+                  defaultValue={new Date().toISOString().slice(0, 10)}
+                  className={inputClassName}
+                />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-[var(--ink)]">Responsible party signature (if applicable)</h3>
+            <ElectronicSignaturePad
+              value={responsiblePartySignatureImage}
+              onChange={setResponsiblePartySignatureImage}
+              disabled={status === "submitting"}
+            />
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <label className="text-sm font-semibold text-[var(--ink)] md:col-span-2">
+                Responsible party legal name
+                <input name="responsiblePartySignatureName" maxLength={200} className={inputClassName} />
+              </label>
+              <label className="text-sm font-semibold text-[var(--ink)]">
+                Signed date
+                <input name="responsiblePartySignedDate" type="date" className={inputClassName} />
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <p className="text-sm text-[var(--ink-soft)]">
-            This online form sends directly to the Hayat admission backend endpoint for intake review.
+            One submission sends your intake details and all uploaded documents to Hayat for review.
           </p>
           <button
             type="submit"

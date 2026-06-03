@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { backendBaseUrl, getApiErrorMessage, type ApiErrorPayload } from "@/lib/apiBase";
+import { getApiErrorMessage, type ApiErrorPayload } from "@/lib/apiBase";
 import ElectronicSignaturePad from "@/components/employ/ElectronicSignaturePad";
 import {
-  EMPLOY_ONBOARDING_API_ACCESS_KEY,
-  POLICY_ACKNOWLEDGEMENTS,
-  type EmployeeOnboardingPayload,
-} from "@/lib/employeeOnboarding";
+  buildEmployFormData,
+  EMPLOY_DOCUMENT_FIELDS,
+  validateEmployDocument,
+} from "@/lib/employOnboardingApi";
+import { POLICY_ACKNOWLEDGEMENTS } from "@/lib/employeeOnboarding";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -154,13 +155,29 @@ export default function EmployeeOnboardingForm() {
       return;
     }
 
+    const doraLicenseNumber = String(fd.get("doraLicenseNumber") ?? "").trim();
+    const requiresDora = Boolean(doraLicenseNumber);
+
+    for (const doc of EMPLOY_DOCUMENT_FIELDS) {
+      const required = doc.required || (doc.name === "doraCredential" && requiresDora);
+      const file = fd.get(doc.name);
+      const fileError = validateEmployDocument(
+        file instanceof File ? file : new File([], ""),
+        required,
+      );
+      if (fileError) {
+        setErrorMessage(`${doc.label}: ${fileError}`);
+        setStatus("error");
+        return;
+      }
+    }
+
     const positionApplied =
       String(fd.get("positionApplied") ?? "").trim() === "Other"
         ? String(fd.get("positionOther") ?? "").trim()
         : String(fd.get("positionApplied") ?? "").trim();
 
-    const payload: EmployeeOnboardingPayload = {
-      accessKey: EMPLOY_ONBOARDING_API_ACCESS_KEY,
+    const onboardingData = {
       personal: {
         firstName: String(fd.get("firstName") ?? "").trim(),
         lastName: String(fd.get("lastName") ?? "").trim(),
@@ -187,7 +204,7 @@ export default function EmployeeOnboardingForm() {
         backgroundConsent: true,
         drugConsent: true,
         doraLicenseType: String(fd.get("doraLicenseType") ?? "").trim() || undefined,
-        doraLicenseNumber: String(fd.get("doraLicenseNumber") ?? "").trim() || undefined,
+        doraLicenseNumber: doraLicenseNumber || undefined,
         doraExpiration: String(fd.get("doraExpiration") ?? "").trim() || undefined,
         legallyAuthorizedToWork: fd.get("legallyAuthorizedToWork") === "yes",
         felonyDeclaration: String(fd.get("felonyDeclaration") ?? "").trim() || undefined,
@@ -218,7 +235,6 @@ export default function EmployeeOnboardingForm() {
       signature: {
         legalName,
         signedDate,
-        signatureImage,
         method: "drawn",
         signedAt: new Date().toISOString(),
         contractAcknowledged: true,
@@ -229,13 +245,14 @@ export default function EmployeeOnboardingForm() {
       },
     };
 
+    const outbound = buildEmployFormData(onboardingData, signatureImage, fd);
+
     setStatus("submitting");
 
     try {
-      const response = await fetch(`${backendBaseUrl}/employ/onboarding`, {
+      const response = await fetch("/api/employ/onboarding", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: outbound,
       });
 
       const data = (await response.json().catch(() => null)) as
@@ -245,7 +262,9 @@ export default function EmployeeOnboardingForm() {
 
       const isSuccess =
         response.status === 201 ||
-        (response.ok && (data as { success?: boolean })?.success === true);
+        (response.ok &&
+          ((data as { success?: boolean })?.success === true ||
+            (data as { ok?: boolean })?.ok === true));
 
       if (!isSuccess) {
         setErrorMessage(getApiErrorMessage(data as ApiErrorPayload));
@@ -389,6 +408,35 @@ export default function EmployeeOnboardingForm() {
               Pay Rate / Salary
               <input name="payRate" maxLength={120} className={inputClassName} placeholder="Hourly or annual" />
             </label>
+          </div>
+        </section>
+
+        <section className={sectionClassName}>
+          <h2 className="text-2xl font-bold text-[var(--ink)]">Pre-Employment Documents (PDF or image)</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+            Per the New Hire Checklist in your HR packet, upload these documents before or on your first
+            day. PDF, JPG, or PNG — max 10MB each. Items marked * are required.
+          </p>
+          <ul className="mt-3 list-inside list-disc space-y-1 text-xs text-[var(--ink-soft)]">
+            {EMPLOY_DOCUMENT_FIELDS.filter((d) => d.required).map((d) => (
+              <li key={d.name}>{d.checklist}</li>
+            ))}
+          </ul>
+          <div className="mt-5 grid gap-4">
+            {EMPLOY_DOCUMENT_FIELDS.map((doc) => (
+              <label key={doc.name} className="text-sm font-semibold text-[var(--ink)]">
+                {doc.label}
+                {doc.required ? " *" : " (optional)"}
+                {doc.name === "doraCredential" ? " — required if you entered a DORA license below" : ""}
+                <input
+                  name={doc.name}
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/*"
+                  required={doc.required}
+                  className="mt-1.5 block w-full text-sm text-[var(--ink-soft)] file:mr-4 file:rounded-full file:border-0 file:bg-[var(--brand-navy)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+                />
+              </label>
+            ))}
           </div>
         </section>
 
@@ -560,6 +608,45 @@ export default function EmployeeOnboardingForm() {
               <input name="physicianPhone" type="tel" maxLength={50} className={inputClassName} />
             </label>
           </div>
+        </section>
+
+        <section className={sectionClassName}>
+          <h2 className="text-2xl font-bold text-[var(--ink)]">Required Documents (New Hire Checklist)</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+            Upload items from the Hayat New Hire Checklist (Employee HR Packet). PDF or image, max
+            10MB each. Policy acknowledgments below are completed online; these files are the
+            supporting paperwork HR needs on file.
+          </p>
+          <ul className="mt-4 space-y-2 text-xs text-[var(--ink-soft)]">
+            {EMPLOY_DOCUMENT_FIELDS.map((doc) => (
+              <li key={doc.name} className="flex gap-2">
+                <span className="text-[var(--brand-orange)]">•</span>
+                <span>
+                  {doc.checklist}
+                  {doc.required ? " (required)" : " (optional)"}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 grid gap-4">
+            {EMPLOY_DOCUMENT_FIELDS.map((doc) => (
+              <label key={doc.name} className="text-sm font-semibold text-[var(--ink)]">
+                {doc.label}
+                {doc.required ? " *" : " (optional)"}
+                <input
+                  name={doc.name}
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/*"
+                  required={doc.required}
+                  className="mt-1.5 block w-full text-sm text-[var(--ink-soft)] file:mr-4 file:rounded-full file:border-0 file:bg-[var(--brand-navy)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+                />
+              </label>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-[var(--ink-soft)]">
+            If you entered a DORA license number above, uploading DORA credential verification is
+            required.
+          </p>
         </section>
 
         <section className={sectionClassName}>

@@ -114,7 +114,7 @@ type AdmissionApiSuccess = {
   ok?: boolean;
   success?: boolean;
   submissionId?: string;
-  data?: { id?: string };
+  data?: { id?: string; submissionId?: string; status?: string };
 };
 
 function getValues(fd: FormData, key: string) {

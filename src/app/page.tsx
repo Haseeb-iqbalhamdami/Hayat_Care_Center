@@ -10,6 +10,7 @@ import {
   adultCareCenterSummary,
   communityStats,
   contactDetails,
+  getContactMapEmbedUrl,
   faqs,
   hayatLocationSectionIntro,
   hayatPrimaryLocation,
@@ -278,7 +279,7 @@ export default function Home() {
               >
                 <iframe
                   title="Hayat care center location map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-89.72%2C39.72%2C-89.57%2C39.85&layer=mapnik&marker=39.7817%2C-89.6501"
+                  src={getContactMapEmbedUrl()}
                   className="h-[290px] w-full md:h-[360px]"
                   loading="lazy"
                 />

@@ -8,7 +8,21 @@ export const contactDetails = {
   hours: "Daily tours available from 9:00 AM - 6:00 PM",
   supportLine: "+1 (719) 499-6620",
   supportHref: "tel:+17194996620",
+  /** WGS84 — keep in sync with `address` for homepage / contact maps */
+  map: {
+    lat: 38.7934,
+    lon: -104.7008,
+    bbox: [-104.715, 38.783, -104.685, 38.803] as const,
+  },
 } as const;
+
+/** OpenStreetMap embed for `contactDetails.address` */
+export function getContactMapEmbedUrl() {
+  const { map } = contactDetails;
+  const [west, south, east, north] = map.bbox;
+  const bbox = `${west},${south},${east},${north}`;
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${map.lat}%2C${map.lon}`;
+}
 
 export const navGroups = [
   {

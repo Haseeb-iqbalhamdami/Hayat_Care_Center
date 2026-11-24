@@ -60,11 +60,6 @@ export const navGroups = [
         href: "/home-care-agency",
         description: "Personalized in home support for routines personal care and companionship.",
       },
-      {
-        label: "Non-Medical Transportation",
-        href: "/non-medical-transportation",
-        description: "Scheduled rides for appointments errands and community visits.",
-      },
     ],
   },
   {
@@ -82,7 +77,6 @@ export const navGroups = [
     links: [
       { label: "Blog", href: "/resources/blog", description: "Articles on senior wellness, lifestyle, and community." },
       { label: "Veteran Caregiver Resources", href: "/resources/veteran-caregiver-resources", description: "VA programs, local support, and practical care options for veteran families." },
-      { label: "Senior Living Guide", href: "/resources/senior-living-guide", description: "Helpful information for families exploring options." },
       { label: "FAQ", href: "/faq", description: "Common questions answered clearly." },
     ],
   },
@@ -116,7 +110,6 @@ export const footerLinkGroups = [
     links: [
       { label: "Adult Care Center", href: "/adult-care-center" },
       { label: "Home Care Agency", href: "/home-care-agency" },
-      { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
       { label: "Floor Plans", href: "/floor-plans" },
       { label: "Photos", href: "/gallery/photos" },
       { label: "Videos", href: "/gallery/videos" },
@@ -127,7 +120,6 @@ export const footerLinkGroups = [
     links: [
       { label: "Blog", href: "/resources/blog" },
       { label: "Veteran Caregiver Resources", href: "/resources/veteran-caregiver-resources" },
-      { label: "Senior Living Guide", href: "/resources/senior-living-guide" },
       { label: "FAQ", href: "/faq" },
       { label: "Careers", href: "/careers" },
     ],
@@ -149,6 +141,7 @@ export const adultCareCenterSummary = {
   bullets: [
     "Structured programming: movement, creativity, conversation, and rest built into the day",
     "Supervision and assistance with personal care needs as part of the plan",
+    "Free transportation to and from the adult care center included with enrollment",
     "Family partnership with practical updates and predictable routines",
   ],
 } as const;
@@ -157,74 +150,83 @@ export const homeCareAgencySummary = {
   eyebrow: "Home care agency",
   title: "The help you need at home—personal care, companionship, and peace of mind",
   body:
-    "When staying home is the goal, Hayat's home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, transportation, and friendly companionship. Care plans are written around your schedule, your priorities, and what 'independence with backup' should look like for your household.",
+    "When staying home is the goal, Hayat's home care agency brings reliable caregivers for personal care, medication reminders, meal support, light housekeeping, and friendly companionship. Free transportation for appointments and care-related trips is included with home care. Care plans are written around your schedule, your priorities, and what 'independence with backup' should look like for your household.",
   bullets: [
     "Flexible scheduling—from a few hours a week to more comprehensive coverage",
     "Skilled and non-skilled staff options available based on the care plan",
+    "Free transportation included with home care for appointments and care-related rides",
     "Consistent staffing orientation so visits feel familiar, not fragmented",
     "Transparent communication with family members and care partners",
   ],
 } as const;
 
-/** Homepage: deeper comparison of the three service lines */
+/** Homepage: deeper comparison of the two primary service lines */
 export const homeVerticalsDeepDive = {
-  eyebrow: "Our verticals",
-  title: "Three ways we serve—same standards, different settings",
+  eyebrow: "Our care paths",
+  title: "Two ways we serve—same standards, different settings",
   intro:
-    "Hayat is built around three complementary verticals: daytime community care, private-duty home support, and non-medical transportation. Families often start with one and add others when schedules, health, or travel needs change. Below is how each vertical works day to day, and who it tends to fit best.",
+    "Hayat is built around two complementary care paths: daytime community care and private-duty home support. Free transportation is included with both. Families often start with one and add the other when schedules or health needs change.",
   adult: {
     name: "Adult care center",
     tagline: "Structured daytime community care",
     fitFor:
-      "Young adults through older adults who thrive with routine, social connection, and on-site support during the day—while still sleeping at home with family at night.",
+      "Young adults through older adults who thrive with routine, social connection, and on-site support during the day—while still sleeping at home with family at night. Free rides to and from the center are included.",
     details: [
       "Arrival, welcome, and a predictable rhythm: meals, activities, rest, and personal care as outlined in the individual plan.",
       "On-site team for oversight, engagement, and gentle redirection when memory or mobility need extra attention.",
       "Family caregivers gain reliable daytime coverage so they can work, rest, or handle errands knowing their loved one is in a staffed environment.",
+      "Free transportation to and from the adult care center is included with the program.",
     ],
-    outcomes: ["Supervised social setting", "Nutrition & hydration built into the day", "Transparent handoffs at pickup"],
+    outcomes: [
+      "Supervised social setting",
+      "Nutrition & hydration built into the day",
+      "Free transport to & from the center",
+      "Transparent handoffs at pickup",
+    ],
   },
   home: {
     name: "Home care agency",
     tagline: "Private-duty care in the home you love",
     fitFor:
-      "Individuals who want to remain at home with help for bathing, dressing, errands, companionship, or post-hospital recovery—on a schedule that matches your household.",
+      "Individuals who want to remain at home with help for bathing, dressing, errands, companionship, or post-hospital recovery—on a schedule that matches your household. Free transportation is included with home care.",
     details: [
       "Care plans spell out tasks, frequency, and goals; supervisors check in so quality stays consistent visit to visit.",
       "Skilled and non-skilled staff options are matched to the level of support needed at home.",
       "We prioritize caregiver continuity so clients see familiar faces, and we communicate early when a change is unavoidable.",
       "Home care can stand alone or pair with the center—for example, evenings and weekends at home after weekday programming.",
+      "Free transportation for appointments and care-related trips is included with home care.",
     ],
     outcomes: [
       "Flexible hours",
       "Skilled and non-skilled staff options",
+      "Free transport included",
       "Privacy and familiarity of home",
       "Caregiver notes families can review",
     ],
   },
   transport: {
-    name: "Non-medical transportation",
-    tagline: "Dependable rides for life outside the home",
+    name: "Free transportation (included)",
+    tagline: "Included with adult day care and home care",
     fitFor:
-      "Clients from young adulthood through older adulthood who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
+      "Transportation is not a separate paid service at Hayat. Rides for adult care center attendance and home-care-related appointments are free for enrolled clients.",
     details: [
-      "Door-through-door or curb-to-curb options depending on mobility; drivers oriented to patience, pacing, and clear communication.",
-      "Coordination with the center or home care team so pickup windows align with programming or visit schedules.",
-      "Advance booking preferred; same-day requests handled when capacity allows.",
+      "Adult care center: free transportation to and from the center.",
+      "Home care: free transportation for appointments and care-related trips coordinated with the plan.",
+      "Not emergency medical transport or ambulance service.",
     ],
-    outcomes: ["Predictable scheduling", "Trained, vetted drivers", "Works alongside center & home care plans"],
+    outcomes: ["Free with adult day care", "Free with home care", "Coordinated with your care plan"],
   },
 } as const;
 
 export const nonMedicalTransportationSummary = {
-  eyebrow: "Non-medical transportation",
-  title: "Rides that respect your time, mobility, and dignity",
+  eyebrow: "Free transportation included",
+  title: "Rides at no extra cost with adult day care and home care",
   body:
-    "Our non-medical transportation service helps clients get to medical appointments, therapy, the adult day center, and community events—without treating you like a number on a route. It is not ambulance or emergency care; it is reliable, courteous transport when driving yourself is no longer the best option.",
+    "Transportation is free for Hayat clients enrolled in our adult care center or home care agency. We help participants get to and from the center, and coordinate care-related appointment rides for home care clients—without treating you like a number on a route. It is not ambulance or emergency care.",
   bullets: [
-    "Scheduled pickups aligned with your care plan and family preferences",
-    "Vehicles and assistance levels matched to walkers, wheelchairs, or step-free needs when arranged in advance",
-    "Clear communication if a delay happens—we call families, not the other way around",
+    "Free transportation to and from the adult care center with enrollment",
+    "Free transportation included with home care for appointments and care-related trips",
+    "Vehicles and assistance levels matched to walkers or wheelchairs when arranged in advance",
   ],
 } as const;
 
@@ -234,7 +236,7 @@ export const hayatPrimaryLocation = {
   area: "Colorado Springs, CO",
   lines: [
     "Daytime programming, dining, activities, and supervised support—all from one welcoming building.",
-    "Home care coordination and non-medical transportation are arranged through the same team, so families hear one clear plan.",
+    "Home care and free client transportation are arranged through the same team, so families hear one clear plan.",
     "Tours and consults by appointment; we return calls the same day when you have an urgent question.",
   ],
   ctaLabel: "Plan a tour",
@@ -300,17 +302,12 @@ export const homeQuickLinks = [
   {
     title: "Adult care center",
     href: "/#adult-day-center",
-    description: "Daytime community care, activities, meals, and supervised support on the homepage overview.",
+    description: "Daytime community care, activities, meals, supervised support, and free rides to the center.",
   },
   {
     title: "Home care agency",
     href: "/#home-care-agency",
-    description: "Trusted caregivers at home for personal care, companionship, and daily routines.",
-  },
-  {
-    title: "Non-medical transportation",
-    href: "/#non-medical-transportation",
-    description: "Scheduled rides for appointments and errands—not emergency medical transport.",
+    description: "Trusted caregivers at home for personal care, companionship, and free care-related rides.",
   },
   {
     title: "Amenities",
@@ -340,8 +337,8 @@ export const homeQuickPathsIntro =
 
 export const homeFeatureCards = [
   {
-    title: "Three ways to receive care",
-    text: "Daytime care at the center, private-duty support at home, and non-medical transportation when you need dependable rides—use one or combine them as life changes.",
+    title: "Two ways to receive care",
+    text: "Daytime care at the center or private-duty support at home—free transportation is included with both. Use one path or combine them as life changes.",
   },
   {
     title: "Plans that respect independence",
@@ -402,8 +399,8 @@ export const amenities = [
     description: "Practical services that reduce daily burden and let residents focus on enjoying the community.",
   },
   {
-    title: "Scheduled Transportation",
-    description: "Transportation coordination for appointments, errands, and planned community outings.",
+    title: "Free Scheduled Transportation",
+    description: "Free transportation included with adult day care and home care for center rides, appointments, and planned outings.",
   },
 ] as const;
 
@@ -512,9 +509,9 @@ export const services = [
     icon: "M3 4h18M8 4v16m8-16v16M4 9h4m8 0h4M4 15h4m8 0h4",
   },
   {
-    title: "Transportation & errands",
+    title: "Free transportation & errands",
     description:
-      "Escorts to appointments, pharmacy stops, and essential outings—planned with safety and pacing in mind.",
+      "Free rides with adult day care and home care—appointments, pharmacy stops, and center pickup planned with safety and pacing in mind.",
     icon: "M8 17h8M7 7h10l2 6H5l2-6Zm1 10a1 1 0 1 0 0 .01M16 17a1 1 0 1 0 0 .01",
   },
 ] as const;
@@ -715,7 +712,6 @@ export const blogPosts = [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Benefits", href: "/benefits" },
   { label: "Home Care Agency", href: "/home-care-agency" },
-  { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
   { label: "Amenities", href: "/amenities" },
   { label: "Activities & Events", href: "/activities-events" },
   { label: "Schedule A Tour", href: "/contact" },
@@ -811,7 +807,7 @@ export const blogPosts = [
 
     {
       question: "Does Hayat provide transportation to the adult day center?",
-      answer: "Yes. Hayat Care Center offers non-medical transportation service for participants getting to and from the adult care center, as well as to medical appointments and community outings. Pickups are scheduled and coordinated with your care plan. Vehicles and assistance levels can be matched to participants using walkers or wheelchairs when arranged in advance.",
+      answer: "Yes — and it is free with adult day care enrollment. Hayat provides transportation to and from the adult care center as part of the program. Home care clients also receive free transportation for appointments and care-related trips. Pickups are scheduled with your care plan, and vehicles can be matched to walkers or wheelchairs when arranged in advance.",
     },
 
     {
@@ -968,7 +964,6 @@ export const blogPosts = [
   "What to look for when choosing a provider",
 ],
     relatedLinks: [
-  { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Home Care Agency", href: "/home-care-agency" },
   { label: "Benefits", href: "/benefits" },
@@ -982,7 +977,7 @@ export const blogPosts = [
   "BreadcrumbList",
 ],
     detail: {
-  overview: "Non-medical transportation for seniors in Colorado Springs fills a specific gap: the everyday rides that keep life running — doctor appointments, therapy sessions, pharmacy pickups, grocery runs, trips to the adult day care center, and social visits — for individuals who can no longer drive safely or reliably. It is not emergency medical transport or ambulance service. It is scheduled, courteous, assistance-level transport operated by trained drivers who understand the pacing, mobility, and communication needs of older adults and adults with disabilities.",
+  overview: "Transportation for seniors in Colorado Springs fills a specific gap: the everyday rides that keep life running — doctor appointments, therapy sessions, pharmacy pickups, grocery runs, trips to the adult day care center, and social visits — for individuals who can no longer drive safely or reliably. At Hayat, transportation is free with adult day care enrollment and free with home care for care-related trips. It is not emergency medical transport or ambulance service.",
   sections: [
     {
       title: "What non-medical transportation covers",
@@ -1201,7 +1196,6 @@ export const blogPosts = [
   { label: "Adult Care Center", href: "/adult-care-center" },
   { label: "Home Care Agency", href: "/home-care-agency" },
   { label: "Benefits", href: "/benefits" },
-  { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
   { label: "Contact Us", href: "/contact" },
 ],
     schemas: [
@@ -1343,7 +1337,7 @@ export const blogPosts = [
     { label: "Benefits", href: "/benefits" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact Us", href: "/contact" },
-    { label: "Non-Medical Transportation", href: "/non-medical-transportation" },
+    { label: "Adult Care Center", href: "/adult-care-center" },
     { label: "FAQ", href: "/faq" },
   ],
 
@@ -2096,10 +2090,6 @@ export const blogPosts = [
 
   relatedLinks: [
     { label: "Home Care Agency", href: "/home-care-agency" },
-    {
-      label: "Non-Medical Transportation",
-      href: "/non-medical-transportation",
-    },
     { label: "Adult Care Center", href: "/adult-care-center" },
     { label: "Benefits", href: "/benefits" },
     { label: "FAQ", href: "/faq" },
@@ -2535,9 +2525,17 @@ export const veteranCaregiverResourcesGuide = {
   readTime: "10 min read",
   excerpt:
     "Practical veteran caregiver resources for Colorado Springs families — VA programs, local support, respite, and care options that work in real life, not just on paper.",
-  heroImage: "/images/resources/veteran-fuji-hero.jpg",
-  heroImageAlt: "Elderly American veteran in a quiet Fujifilm-style portrait, showing dignity and calm strength",
+  heroImage: "/images/resources/veteran-american-flag-hero.jpg",
+  heroImageAlt: "Proud American veteran standing with the United States flag",
+  flagImage: "/images/resources/american-flag-vintage.jpg",
+  flagImageAlt: "The American flag waving with pride",
+  veteranImage: "/images/resources/veteran-classic-portrait.jpg",
+  veteranImageAlt: "Elderly American veteran honored beside the United States flag",
+  tributeTitle: "We Honor America’s Veterans",
+  tributeLead:
+    "At Hayat Care Center, we are deeply proud of every American soldier and veteran who served this nation with courage, sacrifice, and love of country. We love our veterans. We respect their stories. And we are committed to giving them days filled with dignity, warmth, friendship, and joy — because those who protected our freedom deserve peace, happiness, and care that feels like home.",
   intro: [
+    "At Hayat Care Center, we are proud of America’s soldiers and veterans. We love them, we honor their service, and we work every day to bring them comfort, companionship, and meaningful happiness — through adult day care, home care, and free transportation for enrolled clients in Colorado Springs. Their service protected our freedom; our care protects their dignity.",
     "Some days, being a veteran caregiver means managing meds, moods, appointments, paperwork, and a grown adult who swears they do not need help while clearly needing help. That is exactly why finding the top veteran caregiver resources matters. Not the polished brochure version. The real-world kind that helps when your spouse is spiraling, your parent is forgetting, or your family is one more bad night away from running on fumes.",
     "A lot of caregiver advice sounds fine on paper and useless at 2:00 a.m. Veteran families need resources that account for trauma, pride, military culture, brain injury, PTSD, dementia, Parkinson’s, and the fact that caregiving rarely arrives one diagnosis at a time. It usually shows up as a pileup. So let’s talk about what actually tends to help in Colorado Springs — and how Hayat Care Center can sit inside a plan that works.",
   ],
@@ -2646,10 +2644,10 @@ export const veteranCaregiverResourcesGuide = {
       image: "/images/usedimages/homcare.png",
     },
     {
-      title: "Non-Medical Transportation",
-      body: "Scheduled rides to appointments, therapy, and the adult care center — coordinated with your care plan, not a generic route.",
+      title: "Free Transportation Included",
+      body: "Free rides to and from the adult care center, and free care-related transportation with home care — coordinated with your plan.",
       tag: "Hayat",
-      href: "/non-medical-transportation",
+      href: "/contact",
       external: false,
       image: "/images/usedimages/transportation.png",
     },
@@ -2679,7 +2677,7 @@ export const veteranCaregiverResourcesGuide = {
     {
       question: "Does Hayat help with transportation to appointments?",
       answer:
-        "Yes. Hayat offers non-medical transportation for medical appointments, therapy, community outings, and rides to and from the adult care center. Assistance levels can be matched to walkers or wheelchairs when arranged in advance.",
+        "Yes — and it is free with enrollment. Adult care center clients get free rides to and from the center. Home care clients get free transportation for appointments and care-related trips. Assistance levels can be matched to walkers or wheelchairs when arranged in advance.",
     },
     {
       question: "Where is Hayat Care Center located?",

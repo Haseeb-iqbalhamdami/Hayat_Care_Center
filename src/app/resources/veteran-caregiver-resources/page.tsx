@@ -98,39 +98,46 @@ export default function VeteranCaregiverResourcesPage() {
 
       <section className="hero-grid">
         <div className="mx-auto max-w-7xl px-4 py-12 md:py-14">
-          <div className={styles.heroWrap}>
-            <div>
-              <Link href="/resources/blog" className={styles.backLink}>
-                &larr; Back To Resources
-              </Link>
-              <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
-                {guide.eyebrow}
-              </p>
-              <div className="mt-2">
-                <ScrollFloat as="h1" containerClassName={styles.heroTitle} textClassName="text-balance">
-                  {guide.title}
-                </ScrollFloat>
-              </div>
-              <p className={styles.heroExcerpt}>{guide.excerpt}</p>
-              <p className={styles.heroMeta}>
-                <span className={styles.badge}>Veteran Families</span>
-                <span>{guide.date}</span>
-                <span>•</span>
-                <span>{guide.readTime}</span>
-                <span>•</span>
-                <span>By Hayat Care Team</span>
-              </p>
+          <div>
+            <Link href="/resources/blog" className={styles.backLink}>
+              &larr; Back To Resources
+            </Link>
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
+              {guide.eyebrow}
+            </p>
+            <div className="mt-2">
+              <ScrollFloat as="h1" containerClassName={styles.heroTitle} textClassName="text-balance">
+                {guide.title}
+              </ScrollFloat>
             </div>
+            <p className={styles.heroExcerpt}>{guide.excerpt}</p>
+            <p className={styles.heroMeta}>
+              <span className={styles.badge}>Veteran Families</span>
+              <span>{guide.date}</span>
+              <span>•</span>
+              <span>{guide.readTime}</span>
+              <span>•</span>
+              <span>By Hayat Care Team</span>
+            </p>
+          </div>
 
-            <div className={styles.heroMedia}>
+          <div className={`mt-10 ${styles.tributeSection}`} data-reveal>
+            <div className={styles.tributeImageFrame}>
               <Image
                 src={guide.heroImage}
                 alt={guide.heroImageAlt}
                 fill
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className={styles.heroImage}
+                sizes="(min-width: 1024px) 1100px, 100vw"
+                className={styles.tributeMainImage}
                 priority
               />
+            </div>
+
+            <div className={styles.tributeTextBlock}>
+              <p className={styles.tributeEyebrow}>Proudly Serving Those Who Served</p>
+              <h2 className={styles.tributeTitle}>{guide.tributeTitle}</h2>
+              <div className={styles.tributeRule} aria-hidden />
+              <p className={styles.tributeText}>{guide.tributeLead}</p>
             </div>
           </div>
         </div>
@@ -140,8 +147,12 @@ export default function VeteranCaregiverResourcesPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className={styles.layout}>
             <article className={styles.article}>
-              {guide.intro.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className={styles.intro}>
+              {guide.intro.map((paragraph, index) => (
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className={styles.intro}
+                  style={index === 0 ? { fontWeight: 600, color: "#0f172a" } : undefined}
+                >
                   {paragraph}
                 </p>
               ))}

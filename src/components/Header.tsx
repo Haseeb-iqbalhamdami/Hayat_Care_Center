@@ -33,11 +33,6 @@ const navItems: NavItem[] = [
         href: "/home-care-agency",
         description: "Trusted caregivers in your home for personal care, companionship, and daily routines.",
       },
-      {
-        label: "Non-medical transportation",
-        href: "/non-medical-transportation",
-        description: "Scheduled rides for appointments and errands—safe, courteous, and coordinated with your care plan.",
-      },
     ],
   },
   {
@@ -62,7 +57,6 @@ const navItems: NavItem[] = [
         href: "/resources/veteran-caregiver-resources",
         description: "VA programs, respite, and local support for veteran families.",
       },
-      { label: "Senior living guide", href: "/resources/senior-living-guide", description: "Plain-language guidance for your next step." },
       { label: "FAQ", href: "/faq", description: "Answers to common questions about Hayat." },
     ],
   },

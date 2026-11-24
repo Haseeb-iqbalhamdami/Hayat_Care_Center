@@ -48,13 +48,13 @@ const serviceExamples = [
 const relatedPaths = [
   {
     title: "Adult care center",
-    description: "Pair home visits with daytime center programming for more structure each week.",
+    description: "Pair home visits with daytime center programming for more structure each week—free center rides included.",
     href: "/adult-care-center",
   },
   {
-    title: "Non-medical transportation",
-    description: "Arrange reliable rides to appointments errands and social visits.",
-    href: "/non-medical-transportation",
+    title: "Free transportation",
+    description: "Home care includes free transportation for appointments and care-related trips coordinated with your plan.",
+    href: "/contact",
   },
 ] as const;
 

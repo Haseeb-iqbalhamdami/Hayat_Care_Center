@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     "Hayat Care Center senior living guide",
   ],
   alternates: {
-    canonical: "/resources/senior-living-guide",
+    canonical: "/faq",
   },
   openGraph: {
     title: "Senior Living Guide in Colorado Springs | Hayat Care Center",
     description:
       "A practical senior living guide for Colorado Springs families exploring care options, timing, tours, planning, and next steps.",
-    url: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+    url: "https://www.hayatcarecenter.org/faq",
     type: "website",
   },
 };
@@ -36,7 +36,7 @@ export default function SeniorLivingGuidePage() {
       {
         "@type": "Guide",
         name: "Senior Living Guide in Colorado Springs",
-        url: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+        url: "https://www.hayatcarecenter.org/faq",
         description:
           "A practical senior living guide for Colorado Springs families covering care options, timing, tours, family conversations, planning, and next steps.",
         publisher: {
@@ -62,8 +62,8 @@ export default function SeniorLivingGuidePage() {
           {
             "@type": "ListItem",
             position: 3,
-            name: "Senior Living Guide",
-            item: "https://www.hayatcarecenter.org/resources/senior-living-guide",
+            name: "FAQ",
+            item: "https://www.hayatcarecenter.org/faq",
           },
         ],
       },

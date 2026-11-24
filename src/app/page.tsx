@@ -72,7 +72,7 @@ export default function Home() {
       <HeroSection />
 
       <CommunityStatsMarquee items={communityStats} />
-  {/* Deep dive: three verticals */}
+  {/* Deep dive: care paths */}
   <section id="our-verticals" className="home-surface-feature scroll-mt-24 border-b border-slate-200 py-16 md:py-24">
         <div className={homeShell}>
           <div className={homeInner}>
@@ -112,16 +112,6 @@ export default function Home() {
                   href: "/#home-care-agency",
                   imageSrc: photoHomeCare,
                   imageAlt: "Home care support at Hayat",
-                },
-                {
-                  index: "03",
-                  title: homeVerticalsDeepDive.transport.name,
-                  tagline: homeVerticalsDeepDive.transport.tagline,
-                  description: homeVerticalsDeepDive.transport.fitFor,
-                  href: "/#non-medical-transportation",
-                  imageSrc: photoNonMedicalTransport,
-                  imageAlt:
-                    "Comfortable passenger vehicle interior — non-medical transportation for appointments and errands",
                 },
               ]}
             />
@@ -206,10 +196,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="non-medical-transportation" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
+      <section id="free-transportation" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-14 md:py-16">
         <div className={homeShell}>
-          <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
-            <div data-reveal data-reveal-delay={80}>
+          <div className={`${homeInner} grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-12`}>
+            <div data-reveal>
               <p className={sectionEyebrow}>{nonMedicalTransportationSummary.eyebrow}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl">
                 {nonMedicalTransportationSummary.title}
@@ -224,8 +214,8 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className={btnPrimary}>
-                  Request ride information
+                <Link href="/adult-care-center" className={btnPrimary}>
+                  Adult care center
                 </Link>
                 <Link href="/home-care-agency" className={btnOutline}>
                   Home care agency
@@ -235,13 +225,13 @@ export default function Home() {
             <div data-reveal className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md">
               <Image
                 src={photoNonMedicalTransport}
-                alt="Vehicle in motion representing scheduled non medical transportation rides"
+                alt="Free client transportation included with Hayat adult day care and home care"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-                  </div>
-              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -353,8 +343,8 @@ export default function Home() {
                 <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
                   Hayat Care Centers is a Colorado Springs-based care provider
                   supporting older adults and their families across the
-                  region. From our adult day center to home care and
-                  non-medical transportation, every service is built around
+                  region. From our adult day center to home care — with free
+                  transportation included for both — every service is built around
                   dignity, consistency, and genuine human connection.
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">

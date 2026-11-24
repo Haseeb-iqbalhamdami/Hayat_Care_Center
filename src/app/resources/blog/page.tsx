@@ -242,12 +242,12 @@ export default function BlogPage() {
           </div>
 
           <div data-reveal data-reveal-delay={200} className="mt-12 text-center">
-            <p className="text-sm text-[var(--ink-soft)]">Looking for specific guidance on senior living decisions?</p>
+            <p className="text-sm text-[var(--ink-soft)]">Need help matching adult day care or home care for your family?</p>
             <Link
-              href="/resources/senior-living-guide"
+              href="/contact"
               className="mt-3 inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
             >
-              Explore The Senior Living Guide
+              Talk With Our Team
             </Link>
           </div>
         </div>

@@ -39,13 +39,13 @@ const sectionEyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-[v
 const relatedPaths = [
   {
     title: "Home care agency",
-    description: "Keep support going in the evenings or weekends with caregiver visits at home.",
+    description: "Keep support going in the evenings or weekends with caregiver visits at home—free transport included there too.",
     href: "/home-care-agency",
   },
   {
-    title: "Non-medical transportation",
-    description: "Coordinate rides to and from the center or to appointments and errands.",
-    href: "/non-medical-transportation",
+    title: "Free transportation",
+    description: "Rides to and from the adult care center are free with enrollment. Ask our team how pickup works.",
+    href: "/contact",
   },
 ] as const;
 

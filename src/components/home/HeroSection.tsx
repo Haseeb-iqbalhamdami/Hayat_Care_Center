@@ -21,10 +21,10 @@ const services = [
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
-    text: "Non-medical transportation",
-    description: "Reliable rides for appointments errands and community visits.",
+    text: "Free transportation included",
+    description: "Free rides with adult day care and home care — coordinated with your plan.",
     image: "/images/usedimages/transportation.png",
-    imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
+    imageAlt: "Free Hayat client transportation included with adult day care and home care",
   },
 ] as const;
 

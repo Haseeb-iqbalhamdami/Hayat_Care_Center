@@ -81,6 +81,70 @@
   object-position: center;
 }
 
+.tributeSection {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tributeImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 22px 44px -30px rgba(7, 61, 122, 0.45);
+  background: #0b1f3a;
+}
+
+.tributeMainImage {
+  object-fit: cover;
+  object-position: center 30%;
+  filter: sepia(0.12) contrast(1.04) saturate(0.95);
+}
+
+.tributeTextBlock {
+  padding: 1.35rem 1.4rem 1.5rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(7, 61, 122, 0.2);
+  background:
+    linear-gradient(160deg, #0b1f3a 0%, #143156 55%, #5a1d28 100%);
+  color: #ffffff;
+}
+
+.tributeEyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f0d48a;
+}
+
+.tributeTitle {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  line-height: 1.18;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tributeRule {
+  margin: 0.8rem 0 0;
+  width: 4.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, #f0d48a, rgba(240, 212, 138, 0.15));
+}
+
+.tributeText {
+  margin: 0.85rem 0 0;
+  max-width: 68ch;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #ffffff;
+}
+
 .layout {
   display: grid;
   gap: 1.35rem;
@@ -377,6 +441,27 @@
 @media (min-width: 768px) {
   .resourceGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .tributeSection {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .tributeImageFrame {
+    aspect-ratio: 4 / 3;
+    min-height: 360px;
+  }
+
+  .tributeTextBlock {
+    padding: 1.7rem 1.8rem;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

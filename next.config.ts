@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/non-medical-transportation",
+        destination: "/adult-care-center",
+        permanent: true,
+      },
+      {
+        source: "/resources/senior-living-guide",
+        destination: "/resources/blog",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

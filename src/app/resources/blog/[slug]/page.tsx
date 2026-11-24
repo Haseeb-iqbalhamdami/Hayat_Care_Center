@@ -97,10 +97,10 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     Book A Consultation
                   </Link>
                   <Link
-                    href="/resources/senior-living-guide"
+                    href="/resources/blog"
                     className="inline-flex rounded-full bg-[var(--brand-orange)] px-5 py-2.5 text-sm font-bold text-white"
                   >
-                    Read Senior Living Guide
+                    More Care Articles
                   </Link>
                 </div>
               </section>

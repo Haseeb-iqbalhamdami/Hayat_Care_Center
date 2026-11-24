@@ -57,6 +57,11 @@ const navItems: NavItem[] = [
     label: "Resources",
     children: [
       { label: "Blog", href: "/resources/blog", description: "Articles for families navigating care decisions." },
+      {
+        label: "Veteran caregiver resources",
+        href: "/resources/veteran-caregiver-resources",
+        description: "VA programs, respite, and local support for veteran families.",
+      },
       { label: "Senior living guide", href: "/resources/senior-living-guide", description: "Plain-language guidance for your next step." },
       { label: "FAQ", href: "/faq", description: "Answers to common questions about Hayat." },
     ],

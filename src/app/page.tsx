@@ -351,7 +351,7 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
-                  Hayat Care Centers is a Springfield-based care provider
+                  Hayat Care Centers is a Colorado Springs-based care provider
                   supporting older adults and their families across the
                   region. From our adult day center to home care and
                   non-medical transportation, every service is built around

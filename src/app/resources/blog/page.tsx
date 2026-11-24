@@ -107,6 +107,15 @@ export default function BlogPage() {
             Practical articles written for families and caregivers who are exploring senior living, supporting a loved one,
             or looking for clear guidance on aging well.
           </p>
+          <Link
+            href="/resources/veteran-caregiver-resources"
+            data-reveal
+            data-reveal-delay={240}
+            className="mt-6 inline-flex max-w-3xl items-center gap-2 rounded-2xl border border-[var(--brand-navy)]/15 bg-gradient-to-r from-[#fff8ef] to-white px-4 py-3 text-sm font-semibold text-[var(--brand-navy)] shadow-sm transition hover:border-[var(--brand-orange)]/40"
+          >
+            New guide: Top veteran caregiver resources that actually help
+            <span aria-hidden>→</span>
+          </Link>
         </div>
       </section>
 

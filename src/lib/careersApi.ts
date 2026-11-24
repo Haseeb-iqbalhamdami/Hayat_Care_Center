@@ -104,8 +104,40 @@ function extractJobsList(payload: unknown): Job[] {
   return [];
 }
 
+/** Frontend hide list — test/junk API posts we do not want on the public careers pages */
+const HIDDEN_JOB_TITLES = new Set(["skin care job"]);
+
+function looksLikeTestJob(job: Job) {
+  const title = job.title.trim().toLowerCase();
+  const location = (job.location ?? "").trim().toLowerCase();
+  const description = job.description.trim().toLowerCase();
+
+  if (HIDDEN_JOB_TITLES.has(title)) return true;
+  if (title.includes("skin care job")) return true;
+
+  // Obvious placeholder spam from admin testing
+  if (location === "sadsad") return true;
+  if (description.includes("dfsadsdadsad")) return true;
+  if (description.length < 20 && !/[.!?]\s|[a-z]{4,}\s+[a-z]{4,}/i.test(description)) {
+    return true;
+  }
+
+  // Nonsense salary ranges (e.g. $2,333 – $1,212,212)
+  if (
+    typeof job.salaryMin === "number" &&
+    typeof job.salaryMax === "number" &&
+    job.salaryMax > 500_000 &&
+    job.salaryMax > job.salaryMin * 20
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
 function isPublicJob(job: Job) {
   if (job.isArchived) return false;
+  if (looksLikeTestJob(job)) return false;
   const status = (job.status ?? "open").toLowerCase();
   return status === "open" || status === "active";
 }

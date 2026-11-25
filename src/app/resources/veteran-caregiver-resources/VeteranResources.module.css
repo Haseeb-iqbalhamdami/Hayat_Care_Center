@@ -184,11 +184,63 @@
   line-height: 1.2;
 }
 
+.sectionLead {
+  margin: 0.55rem 0 0;
+  color: #0a4a8f;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .sectionText {
   margin: 0.5rem 0 0;
   color: #475569;
   font-size: 0.98rem;
   line-height: 1.74;
+}
+
+.bulletList {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.4rem;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.bulletList li::marker {
+  color: #0a4a8f;
+}
+
+.inlineLink {
+  color: #0a4a8f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.closingBlock {
+  margin-top: 1.4rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(7, 61, 122, 0.18);
+  background: linear-gradient(160deg, #0b1f3a, #5a1d28);
+  color: #fff;
+}
+
+.closingLead {
+  margin: 0;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.closingText {
+  margin: 0.65rem 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.65;
 }
 
 .subBlock {
@@ -211,13 +263,35 @@
   margin-top: 1.35rem;
   overflow: hidden;
   border-radius: 1.2rem;
-  min-height: 220px;
+  min-height: 260px;
+  aspect-ratio: 16 / 9;
   border: 1px solid rgba(226, 232, 240, 0.95);
 }
 
 .midImage {
   object-fit: cover;
   object-position: center;
+}
+
+.ctaBlock {
+  margin-top: 1.35rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: #f8fafc;
+  padding: 1.1rem 1.15rem;
+}
+
+.ctaTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.ctaText {
+  margin: 0.45rem 0 0;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
 }
 
 .sidebar {

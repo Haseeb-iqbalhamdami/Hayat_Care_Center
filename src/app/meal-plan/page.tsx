@@ -7,7 +7,7 @@ import { weeklyMealPlan } from "@/data/mealPlan";
 export const metadata: Metadata = {
   title: "Senior Meal Plan in Colorado Springs | Weekly Meals | Hayat Care Center",
   description:
-    "View Hayat Care Center's weekly senior meal plan in Colorado Springs with breakfast, lunch, dinner, ingredients, and dietary adjustment options for older adults.",
+    "View Hayat Care Center's weekly senior meal plan in Colorado Springs with breakfast, lunch, ingredients, and dietary adjustment options for older adults.",
   keywords: [
     "senior meal plan Colorado Springs",
     "adult day care with meals Colorado Springs",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Senior Meal Plan in Colorado Springs | Hayat Care Center",
     description:
-      "Weekly breakfast, lunch, dinner, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
+      "Weekly breakfast, lunch, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
     url: "https://www.hayatcarecenter.org/meal-plan",
     type: "website",
   },
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
 const mealOrder: Record<string, number> = {
   Breakfast: 1,
   Lunch: 2,
-  Dinner: 3,
 };
 
 export default function MealPlanPage() {
@@ -51,7 +50,7 @@ export default function MealPlanPage() {
         serviceType: "Senior Meal Program",
         url: "https://www.hayatcarecenter.org/meal-plan",
         description:
-          "Weekly breakfast, lunch, dinner, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
+          "Weekly breakfast, lunch, ingredients, and dietary adjustment options for seniors at Hayat Care Center.",
       },
       {
         "@type": "BreadcrumbList",
@@ -94,12 +93,12 @@ export default function MealPlanPage() {
               containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              Seven Day Dining Schedule With Breakfast Lunch Dinner And Ingredients
+              Seven Day Dining Schedule With Breakfast, Lunch, And Ingredients
             </ScrollFloat>
           </div>
           <p data-reveal data-reveal-delay={120} className="mt-4 max-w-4xl text-base leading-7 text-[var(--ink-soft)] md:text-lg">
-            This detailed menu shows the planned meals for each day of the week. Every day includes a breakfast recipe, a lunch
-            recipe, and a dinner recipe, followed by the ingredients used in each meal.
+            This detailed menu shows the planned meals for each day of the week. Every day includes a breakfast recipe and a lunch
+            recipe, followed by the ingredients used in each meal. Dinner is not provided as part of our meal program.
           </p>
         </div>
       </section>
@@ -113,7 +112,7 @@ export default function MealPlanPage() {
               Menu note: this is a sample weekly cycle and can be adjusted for allergies, texture preferences, sodium targets, and
               physician guidance.
             </p>
-            <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-5 grid gap-2 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold)]">Breakfast</p>
                 <p className="mt-1 text-sm text-slate-700">Balanced carbs plus protein</p>
@@ -121,10 +120,6 @@ export default function MealPlanPage() {
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold)]">Lunch</p>
                 <p className="mt-1 text-sm text-slate-700">Midday energy and hydration support</p>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold)]">Dinner</p>
-                <p className="mt-1 text-sm text-slate-700">Comfort focused and easy to digest</p>
               </div>
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold)]">Ingredients</p>
@@ -154,7 +149,7 @@ export default function MealPlanPage() {
                 </p>
               </div>
 
-              <div className="grid gap-5 p-5 md:p-7 lg:grid-cols-3">
+              <div className="grid gap-5 p-5 md:p-7 lg:grid-cols-2">
                 {dayPlan.meals
                   .slice()
                   .sort((a, b) => mealOrder[a.slot] - mealOrder[b.slot])

@@ -27,10 +27,10 @@ function VerticalsBranchGraphic() {
       className="mx-auto mb-7 flex max-w-5xl flex-col items-center gap-3 md:mb-9"
     >
       <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-400">
-        One organization · Three ways we care
+        One organization · Two ways we care
       </p>
       <svg
-        className="verticals-branch-svg h-14 w-[17rem] text-[#073D7A] md:h-16 md:w-[19rem]"
+        className="verticals-branch-svg h-14 w-[14rem] text-[#073D7A] md:h-16 md:w-[16rem]"
         viewBox="0 0 280 64"
         fill="none"
         aria-hidden
@@ -45,15 +45,7 @@ function VerticalsBranchGraphic() {
         />
         <path
           className="vb-path vb-path--left"
-          d="M140 28L48 52"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          opacity="0.55"
-        />
-        <path
-          className="vb-path vb-path--mid"
-          d="M140 28v26"
+          d="M140 28L72 52"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
@@ -61,16 +53,15 @@ function VerticalsBranchGraphic() {
         />
         <path
           className="vb-path vb-path--right"
-          d="M140 28L232 52"
+          d="M140 28L208 52"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           opacity="0.55"
         />
         <circle className="vb-node vb-node--root" cx="140" cy="12" r="4" fill="currentColor" opacity="0.9" />
-        <circle className="vb-node vb-node--left" cx="48" cy="52" r="3.5" fill="#d5664b" />
-        <circle className="vb-node vb-node--mid" cx="140" cy="56" r="3.5" fill="#d5664b" />
-        <circle className="vb-node vb-node--right" cx="232" cy="52" r="3.5" fill="#d5664b" />
+        <circle className="vb-node vb-node--left" cx="72" cy="52" r="3.5" fill="#d5664b" />
+        <circle className="vb-node vb-node--right" cx="208" cy="52" r="3.5" fill="#d5664b" />
       </svg>
     </div>
   );
@@ -97,7 +88,7 @@ function VerticalCard({ item, revealDelay }: { item: VerticalShowcaseItem; revea
           alt={item.imageAlt}
           fill
           className="object-cover object-center transition duration-700 ease-out motion-reduce:transition-none group-hover:scale-[1.07]"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 45vw"
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-75 transition duration-500 group-hover:opacity-90"
@@ -130,7 +121,7 @@ export default function VerticalShowcaseCards({ items }: { items: VerticalShowca
   return (
     <div className="mx-auto mt-10 max-w-6xl lg:mt-12">
       <VerticalsBranchGraphic />
-      <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-4xl grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-6">
         {items.map((item, index) => (
           <VerticalCard key={item.href} item={item} revealDelay={130 + index * 120} />
         ))}

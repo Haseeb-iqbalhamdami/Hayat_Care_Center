@@ -1,28 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import BorderGlow from "@/components/reactbits/BorderGlow";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
-import { floorPlans } from "@/data/siteContent";
+import { facilityRooms } from "@/data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Adult Day Care Floor Plans in Colorado Springs | Hayat Care Center",
+  title: "Our Rooms & Spaces in Colorado Springs | Hayat Care Center",
   description:
-    "Compare floor plans and suite layouts at Hayat Care Center in Colorado Springs, including living space options, comfort features, and support settings for different routines.",
+    "Explore the rooms and spaces at Hayat Care Center in Colorado Springs, including rest room, craft room, dining, recreation, wellness, and more.",
   keywords: [
-    "adult day care floor plans Colorado Springs",
-    "senior care floor plans Colorado Springs",
-    "Hayat Care Center floor plans",
-    "senior suite layouts Colorado Springs",
-    "adult day care layouts Colorado Springs",
-    "care center floor plans Colorado Springs",
+    "adult day care rooms Colorado Springs",
+    "Hayat Care Center facility spaces",
+    "craft room adult day care Colorado Springs",
+    "rest room senior day program",
+    "adult day care amenities Colorado Springs",
   ],
   alternates: {
     canonical: "/floor-plans",
   },
   openGraph: {
-    title: "Adult Day Care Floor Plans in Colorado Springs | Hayat Care Center",
+    title: "Our Rooms & Spaces | Hayat Care Center",
     description:
-      "Compare suite layouts, living space options, comfort features, and support settings at Hayat Care Center in Colorado Springs.",
+      "See the rooms available at Hayat Care Center — rest room, craft room, dining, recreation, wellness, and more.",
     url: "https://www.hayatcarecenter.org/floor-plans",
     type: "website",
   },
@@ -34,16 +32,16 @@ export default function FloorPlansPage() {
     "@graph": [
       {
         "@type": "Service",
-        name: "Adult Day Care Floor Plans in Colorado Springs",
+        name: "Hayat Care Center Rooms and Spaces",
         provider: {
           "@type": "LocalBusiness",
           name: "Hayat Care Center",
         },
         areaServed: "Colorado Springs, CO",
-        serviceType: "Care Center Floor Plans",
+        serviceType: "Adult Day Care Facility Spaces",
         url: "https://www.hayatcarecenter.org/floor-plans",
         description:
-          "Hayat Care Center provides floor plan and suite layout information in Colorado Springs for families comparing living space, comfort, and support settings.",
+          "Rooms and spaces at Hayat Care Center including rest room, craft room, dining, recreation, and wellness areas.",
       },
       {
         "@type": "BreadcrumbList",
@@ -57,7 +55,7 @@ export default function FloorPlansPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Floor Plans",
+            name: "Our Rooms",
             item: "https://www.hayatcarecenter.org/floor-plans",
           },
         ],
@@ -80,7 +78,7 @@ export default function FloorPlansPage() {
             data-reveal
             className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-blue)]"
           >
-            Floor Plans
+            Our Rooms & Spaces
           </p>
           <div data-reveal data-reveal-delay={90}>
             <ScrollFloat
@@ -88,7 +86,7 @@ export default function FloorPlansPage() {
               containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              Multiple Suite Layouts To Match Different Routines And Preferences
+              Rooms Designed For Comfort, Activity, And Everyday Belonging
             </ScrollFloat>
           </div>
           <p
@@ -96,50 +94,39 @@ export default function FloorPlansPage() {
             data-reveal-delay={180}
             className="mt-4 max-w-3xl text-base leading-7 text-[var(--ink-soft)] md:text-lg"
           >
-            Hayat offers several suite styles so families can compare living
-            space, comfort, and the support setting that feels right for the
-            next chapter.
+            Instead of suite floor plans, here is a clear look at the rooms and spaces available at
+            Hayat Care Center — including rest room, craft room, dining, recreation, wellness, and more.
           </p>
         </div>
       </section>
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-5 lg:grid-cols-3">
-            {floorPlans.map((plan, index) => (
-              <BorderGlow
-                key={plan.title}
-                data-reveal
-                data-reveal-delay={index * 90}
-                data-tilt
-                className="h-full"
-                borderRadius={22}
-                glowRadius={28}
-              >
-                <article className="h-full rounded-3xl bg-white p-7">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-orange)]">
-                    {plan.layout}
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <div className="border-b border-slate-200 bg-slate-50 px-5 py-4 md:px-7">
+              <h2 className="text-xl font-bold text-[var(--ink)] md:text-2xl">Rooms Available At Our Center</h2>
+              <p className="mt-1 text-sm text-[var(--ink-soft)]">
+                A practical list of the spaces participants and families can expect during a visit.
+              </p>
+            </div>
+
+            <ul className="divide-y divide-slate-100">
+              {facilityRooms.map((room, index) => (
+                <li
+                  key={room.title}
+                  data-reveal
+                  data-reveal-delay={index * 40}
+                  className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-start sm:gap-6 md:px-7 md:py-5"
+                >
+                  <p className="min-w-[12rem] text-base font-bold text-[var(--brand-navy)] md:min-w-[14rem]">
+                    {room.title}
                   </p>
-                  <h2 className="mt-3 text-2xl font-bold text-[var(--ink)]">
-                    {plan.title}
-                  </h2>
-                  <p className="mt-1 text-sm font-semibold text-[var(--brand-blue)]">
-                    {plan.size}
+                  <p className="text-sm leading-6 text-[var(--ink-soft)] md:text-[0.95rem]">
+                    {room.description}
                   </p>
-                  <p className="mt-4 text-sm leading-6 text-[var(--ink-soft)]">
-                    {plan.description}
-                  </p>
-                  <ul className="mt-5 space-y-2 text-sm text-[var(--ink-soft)]">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-orange)]" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </BorderGlow>
-            ))}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div
@@ -151,13 +138,13 @@ export default function FloorPlansPage() {
               href="/contact"
               className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
             >
-              Request Pricing & Availability
+              Schedule A Tour
             </Link>
             <Link
-              href="/contact"
+              href="/community/our-facility"
               className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
             >
-              Talk With Our Team
+              See Our Facility
             </Link>
           </div>
         </div>

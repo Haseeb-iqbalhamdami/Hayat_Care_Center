@@ -104,8 +104,16 @@ function extractJobsList(payload: unknown): Job[] {
   return [];
 }
 
-/** Frontend hide list — test/junk API posts we do not want on the public careers pages */
-const HIDDEN_JOB_TITLES = new Set(["skin care job"]);
+/** Frontend hide list — test/junk or retired roles we do not want on public careers pages */
+const HIDDEN_JOB_TITLES = new Set(["skin care job", "administrative manager"]);
+
+/** Canonical hourly pay ranges shown on the site (override backend salary when matched) */
+const HOURLY_PAY_BY_ROLE: Array<{ match: RegExp; min: number; max: number }> = [
+  { match: /\bcna\b|certified nursing assistant/i, min: 18, max: 24 },
+  { match: /\brn\b|registered nurse|\bnurse\b/i, min: 28, max: 40 },
+  { match: /\bcare\s*giver\b|\bcaregiver\b/i, min: 16, max: 22 },
+  { match: /assistant\s+admin(?:istrative)?\s+manager|admin(?:istrative)?\s+assistant\s+manager/i, min: 19, max: 23 },
+];
 
 function looksLikeTestJob(job: Job) {
   const title = job.title.trim().toLowerCase();
@@ -114,6 +122,10 @@ function looksLikeTestJob(job: Job) {
 
   if (HIDDEN_JOB_TITLES.has(title)) return true;
   if (title.includes("skin care job")) return true;
+  // Hide Administrative Manager; keep Assistant Admin Manager
+  if (title === "administrative manager" || /^administrative\s+manager\b/.test(title)) {
+    return true;
+  }
 
   // Obvious placeholder spam from admin testing
   if (location === "sadsad") return true;
@@ -133,6 +145,20 @@ function looksLikeTestJob(job: Job) {
   }
 
   return false;
+}
+
+function applyHourlyPayOverride(job: Job): Job {
+  const title = job.title.trim();
+  for (const rule of HOURLY_PAY_BY_ROLE) {
+    if (rule.match.test(title)) {
+      return {
+        ...job,
+        salaryMin: rule.min,
+        salaryMax: rule.max,
+      };
+    }
+  }
+  return job;
 }
 
 function isPublicJob(job: Job) {
@@ -176,14 +202,14 @@ export async function getJobs(params?: JobsQueryParams): Promise<Job[]> {
     }),
   );
 
-  return extractJobsList(data).filter(isPublicJob);
+  return extractJobsList(data).filter(isPublicJob).map(applyHourlyPayOverride);
 }
 
 export async function getJobById(id: string): Promise<Job | null> {
   const data = await fetchJson<unknown>(buildUrl(`/jobs/${encodeURIComponent(id)}`));
   const job = normalizeJob(isRecord(data) && "job" in data ? data.job : data);
   if (!job || !isPublicJob(job)) return null;
-  return job;
+  return applyHourlyPayOverride(job);
 }
 
 export function formatEmploymentType(value?: string) {
@@ -200,11 +226,23 @@ export function formatSalaryRange(min?: number, max?: number) {
     maximumFractionDigits: 0,
   });
 
+  // Values under ~$100 are treated as hourly rates for display
+  const isHourly =
+    (typeof max === "number" && max > 0 && max <= 100) ||
+    (typeof min === "number" && min > 0 && min <= 100 && typeof max !== "number");
+
   if (typeof min === "number" && typeof max === "number") {
-    return `${formatter.format(min)} – ${formatter.format(max)}`;
+    const range = `${formatter.format(min)} – ${formatter.format(max)}`;
+    return isHourly ? `${range} / hour` : range;
   }
-  if (typeof min === "number") return `From ${formatter.format(min)}`;
-  if (typeof max === "number") return `Up to ${formatter.format(max)}`;
+  if (typeof min === "number") {
+    const value = `From ${formatter.format(min)}`;
+    return isHourly ? `${value} / hour` : value;
+  }
+  if (typeof max === "number") {
+    const value = `Up to ${formatter.format(max)}`;
+    return isHourly ? `${value} / hour` : value;
+  }
   return null;
 }
 

@@ -43,7 +43,7 @@ export const navGroups = [
       { label: "Activities & Events", href: "/activities-events", description: "Social programs, outings, and daily gatherings." },
       { label: "Life Enrichment", href: "/wellness", description: "Wellness and engagement programs at Hayat." },
       { label: "Dining Experience", href: "/dining", description: "Meals, hospitality, and nutrition handled with care." },
-      { label: "Weekly Meal Plan", href: "/meal-plan", description: "Seven day menu with breakfast lunch dinner and ingredients." },
+      { label: "Weekly Meal Plan", href: "/meal-plan", description: "Seven day menu with breakfast, lunch, and ingredients." },
     ],
   },
   {
@@ -63,10 +63,10 @@ export const navGroups = [
     ],
   },
   {
-    label: "Gallery & Floor Plans",
+    label: "Gallery & Rooms",
     href: "/floor-plans",
     links: [
-      { label: "Floor Plans", href: "/floor-plans", description: "Browse suite layouts and compare footprints." },
+      { label: "Our Rooms", href: "/floor-plans", description: "Rest room, craft room, dining, recreation, and more spaces." },
       { label: "Photos", href: "/gallery/photos", description: "View our community spaces, suites, and grounds." },
       { label: "Videos", href: "/gallery/videos", description: "Watch walkthrough tours and community highlights." },
     ],
@@ -110,7 +110,7 @@ export const footerLinkGroups = [
     links: [
       { label: "Adult Care Center", href: "/adult-care-center" },
       { label: "Home Care Agency", href: "/home-care-agency" },
-      { label: "Floor Plans", href: "/floor-plans" },
+      { label: "Our Rooms", href: "/floor-plans" },
       { label: "Photos", href: "/gallery/photos" },
       { label: "Videos", href: "/gallery/videos" },
     ],
@@ -564,29 +564,60 @@ export const coverageOptions = [
   "Personalized service review",
 ] as const;
 
-export const floorPlans = [
+/** Rooms and spaces at the adult care center — shown on /floor-plans */
+export const facilityRooms = [
   {
-    title: "Willow Suite",
-    layout: "Suite | One Bath",
-    size: "340 sq. ft.",
-    description: "A streamlined studio option designed for comfort, ease, and low-maintenance living.",
-    features: ["Open sleeping area", "Accessible bath", "Ideal for simplified routines"],
+    title: "Rest Room",
+    description: "A quiet, comfortable space for participants who need a break, a nap, or a calm moment during the day.",
   },
   {
-    title: "Juniper One Bedroom",
-    layout: "One Bed | One Bath",
-    size: "485 sq. ft.",
-    description: "A balanced layout with more separation between living and resting space for a home-like feel.",
-    features: ["Dedicated bedroom", "Comfortable sitting area", "Great fit for quiet daily routines"],
+    title: "Craft Room",
+    description: "A creative space for arts, crafts, projects, and hands-on activities that keep minds engaged.",
   },
   {
-    title: "Summit Companion",
-    layout: "Two Bed | One Bath",
-    size: "720 sq. ft.",
-    description: "A larger shared layout for residents who value extra room, flexibility, or companion living.",
-    features: ["Two sleeping areas", "Expanded living space", "Designed for flexibility"],
+    title: "Activity & Recreation Room",
+    description: "Open space for games, group programs, movement activities, and social gatherings.",
+  },
+  {
+    title: "Dining Room",
+    description: "A welcoming dining area for breakfast, lunch, and shared meals with friends and staff.",
+  },
+  {
+    title: "Entertainment & TV Lounge",
+    description: "A comfortable lounge for movies, television, music, and relaxed social time.",
+  },
+  {
+    title: "Game Room",
+    description: "Indoor recreation for pool, billiards, table tennis, cards, and friendly competition.",
+  },
+  {
+    title: "Library & Reading Nook",
+    description: "A quieter corner for reading, reflection, conversation, and peaceful downtime.",
+  },
+  {
+    title: "Fitness & Wellness Studio",
+    description: "A flexible space for gentle exercise, balance work, stretching, and wellness programs.",
+  },
+  {
+    title: "Beauty & Grooming Space",
+    description: "An on-site area for personal care touches that help participants feel polished and confident.",
+  },
+  {
+    title: "Reception & Welcome Lobby",
+    description: "A bright entry area where families are greeted and participants begin each day.",
+  },
+  {
+    title: "Quiet Relaxation Area",
+    description: "A calm retreat for rest, soft conversation, or time away from louder group activity.",
+  },
+  {
+    title: "Courtyard & Outdoor Space",
+    description: "Fresh-air seating and walking areas for gentle movement and outdoor enjoyment when weather allows.",
   },
 ] as const;
+
+/** @deprecated Prefer facilityRooms — kept empty-safe alias for any legacy imports */
+export const floorPlans = facilityRooms;
 
 export const testimonials = [
   {

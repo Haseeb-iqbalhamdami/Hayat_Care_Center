@@ -13,11 +13,6 @@ const mealVisuals = [
     image: "/images/meal-plan/meal-02.jpg",
   },
   {
-    slot: "Dinner",
-    dish: "Salmon And Greens",
-    image: "/images/meal-plan/meal-03.jpg",
-  },
-  {
     slot: "Breakfast",
     dish: "Whole Grain Toast Plate",
     image: "/images/meal-plan/meal-04.jpg",
@@ -26,11 +21,6 @@ const mealVisuals = [
     slot: "Lunch",
     dish: "Vegetable Soup And Salad",
     image: "/images/meal-plan/meal-05.jpg",
-  },
-  {
-    slot: "Dinner",
-    dish: "Chicken Rice Dinner",
-    image: "/images/meal-plan/meal-06.jpg",
   },
 ] as const;
 

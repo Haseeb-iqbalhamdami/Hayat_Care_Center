@@ -1,4 +1,4 @@
-export type MealSlot = "Breakfast" | "Lunch" | "Dinner";
+export type MealSlot = "Breakfast" | "Lunch";
 
 export interface MealEntry {
   slot: MealSlot;
@@ -44,21 +44,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Low sodium vegetable broth",
           "Olive oil",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Dill Salmon With Sweet Potato Mash And Green Beans",
-        ingredients: [
-          "Salmon fillet",
-          "Fresh dill",
-          "Lemon slices",
-          "Sweet potatoes",
-          "Plain yogurt",
-          "Green beans",
-          "Olive oil",
-          "Black pepper",
-        ],
-      },
+      }
     ],
   },
   {
@@ -92,21 +78,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Low sodium broth",
           "Thyme",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Beef And Broccoli Stir Fry With Brown Rice",
-        ingredients: [
-          "Lean beef strips",
-          "Broccoli florets",
-          "Bell peppers",
-          "Ginger",
-          "Garlic",
-          "Low sodium soy sauce",
-          "Brown rice",
-          "Sesame oil",
-        ],
-      },
+      }
     ],
   },
   {
@@ -139,21 +111,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Olive oil",
           "Mixed greens",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Lemon Garlic Cod With Roasted Vegetables",
-        ingredients: [
-          "Cod fillet",
-          "Lemon juice",
-          "Garlic",
-          "Zucchini",
-          "Carrots",
-          "Cauliflower",
-          "Olive oil",
-          "Oregano",
-        ],
-      },
+      }
     ],
   },
   {
@@ -185,21 +143,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Plain yogurt",
           "Lemon tahini dressing",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Vegetable Lasagna With Cottage Cheese",
-        ingredients: [
-          "Whole wheat lasagna sheets",
-          "Cottage cheese",
-          "Spinach",
-          "Mushrooms",
-          "Marinara sauce",
-          "Mozzarella",
-          "Onion",
-          "Garlic",
-        ],
-      },
+      }
     ],
   },
   {
@@ -233,22 +177,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Whole wheat pita",
           "Lettuce",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Light Chicken And Vegetable Biryani",
-        ingredients: [
-          "Basmati and brown rice blend",
-          "Chicken breast",
-          "Onion",
-          "Tomatoes",
-          "Green peas",
-          "Carrots",
-          "Turmeric",
-          "Cumin",
-          "Low sodium broth",
-        ],
-      },
+      }
     ],
   },
   {
@@ -281,21 +210,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Diced tomatoes",
           "Avocado",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Beef Meatballs In Tomato Basil Sauce With Polenta",
-        ingredients: [
-          "Lean ground beef",
-          "Rolled oats",
-          "Egg",
-          "Garlic",
-          "Parsley",
-          "Tomato basil sauce",
-          "Cornmeal",
-          "Parmesan",
-        ],
-      },
+      }
     ],
   },
   {
@@ -327,23 +242,7 @@ export const weeklyMealPlan: DayMenu[] = [
           "Green peas",
           "Parsley",
         ],
-      },
-      {
-        slot: "Dinner",
-        recipe: "Vegetable Chickpea Curry With Brown Rice",
-        ingredients: [
-          "Chickpeas",
-          "Cauliflower",
-          "Potatoes",
-          "Spinach",
-          "Light coconut milk",
-          "Onion",
-          "Garlic",
-          "Ginger",
-          "Curry powder",
-          "Brown rice",
-        ],
-      },
+      }
     ],
   },
 ];
